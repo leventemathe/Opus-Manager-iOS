@@ -139,6 +139,7 @@
 		D71E6B07209A1B65003647B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D77DABCC209A34FD003D02AC /* Common */,
 				D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -151,6 +152,13 @@
 				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D77DABCC209A34FD003D02AC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
