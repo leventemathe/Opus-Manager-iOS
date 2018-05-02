@@ -1,0 +1,12 @@
+.DS_Store
+build/
+*.xcuserstate
+xcuserdata
+
+GoogleService-Info.plist
+GoogleService-Info-Dev.plist
+GoogleService-Info-Prod.plist
+FirebaseConfig/Dev/GoogleService-Info.plist
+FirebaseConfig/Prod/GoogleService-Info.plist
+
+Configuration.swift

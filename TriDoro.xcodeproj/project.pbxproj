@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */; };
-		D71E6AE6209A1AD8003647B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE5209A1AD8003647B7 /* ViewController.swift */; };
-		D71E6AE9209A1AD8003647B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* Main.storyboard */; };
+		D71E6AE9209A1AD8003647B7 /* Selector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* Selector.storyboard */; };
 		D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEA209A1ADA003647B7 /* Assets.xcassets */; };
 		D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */; };
 		D71E6AF9209A1ADA003647B7 /* TriDoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AF8209A1ADA003647B7 /* TriDoroTests.swift */; };
+		D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6B09209A1C19003647B7 /* SelectorVC.swift */; };
+		D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */; };
+		D71E6B0F209A1D93003647B7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
+		D71E6B10209A1D93003647B7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +31,17 @@
 /* Begin PBXFileReference section */
 		D71E6AE0209A1AD8003647B7 /* TriDoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriDoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D71E6AE5209A1AD8003647B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Selector.storyboard; sourceTree = "<group>"; };
 		D71E6AEA209A1ADA003647B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D71E6AED209A1ADA003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D71E6AEF209A1ADA003647B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71E6AF4209A1ADA003647B7 /* TriDoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriDoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E6AF8209A1ADA003647B7 /* TriDoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriDoroTests.swift; sourceTree = "<group>"; };
 		D71E6AFA209A1ADA003647B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71E6B09209A1C19003647B7 /* SelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVC.swift; sourceTree = "<group>"; };
+		D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,12 @@
 		D71E6AE2209A1AD8003647B7 /* TriDoro */ = {
 			isa = PBXGroup;
 			children = (
-				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
-				D71E6AE5209A1AD8003647B7 /* ViewController.swift */,
-				D71E6AE7209A1AD8003647B7 /* Main.storyboard */,
-				D71E6AEA209A1ADA003647B7 /* Assets.xcassets */,
-				D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */,
-				D71E6AEF209A1ADA003647B7 /* Info.plist */,
+				D71E6B03209A1B46003647B7 /* Theme */,
+				D71E6B04209A1B52003647B7 /* Assets */,
+				D71E6B05209A1B58003647B7 /* Supporting Files */,
+				D71E6B06209A1B60003647B7 /* Model */,
+				D71E6B08209A1B6A003647B7 /* Controller */,
+				D71E6B07209A1B65003647B7 /* View */,
 			);
 			path = TriDoro;
 			sourceTree = "<group>";
@@ -94,6 +100,57 @@
 				D71E6AFA209A1ADA003647B7 /* Info.plist */,
 			);
 			path = TriDoroTests;
+			sourceTree = "<group>";
+		};
+		D71E6B03209A1B46003647B7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		D71E6B04209A1B52003647B7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D71E6AEA209A1ADA003647B7 /* Assets.xcassets */,
+				D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */,
+				D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */,
+				D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D71E6B05209A1B58003647B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
+				D71E6AEF209A1ADA003647B7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D71E6B06209A1B60003647B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D71E6B07209A1B65003647B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D71E6B08209A1B6A003647B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D71E6AE7209A1AD8003647B7 /* Selector.storyboard */,
+				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */,
+				D71E6B0F209A1D93003647B7 /* Lato-Bold.ttf in Resources */,
 				D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */,
-				D71E6AE9209A1AD8003647B7 /* Main.storyboard in Resources */,
+				D71E6B10209A1D93003647B7 /* Lato-Light.ttf in Resources */,
+				D71E6AE9209A1AD8003647B7 /* Selector.storyboard in Resources */,
+				D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D71E6AE6209A1AD8003647B7 /* ViewController.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
+				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,12 +281,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D71E6AE7209A1AD8003647B7 /* Main.storyboard */ = {
+		D71E6AE7209A1AD8003647B7 /* Selector.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D71E6AE8209A1AD8003647B7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Selector.storyboard;
 			sourceTree = "<group>";
 		};
 		D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */ = {
@@ -360,7 +420,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XA4EDUMR4;
-				INFOPLIST_FILE = TriDoro/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TriDoro/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +439,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XA4EDUMR4;
-				INFOPLIST_FILE = TriDoro/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TriDoro/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
