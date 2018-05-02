@@ -14,8 +14,13 @@
 		D71E6AF9209A1ADA003647B7 /* TriDoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AF8209A1ADA003647B7 /* TriDoroTests.swift */; };
 		D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6B09209A1C19003647B7 /* SelectorVC.swift */; };
 		D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */; };
-		D71E6B0F209A1D93003647B7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
-		D71E6B10209A1D93003647B7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
+		D731C4EB209A3DDA00076098 /* TaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D731C4EA209A3DDA00076098 /* TaskView.xib */; };
+		D731C4ED209A3EA100076098 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4EC209A3EA100076098 /* TaskView.swift */; };
+		D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4EE209A4AC700076098 /* LargeLabel.swift */; };
+		D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */; };
+		D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */; };
+		D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
+		D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
 		D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		D731C4EA209A3DDA00076098 /* TaskView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskView.xib; sourceTree = "<group>"; };
+		D731C4EC209A3EA100076098 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		D731C4EE209A4AC700076098 /* LargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeLabel.swift; sourceTree = "<group>"; };
+		D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyFonts.swift"; sourceTree = "<group>"; };
+		D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,8 @@
 		D71E6B03209A1B46003647B7 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */,
+				D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -148,15 +160,26 @@
 		D71E6B08209A1B6A003647B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D731C4E9209A3AE800076098 /* Selector */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D731C4E9209A3AE800076098 /* Selector */ = {
+			isa = PBXGroup;
+			children = (
 				D71E6AE7209A1AD8003647B7 /* Selector.storyboard */,
 				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
 			);
-			path = Controller;
+			path = Selector;
 			sourceTree = "<group>";
 		};
 		D77DABCC209A34FD003D02AC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D731C4EA209A3DDA00076098 /* TaskView.xib */,
+				D731C4EC209A3EA100076098 /* TaskView.swift */,
+				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -242,12 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */,
 				D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */,
-				D71E6B0F209A1D93003647B7 /* Lato-Bold.ttf in Resources */,
+				D731C4EB209A3DDA00076098 /* TaskView.xib in Resources */,
 				D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */,
-				D71E6B10209A1D93003647B7 /* Lato-Light.ttf in Resources */,
 				D71E6AE9209A1AD8003647B7 /* Selector.storyboard in Resources */,
 				D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */,
+				D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,8 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
+				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
+				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
+				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

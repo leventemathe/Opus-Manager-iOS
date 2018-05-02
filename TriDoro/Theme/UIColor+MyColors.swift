@@ -1,5 +1,5 @@
 //
-//  SelectorVC.swift
+//  UIColor+MyColors.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 02..
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class SelectorVC: UIViewController {
-
+extension UIColor {
+    
+    static let myBackgroundColor = UIColor.black
+    static let myTintColor = UIColor.white
 }
