@@ -16,6 +16,7 @@ class SelectorVC: UIViewController, Storyboarded {
     
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
+    var coordinator: MainCoordinator!
     
     var images = [UIImage]() {
         didSet {
@@ -84,18 +85,14 @@ class SelectorVC: UIViewController, Storyboarded {
     }
     
     @objc private func workTapped() {
-        let workVC = WorkVC()
-        workVC.modalTransitionStyle = .coverVertical
-        workVC.modalPresentationStyle = .overFullScreen        
-        navigationController?.present(workVC, animated: true)
-        print("work tapped")
+        coordinator.work()
     }
     
     @objc private func shortBreakTapped() {
-        print("short break tapped")
+        coordinator.shortBreak()
     }
     
     @objc private func longBreakTapped() {
-        print("long break tapped")
+        coordinator.longBreak()
     }
 }

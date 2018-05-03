@@ -31,9 +31,10 @@
 		D78DBD0C209B85F000D12549 /* TimerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0B209B85F000D12549 /* TimerScreenView.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
 		D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0F209B87B000D12549 /* WorkScreenView.swift */; };
-		D78DBD13209B93BD00D12549 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD12209B93BD00D12549 /* Coordinator.swift */; };
 		D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD14209B940100D12549 /* MainCoordinator.swift */; };
 		D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD16209B975A00D12549 /* Storyboarded.swift */; };
+		D78DBD19209B9C4A00D12549 /* BackToMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */; };
+		D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD1A209B9DD800D12549 /* TimerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +76,10 @@
 		D78DBD0B209B85F000D12549 /* TimerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenView.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		D78DBD0F209B87B000D12549 /* WorkScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScreenView.swift; sourceTree = "<group>"; };
-		D78DBD12209B93BD00D12549 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D78DBD14209B940100D12549 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D78DBD16209B975A00D12549 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToMainCoordinator.swift; sourceTree = "<group>"; };
+		D78DBD1A209B9DD800D12549 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		D78DBD07209B856900D12549 /* Work */ = {
 			isa = PBXGroup;
 			children = (
+				D78DBD1A209B9DD800D12549 /* TimerVC.swift */,
 				D78DBD08209B85B900D12549 /* WorkVC.swift */,
 			);
 			path = Work;
@@ -257,8 +260,8 @@
 		D78DBD11209B93A700D12549 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D78DBD12209B93BD00D12549 /* Coordinator.swift */,
 				D78DBD14209B940100D12549 /* MainCoordinator.swift */,
+				D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -374,12 +377,13 @@
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */,
+				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
+				D78DBD19209B9C4A00D12549 /* BackToMainCoordinator.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
-				D78DBD13209B93BD00D12549 /* Coordinator.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
 				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,

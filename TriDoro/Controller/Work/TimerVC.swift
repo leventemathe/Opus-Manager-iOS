@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  TimerVC.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 03..
@@ -8,9 +8,11 @@
 
 import UIKit
 
-protocol Coordinator {
+class TimerVC: UIViewController {
     
-    var navigationController: UINavigationController { get }
+    var coordinator: BackToMainCoordinator?
     
-    func start()
+    @objc func done() {
+        coordinator?.back()
+    }
 }

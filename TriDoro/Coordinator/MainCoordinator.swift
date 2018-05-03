@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MainCoordinator: Coordinator {
+struct MainCoordinator {
     
     var navigationController: UINavigationController
     
@@ -18,6 +18,21 @@ struct MainCoordinator: Coordinator {
     
     func start() {
         let selectorVC = SelectorVC.instantiate()
+        selectorVC.coordinator = self
         navigationController.pushViewController(selectorVC, animated: false)
+    }
+    
+    func work() {
+        let workVC = WorkVC()
+        workVC.coordinator = BackToMainCoordinator(navigationController: navigationController)
+        navigationController.pushViewController(workVC, animated: true)
+    }
+    
+    func shortBreak() {
+        
+    }
+    
+    func longBreak() {
+        
     }
 }
