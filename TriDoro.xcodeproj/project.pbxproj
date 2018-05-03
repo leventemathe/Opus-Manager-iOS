@@ -27,6 +27,10 @@
 		D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD5209B12B5007F9976 /* Configuration.swift */; };
 		D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */; };
 		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
+		D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD08209B85B900D12549 /* WorkVC.swift */; };
+		D78DBD0C209B85F000D12549 /* TimerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0B209B85F000D12549 /* TimerScreenView.swift */; };
+		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
+		D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0F209B87B000D12549 /* WorkScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		D756EAD5209B12B5007F9976 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorHandler.swift; sourceTree = "<group>"; };
 		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D78DBD08209B85B900D12549 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
+		D78DBD0B209B85F000D12549 /* TimerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenView.swift; sourceTree = "<group>"; };
+		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		D78DBD0F209B87B000D12549 /* WorkScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				D77DABCC209A34FD003D02AC /* Common */,
+				D78DBD06209B854900D12549 /* Selector */,
+				D78DBD0A209B85D200D12549 /* Timer Screens */,
 				D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -174,7 +184,9 @@
 		D71E6B08209A1B6A003647B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D78DBD04209B7A7700D12549 /* ImageDownloader.swift */,
 				D731C4E9209A3AE800076098 /* Selector */,
+				D78DBD07209B856900D12549 /* Work */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,7 +196,6 @@
 			children = (
 				D71E6AE7209A1AD8003647B7 /* Selector.storyboard */,
 				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
-				D78DBD04209B7A7700D12549 /* ImageDownloader.swift */,
 			);
 			path = Selector;
 			sourceTree = "<group>";
@@ -203,11 +214,36 @@
 		D77DABCC209A34FD003D02AC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D731C4EA209A3DDA00076098 /* TaskView.xib */,
-				D731C4EC209A3EA100076098 /* TaskView.swift */,
 				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
+				D78DBD0D209B861200D12549 /* LargeButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D78DBD06209B854900D12549 /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				D731C4EA209A3DDA00076098 /* TaskView.xib */,
+				D731C4EC209A3EA100076098 /* TaskView.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
+		D78DBD07209B856900D12549 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				D78DBD08209B85B900D12549 /* WorkVC.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		D78DBD0A209B85D200D12549 /* Timer Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D78DBD0B209B85F000D12549 /* TimerScreenView.swift */,
+				D78DBD0F209B87B000D12549 /* WorkScreenView.swift */,
+			);
+			path = "Timer Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,15 +351,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78DBD0C209B85F000D12549 /* TimerScreenView.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
+				D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
+				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
+				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,

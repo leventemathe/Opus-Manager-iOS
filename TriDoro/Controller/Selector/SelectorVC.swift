@@ -37,6 +37,7 @@ class SelectorVC: UIViewController {
         imageDownloader = ImageDownloader()
         downloadImages()
         setupLabels()
+        setupCoordinator()
     }
     
     private func downloadImages() {
@@ -70,5 +71,31 @@ class SelectorVC: UIViewController {
         workView.setLabelText(workText)
         shortBreakView.setLabelText(shortBreakText)
         longBreakView.setLabelText(longBreakText)
+    }
+    
+    private func setupCoordinator() {
+        let workTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(workTapped))
+        let shortBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shortBreakTapped))
+        let longBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(longBreakTapped))
+        
+        workView.addGestureRecognizer(workTapRecognizer)
+        shortBreakView.addGestureRecognizer(shortBreakTapRecognizer)
+        longBreakView.addGestureRecognizer(longBreakTapRecognizer)
+    }
+    
+    @objc private func workTapped() {
+        let workVC = WorkVC()
+        workVC.modalTransitionStyle = .coverVertical
+        workVC.modalPresentationStyle = .overFullScreen
+        self.present(workVC, animated: true)
+        print("work tapped")
+    }
+    
+    @objc private func shortBreakTapped() {
+        print("short break tapped")
+    }
+    
+    @objc private func longBreakTapped() {
+        print("long break tapped")
     }
 }

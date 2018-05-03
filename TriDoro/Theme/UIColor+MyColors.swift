@@ -11,5 +11,6 @@ import UIKit
 extension UIColor {
     
     static let myBackgroundColor = UIColor.black
+    static let myLightBackgroundColor = UIColor.gray
     static let myTintColor = UIColor.white
 }

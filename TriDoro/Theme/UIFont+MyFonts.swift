@@ -12,4 +12,6 @@ extension UIFont {
     
     static let myDisplayBold = UIFont(name: "Lato-Bold", size: 72)!
     static let myDisplayLight = UIFont(name: "Lato-Light", size: 72)!
+    
+    static let myHeaderLight = UIFont(name: "Lato-Light", size: 38)!
 }
