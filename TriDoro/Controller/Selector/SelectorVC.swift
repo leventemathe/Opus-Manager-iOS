@@ -14,9 +14,45 @@ class SelectorVC: UIViewController {
     @IBOutlet weak var shortBreakView: TaskView!
     @IBOutlet weak var longBreakView: TaskView!
     
+    var photoService: PhotoService!
+    var imageDownloader: ImageDownloader!
+    
+    var images = [UIImage]() {
+        didSet {
+            if images.count == 3 {
+                workView.setImage(images[0])
+                shortBreakView.setImage(images[1])
+                longBreakView.setImage(images[2])
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoService = UnsplashPhotoService()
+        imageDownloader = ImageDownloader()
+        downloadImages()
         setupLabels()
+    }
+    
+    private func downloadImages() {
+        photoService.getThreeRandomPhotoUrls { result in
+            switch result {
+            case .success(let urls):
+                for url in urls {
+                    self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
+                        switch result {
+                        case .success(let image):
+                            self.images.append(image)
+                        default:
+                            break
+                        }
+                    })
+                }
+            default:
+                break
+            }
+        }
     }
     
     private func setupLabels() {

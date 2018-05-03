@@ -39,4 +39,8 @@ class TaskView: UIView {
     func setLabelText(_ text: String) {
         label.text = text
     }
+    
+    func setImage(_ image: UIImage) {
+        imageView.image = image
+    }
 }

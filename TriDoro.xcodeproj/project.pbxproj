@@ -21,6 +21,12 @@
 		D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */; };
 		D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
 		D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
+		D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EACE209B10E4007F9976 /* PhotoService.swift */; };
+		D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */; };
+		D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD2209B1184007F9976 /* ServiceResult.swift */; };
+		D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD5209B12B5007F9976 /* Configuration.swift */; };
+		D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */; };
+		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		D731C4EE209A4AC700076098 /* LargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeLabel.swift; sourceTree = "<group>"; };
 		D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyFonts.swift"; sourceTree = "<group>"; };
 		D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColors.swift"; sourceTree = "<group>"; };
+		D756EACE209B10E4007F9976 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoService.swift; sourceTree = "<group>"; };
+		D756EAD2209B1184007F9976 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
+		D756EAD5209B12B5007F9976 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorHandler.swift; sourceTree = "<group>"; };
+		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,7 @@
 			children = (
 				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
 				D71E6AEF209A1ADA003647B7 /* Info.plist */,
+				D756EAD5209B12B5007F9976 /* Configuration.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 		D71E6B06209A1B60003647B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D756EAD4209B118B007F9976 /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,8 +184,20 @@
 			children = (
 				D71E6AE7209A1AD8003647B7 /* Selector.storyboard */,
 				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
+				D78DBD04209B7A7700D12549 /* ImageDownloader.swift */,
 			);
 			path = Selector;
+			sourceTree = "<group>";
+		};
+		D756EAD4209B118B007F9976 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D756EAD2209B1184007F9976 /* ServiceResult.swift */,
+				D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */,
+				D756EACE209B10E4007F9976 /* PhotoService.swift */,
+				D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		D77DABCC209A34FD003D02AC /* Common */ = {
@@ -290,11 +316,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
+				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
+				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
+				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
+				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,
+				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
+				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
