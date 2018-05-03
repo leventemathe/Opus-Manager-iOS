@@ -1,5 +1,5 @@
 //
-//  ShortBreakScreenView.swift
+//  WorkVC.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 03..
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class WorkScreenView: TimerScreenView {
-    
-    override func commonInit() {
-        super.commonInit()
+class WorkVC: TimerVC {
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
         doneButton.setText(NSLocalizedString("Cancel", comment: "Label text for cancel button"))
     }
 }
