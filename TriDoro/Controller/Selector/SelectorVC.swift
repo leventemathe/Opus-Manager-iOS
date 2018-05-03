@@ -19,11 +19,15 @@ class SelectorVC: UIViewController {
     
     var images = [UIImage]() {
         didSet {
-            if images.count == 3 {
-                workView.setImage(images[0])
-                shortBreakView.setImage(images[1])
-                longBreakView.setImage(images[2])
-            }
+            setImages()
+        }
+    }
+    
+    private func setImages() {
+        if images.count == 3 {
+            workView.setImage(images[0])
+            shortBreakView.setImage(images[1])
+            longBreakView.setImage(images[2])
         }
     }
     
@@ -39,19 +43,23 @@ class SelectorVC: UIViewController {
         photoService.getThreeRandomPhotoUrls { result in
             switch result {
             case .success(let urls):
-                for url in urls {
-                    self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
-                        switch result {
-                        case .success(let image):
-                            self.images.append(image)
-                        default:
-                            break
-                        }
-                    })
-                }
+                self.downloadImagesFrom(urls: urls)
             default:
                 break
             }
+        }
+    }
+    
+    private func downloadImagesFrom(urls: [URL]) {
+        for url in urls {
+            self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
+                switch result {
+                case .success(let image):
+                    self.images.append(image)
+                default:
+                    break
+                }
+            })
         }
     }
     
