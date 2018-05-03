@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */; };
-		D71E6AE9209A1AD8003647B7 /* Selector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* Selector.storyboard */; };
+		D71E6AE9209A1AD8003647B7 /* SelectorVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* SelectorVC.storyboard */; };
 		D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEA209A1ADA003647B7 /* Assets.xcassets */; };
 		D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */; };
 		D71E6AF9209A1ADA003647B7 /* TriDoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AF8209A1ADA003647B7 /* TriDoroTests.swift */; };
@@ -31,6 +31,9 @@
 		D78DBD0C209B85F000D12549 /* TimerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0B209B85F000D12549 /* TimerScreenView.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
 		D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0F209B87B000D12549 /* WorkScreenView.swift */; };
+		D78DBD13209B93BD00D12549 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD12209B93BD00D12549 /* Coordinator.swift */; };
+		D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD14209B940100D12549 /* MainCoordinator.swift */; };
+		D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD16209B975A00D12549 /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,7 @@
 /* Begin PBXFileReference section */
 		D71E6AE0209A1AD8003647B7 /* TriDoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriDoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Selector.storyboard; sourceTree = "<group>"; };
+		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectorVC.storyboard; sourceTree = "<group>"; };
 		D71E6AEA209A1ADA003647B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D71E6AED209A1ADA003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D71E6AEF209A1ADA003647B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +75,9 @@
 		D78DBD0B209B85F000D12549 /* TimerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenView.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		D78DBD0F209B87B000D12549 /* WorkScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScreenView.swift; sourceTree = "<group>"; };
+		D78DBD12209B93BD00D12549 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D78DBD14209B940100D12549 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D78DBD16209B975A00D12549 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 				D71E6B06209A1B60003647B7 /* Model */,
 				D71E6B08209A1B6A003647B7 /* Controller */,
 				D71E6B07209A1B65003647B7 /* View */,
+				D78DBD11209B93A700D12549 /* Coordinator */,
 			);
 			path = TriDoro;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 		D71E6B08209A1B6A003647B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D78DBD16209B975A00D12549 /* Storyboarded.swift */,
 				D78DBD04209B7A7700D12549 /* ImageDownloader.swift */,
 				D731C4E9209A3AE800076098 /* Selector */,
 				D78DBD07209B856900D12549 /* Work */,
@@ -194,7 +202,7 @@
 		D731C4E9209A3AE800076098 /* Selector */ = {
 			isa = PBXGroup;
 			children = (
-				D71E6AE7209A1AD8003647B7 /* Selector.storyboard */,
+				D71E6AE7209A1AD8003647B7 /* SelectorVC.storyboard */,
 				D71E6B09209A1C19003647B7 /* SelectorVC.swift */,
 			);
 			path = Selector;
@@ -244,6 +252,15 @@
 				D78DBD0F209B87B000D12549 /* WorkScreenView.swift */,
 			);
 			path = "Timer Screens";
+			sourceTree = "<group>";
+		};
+		D78DBD11209B93A700D12549 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D78DBD12209B93BD00D12549 /* Coordinator.swift */,
+				D78DBD14209B940100D12549 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +348,7 @@
 				D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */,
 				D731C4EB209A3DDA00076098 /* TaskView.xib in Resources */,
 				D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */,
-				D71E6AE9209A1AD8003647B7 /* Selector.storyboard in Resources */,
+				D71E6AE9209A1AD8003647B7 /* SelectorVC.storyboard in Resources */,
 				D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */,
 				D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */,
 			);
@@ -358,14 +375,17 @@
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D78DBD10209B87B000D12549 /* WorkScreenView.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
+				D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
+				D78DBD13209B93BD00D12549 /* Coordinator.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
 				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
+				D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,12 +409,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D71E6AE7209A1AD8003647B7 /* Selector.storyboard */ = {
+		D71E6AE7209A1AD8003647B7 /* SelectorVC.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D71E6AE8209A1AD8003647B7 /* Base */,
 			);
-			name = Selector.storyboard;
+			name = SelectorVC.storyboard;
 			sourceTree = "<group>";
 		};
 		D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */ = {

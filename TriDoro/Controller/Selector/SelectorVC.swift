@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectorVC: UIViewController {
+class SelectorVC: UIViewController, Storyboarded {
     
     @IBOutlet weak var workView: TaskView!
     @IBOutlet weak var shortBreakView: TaskView!
@@ -86,8 +86,8 @@ class SelectorVC: UIViewController {
     @objc private func workTapped() {
         let workVC = WorkVC()
         workVC.modalTransitionStyle = .coverVertical
-        workVC.modalPresentationStyle = .overFullScreen
-        self.present(workVC, animated: true)
+        workVC.modalPresentationStyle = .overFullScreen        
+        navigationController?.present(workVC, animated: true)
         print("work tapped")
     }
     
