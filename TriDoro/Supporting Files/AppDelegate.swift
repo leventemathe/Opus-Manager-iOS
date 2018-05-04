@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupMainVC() {
-        let navigationVC = UINavigationController()
-        navigationVC.isNavigationBarHidden = true
-        coordinator = MainCoordinator(navigationController: navigationVC)
+        let navigationVC = UINavigationController()        
+        coordinator = AppCoordinator(navigationController: navigationVC)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)

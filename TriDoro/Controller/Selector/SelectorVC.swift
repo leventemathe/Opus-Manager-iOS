@@ -35,9 +35,7 @@ class SelectorVC: UIViewController, Storyboarded {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        photoService = UnsplashPhotoService()
-        imageDownloader = ImageDownloader()
+        super.viewDidLoad()        
         downloadImages()
         setupLabels()
         setupCoordinator()

@@ -1,5 +1,5 @@
 //
-//  BackToMainCoordinator.swift
+//  WorkCoordinator.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 03..

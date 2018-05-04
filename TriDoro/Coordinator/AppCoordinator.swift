@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  AppCoordinator.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 04..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MainCoordinator: Coordinator {
+struct AppCoordinator: Coordinator {
     
     static let SELECTOR_KEY = "selector"
     
@@ -21,7 +21,7 @@ struct MainCoordinator: Coordinator {
 
     mutating func start() {
         var selectorCoordinator = SelectorCoordinator(navigationController: navigationController)
-        coordinators[MainCoordinator.SELECTOR_KEY] = selectorCoordinator
+        coordinators[AppCoordinator.SELECTOR_KEY] = selectorCoordinator
         selectorCoordinator.start()
     }
 }

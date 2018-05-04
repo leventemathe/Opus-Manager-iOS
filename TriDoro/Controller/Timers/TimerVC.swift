@@ -21,7 +21,7 @@ class TimerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupCoordinator()
+        setupDoneButton()
     }
     
     private func setupView() {
@@ -32,7 +32,7 @@ class TimerVC: UIViewController {
         doneButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    private func setupCoordinator() {
+    private func setupDoneButton() {
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
     }
     

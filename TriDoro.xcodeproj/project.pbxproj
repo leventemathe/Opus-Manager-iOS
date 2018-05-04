@@ -37,7 +37,7 @@
 		D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD1C209BA05B00D12549 /* TimerLabel.swift */; };
 		D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */; };
 		D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */; };
-		D7B299F8209C540D0078F267 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* MainCoordinator.swift */; };
+		D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		D78DBD1C209BA05B00D12549 /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVCDelegate.swift; sourceTree = "<group>"; };
-		D7B299F7209C540D0078F267 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D7B299F7209C540D0078F267 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +259,7 @@
 			children = (
 				D7B299F6209C53630078F267 /* Delegates */,
 				D7477001209C556500F4584C /* Coordinator.swift */,
-				D7B299F7209C540D0078F267 /* MainCoordinator.swift */,
+				D7B299F7209C540D0078F267 /* AppCoordinator.swift */,
 				D78DBD14209B940100D12549 /* SelectorCoordinator.swift */,
 				D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */,
 			);
@@ -385,7 +385,7 @@
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */,
-				D7B299F8209C540D0078F267 /* MainCoordinator.swift in Sources */,
+				D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */,
 				D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  SelectorCoordinator.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 03..
@@ -20,7 +20,10 @@ struct SelectorCoordinator: Coordinator {
     }
     
     mutating func start() {
+        navigationController.isNavigationBarHidden = true
         let selectorVC = SelectorVC.instantiate()
+        selectorVC.photoService = UnsplashPhotoService()
+        selectorVC.imageDownloader = ImageDownloader()
         selectorVC.delegate = self
         navigationController.pushViewController(selectorVC, animated: false)
     }
