@@ -8,49 +8,40 @@
 
 import UIKit
 
-class TimerLabel: UILabel {
+class TimerLabel: UILabel, MyTimerDelegate {
     
-    override init(frame: CGRect) {
+    private override init(frame: CGRect) {
+        self.timer = MyTimer()
         super.init(frame: frame)
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.timer = MyTimer()
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    init() {
+    init(timer: MyTimer = MyTimer()) {
+        self.timer = timer
         super.init(frame: CGRect.zero)
         commonInit()
     }
     
+    var timer: MyTimer
+    
     private func commonInit() {
+        timer.delegate = self
         font = UIFont.myDisplayLight
         textColor = UIColor.myTintColor
+        text = timer.string
     }
     
-    private var timestamp = 0 {
-        didSet {
-            setText()
-        }
+    func start() {
+        timer.start()
     }
     
-    private func setText() {
-        let mins = timestamp / 60
-        let secs = timestamp % 60
-        text = "\(mins):\(secs)"
-    }
-    
-    func setTime(_ timestamp: Int) {
-        self.timestamp = timestamp
-    }
-    
-    func increment() {
-        timestamp += 1
-    }
-    
-    func decrement() {
-        timestamp -= 1
+    func timeChanged() {
+        text = timer.string
     }
 }

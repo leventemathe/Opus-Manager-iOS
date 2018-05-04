@@ -16,23 +16,45 @@ class TimerVC: UIViewController {
         return button
     }()
     
+    let timerLabel: TimerLabel = {
+        var label = TimerLabel()
+        return label
+    }()
+    
     var delegate: TimerVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupDoneButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        timerLabel.start()
     }
     
     private func setupView() {
         view.backgroundColor = UIColor.myBackgroundColor
-        view.addSubview(doneButton)
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        doneButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        setupTimerLabel()
+        setupDoneButton()
+    }
+    
+    private func setupTimerLabel() {
+        view.addSubview(timerLabel)
+        
+        timerLabel.translatesAutoresizingMaskIntoConstraints = false
+        timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        timerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        timerLabel.layoutIfNeeded()
     }
     
     private func setupDoneButton() {
+        view.addSubview(doneButton)
+        
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        doneButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 32).isActive = true
+        
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
     }
     

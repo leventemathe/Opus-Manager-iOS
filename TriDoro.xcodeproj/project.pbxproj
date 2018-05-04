@@ -22,6 +22,7 @@
 		D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
 		D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
 		D7477002209C556500F4584C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477001209C556500F4584C /* Coordinator.swift */; };
+		D7477004209C646400F4584C /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477003209C646400F4584C /* MyTimer.swift */; };
 		D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EACE209B10E4007F9976 /* PhotoService.swift */; };
 		D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */; };
 		D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD2209B1184007F9976 /* ServiceResult.swift */; };
@@ -70,6 +71,7 @@
 		D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyFonts.swift"; sourceTree = "<group>"; };
 		D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColors.swift"; sourceTree = "<group>"; };
 		D7477001209C556500F4584C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D7477003209C646400F4584C /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
 		D756EACE209B10E4007F9976 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoService.swift; sourceTree = "<group>"; };
 		D756EAD2209B1184007F9976 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				D756EAD4209B118B007F9976 /* Networking */,
+				D7477003209C646400F4584C /* MyTimer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */,
 				D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */,
 				D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */,
+				D7477004209C646400F4584C /* MyTimer.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
