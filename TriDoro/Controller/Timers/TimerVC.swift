@@ -16,7 +16,7 @@ class TimerVC: UIViewController {
         return button
     }()
     
-    var coordinator: BackToMainCoordinator?
+    var delegate: TimerVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,6 @@ class TimerVC: UIViewController {
     }
     
     @objc func done() {
-        coordinator?.back()
+        delegate?.done()
     }
 }

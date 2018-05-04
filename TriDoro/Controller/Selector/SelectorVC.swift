@@ -16,10 +16,12 @@ class SelectorVC: UIViewController, Storyboarded {
     
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
-    var coordinator: MainCoordinator!
+    
+    var delegate: SelectorVCDelegate?
     
     var images = [UIImage]() {
         didSet {
+            print(images)
             setImages()
         }
     }
@@ -54,6 +56,7 @@ class SelectorVC: UIViewController, Storyboarded {
     
     private func downloadImagesFrom(urls: [URL]) {
         for url in urls {
+            print(url)
             self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
                 switch result {
                 case .success(let image):
@@ -85,14 +88,14 @@ class SelectorVC: UIViewController, Storyboarded {
     }
     
     @objc private func workTapped() {
-        coordinator.work()
+        delegate?.work()
     }
     
     @objc private func shortBreakTapped() {
-        coordinator.shortBreak()
+        delegate?.shortBreak()
     }
     
     @objc private func longBreakTapped() {
-        coordinator.longBreak()
+        delegate?.longBreak()
     }
 }

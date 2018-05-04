@@ -21,6 +21,7 @@
 		D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */; };
 		D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */; };
 		D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */; };
+		D7477002209C556500F4584C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477001209C556500F4584C /* Coordinator.swift */; };
 		D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EACE209B10E4007F9976 /* PhotoService.swift */; };
 		D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */; };
 		D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD2209B1184007F9976 /* ServiceResult.swift */; };
@@ -29,11 +30,14 @@
 		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
 		D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD08209B85B900D12549 /* WorkVC.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
-		D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD14209B940100D12549 /* MainCoordinator.swift */; };
+		D78DBD15209B940100D12549 /* SelectorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD14209B940100D12549 /* SelectorCoordinator.swift */; };
 		D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD16209B975A00D12549 /* Storyboarded.swift */; };
-		D78DBD19209B9C4A00D12549 /* BackToMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */; };
+		D78DBD19209B9C4A00D12549 /* WorkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */; };
 		D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD1A209B9DD800D12549 /* TimerVC.swift */; };
 		D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD1C209BA05B00D12549 /* TimerLabel.swift */; };
+		D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */; };
+		D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */; };
+		D7B299F8209C540D0078F267 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,7 @@
 		D731C4EE209A4AC700076098 /* LargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeLabel.swift; sourceTree = "<group>"; };
 		D731C4F0209A4B4B00076098 /* UIFont+MyFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MyFonts.swift"; sourceTree = "<group>"; };
 		D731C4F2209A4BE300076098 /* UIColor+MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColors.swift"; sourceTree = "<group>"; };
+		D7477001209C556500F4584C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D756EACE209B10E4007F9976 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoService.swift; sourceTree = "<group>"; };
 		D756EAD2209B1184007F9976 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
@@ -73,11 +78,14 @@
 		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D78DBD08209B85B900D12549 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
-		D78DBD14209B940100D12549 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D78DBD14209B940100D12549 /* SelectorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorCoordinator.swift; sourceTree = "<group>"; };
 		D78DBD16209B975A00D12549 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToMainCoordinator.swift; sourceTree = "<group>"; };
+		D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCoordinator.swift; sourceTree = "<group>"; };
 		D78DBD1A209B9DD800D12549 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		D78DBD1C209BA05B00D12549 /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
+		D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVCDelegate.swift; sourceTree = "<group>"; };
+		D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVCDelegate.swift; sourceTree = "<group>"; };
+		D7B299F7209C540D0078F267 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,10 +257,22 @@
 		D78DBD11209B93A700D12549 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D78DBD14209B940100D12549 /* MainCoordinator.swift */,
-				D78DBD18209B9C4A00D12549 /* BackToMainCoordinator.swift */,
+				D7B299F6209C53630078F267 /* Delegates */,
+				D7477001209C556500F4584C /* Coordinator.swift */,
+				D7B299F7209C540D0078F267 /* MainCoordinator.swift */,
+				D78DBD14209B940100D12549 /* SelectorCoordinator.swift */,
+				D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D7B299F6209C53630078F267 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */,
+				D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,20 +380,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
 				D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */,
+				D7B299F8209C540D0078F267 /* MainCoordinator.swift in Sources */,
+				D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */,
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
-				D78DBD15209B940100D12549 /* MainCoordinator.swift in Sources */,
+				D78DBD15209B940100D12549 /* SelectorCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
-				D78DBD19209B9C4A00D12549 /* BackToMainCoordinator.swift in Sources */,
+				D78DBD19209B9C4A00D12549 /* WorkCoordinator.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
+				D7477002209C556500F4584C /* Coordinator.swift in Sources */,
 				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,

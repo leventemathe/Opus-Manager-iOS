@@ -8,15 +8,25 @@
 
 import UIKit
 
-struct BackToMainCoordinator {
+struct WorkCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var coordinators = [String : Coordinator]()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func back() {
+    mutating func start() {
+        let workVC = WorkVC()
+        workVC.delegate = self
+        navigationController.pushViewController(workVC, animated: true)
+    }
+}
+
+extension WorkCoordinator: TimerVCDelegate {
+    
+    func done() {
         navigationController.popViewController(animated: true)
     }
 }
