@@ -15,9 +15,9 @@ protocol MyTimerDelegate: class {
 
 class MyTimer {
     
-    private var timer: Timer
-    private var startTimestamp: Double?
-    var timestamp = 0 {
+    var timer: Timer
+    var startTimestamp: Double?
+    var time = 0 {
         didSet {
             delegate?.timeChanged(string)
         }
@@ -30,8 +30,8 @@ class MyTimer {
     }
     
     var string: String {
-        let mins = timestamp / 60
-        let secs = timestamp % 60
+        let mins = time / 60
+        let secs = time % 60
         let minsString = mins > 9 ? String(mins) : String("0\(mins)")
         let secsString = secs > 9 ? String(secs) : String("0\(secs)")
         return  "\(minsString):\(secsString)"
@@ -44,20 +44,26 @@ class MyTimer {
     }
     
     @objc func incementTimer() {
-        timestamp += 1
+        time += 1
     }
     
     func cancel() {
         timer.invalidate()
     }
     
-    func refresh() {
+    var diff: Int? {
         guard let startTimestamp = startTimestamp else {
-            return
+            return nil
         }
         let currentTimestamp = Date().timeIntervalSince1970
-        let diff = Int(currentTimestamp - startTimestamp)
-        timestamp = diff
+        return Int(currentTimestamp - startTimestamp)
+    }
+    
+    func refresh() {
+        guard let diff = diff else {
+            return
+        }
+        time = diff
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
     }
     

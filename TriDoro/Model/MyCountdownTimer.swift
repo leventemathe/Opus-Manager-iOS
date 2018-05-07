@@ -15,12 +15,12 @@ class MyCountdownTimer: MyTimer {
     init(startTime: Int, timer: Timer = Timer()) {
         self.startTime = startTime
         super.init(timer: timer)
-        self.timestamp = startTime
+        self.time = startTime
     }
     
     override func incementTimer() {
-        timestamp -= 1
-        if timestamp <= 0 {
+        time -= 1
+        if time <= 0 {
             cancel()
         }
     }
@@ -28,6 +28,14 @@ class MyCountdownTimer: MyTimer {
     override func start() {
         super.start()
         addNotification()
+    }
+    
+    override func refresh() {
+        guard let diff = diff else {
+            return
+        }
+        time = startTime - diff
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
     }
     
     private func addNotification() {
