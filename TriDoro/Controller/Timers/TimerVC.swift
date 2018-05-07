@@ -23,14 +23,17 @@ class TimerVC: UIViewController {
     
     weak var delegate: TimerVCDelegate?
     
+    var timerModel: MyTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupModel()
         setupView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        timerLabel.start()
+    private func setupModel() {
+        timerModel.delegate = timerLabel
+        timerModel.start()
     }
     
     private func setupView() {
@@ -63,10 +66,10 @@ class TimerVC: UIViewController {
     }
     
     func cancelTimer() {
-        timerLabel.cancel()
+        timerModel.cancel()
     }
     
     func refreshTimer() {
-        timerLabel.refresh()
+        timerModel.refresh()
     }
 }

@@ -29,6 +29,7 @@
 		D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD5209B12B5007F9976 /* Configuration.swift */; };
 		D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */; };
 		D7801D6620A050F1000786B6 /* TimerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6520A050F1000786B6 /* TimerNotification.swift */; };
+		D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */; };
 		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
 		D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD08209B85B900D12549 /* WorkVC.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
@@ -79,6 +80,7 @@
 		D756EAD5209B12B5007F9976 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorHandler.swift; sourceTree = "<group>"; };
 		D7801D6520A050F1000786B6 /* TimerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotification.swift; sourceTree = "<group>"; };
+		D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountdownTimer.swift; sourceTree = "<group>"; };
 		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D78DBD08209B85B900D12549 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				D756EAD4209B118B007F9976 /* Networking */,
 				D7477003209C646400F4584C /* MyTimer.swift */,
+				D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */,
 				D7801D6520A050F1000786B6 /* TimerNotification.swift */,
 			);
 			path = Model;
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */,
+				D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,

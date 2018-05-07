@@ -10,16 +10,16 @@ import Foundation
 
 protocol MyTimerDelegate: class {
     
-    func timeChanged()
+    func timeChanged(_ time: String)
 }
 
 class MyTimer {
     
     private var timer: Timer
     private var startTimestamp: Double?
-    private var timestamp = 0 {
+    var timestamp = 0 {
         didSet {
-            delegate?.timeChanged()
+            delegate?.timeChanged(string)
         }
     }
     
@@ -40,9 +40,10 @@ class MyTimer {
     func start() {
         startTimestamp = Double(Date().timeIntervalSince1970)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
+        delegate?.timeChanged(string)
     }
     
-    @objc private func incementTimer() {
+    @objc func incementTimer() {
         timestamp += 1
     }
     
