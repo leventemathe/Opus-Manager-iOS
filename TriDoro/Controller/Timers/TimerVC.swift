@@ -61,4 +61,12 @@ class TimerVC: UIViewController {
     @objc func done() {
         delegate?.done()
     }
+    
+    func cancelTimer() {
+        timerLabel.cancel()
+    }
+    
+    func refreshTimer() {
+        timerLabel.refresh()
+    }
 }

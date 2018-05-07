@@ -12,6 +12,14 @@ protocol Coordinator {
  
     var navigationController: UINavigationController { get }
     var coordinators: [String: Coordinator] { get }
+    var currentVC: UIViewController? { get }
     
     func start()
+}
+
+extension Coordinator {
+    
+    var currentVC: UIViewController? {
+        return navigationController.topViewController
+    }
 }

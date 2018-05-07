@@ -41,6 +41,14 @@ class TimerLabel: UILabel, MyTimerDelegate {
         timer.start()
     }
     
+    func cancel() {
+        timer.cancel()
+    }
+    
+    func refresh() {
+        timer.refresh()
+    }
+    
     func timeChanged() {
         text = timer.string
     }
