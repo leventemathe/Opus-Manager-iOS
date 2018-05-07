@@ -33,7 +33,7 @@ class TimerVC: UIViewController {
     
     private func setupModel() {
         timerModel.delegate = timerLabel
-        timerModel.start()
+        startTimer()
     }
     
     private func setupView() {
@@ -63,6 +63,10 @@ class TimerVC: UIViewController {
     
     @objc func done() {
         delegate?.done()
+    }
+    
+    func startTimer() {
+        timerModel.start()
     }
     
     func cancelTimer() {

@@ -8,12 +8,14 @@
 
 import UserNotifications
 
-struct TimerNotification {
+class TimerNotification: NSObject, UNUserNotificationCenterDelegate {
     
     private let center: UNUserNotificationCenter
     
     init(_ center: UNUserNotificationCenter = UNUserNotificationCenter.current()) {
         self.center = center
+        super.init()
+        self.center.delegate = self
     }
     
     static func askPermission() {
@@ -30,6 +32,16 @@ struct TimerNotification {
         
         let requestID = String(timeInterval) + "-" + title
         let request = UNNotificationRequest(identifier: requestID, content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: nil)
+        self.removeAllNotifications()
+        center.add(request, withCompletionHandler: { _ in })
+    }
+    
+    func removeAllNotifications() {
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 }

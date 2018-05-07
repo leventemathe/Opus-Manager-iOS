@@ -10,7 +10,7 @@ import Foundation
 
 class MyCountdownTimer: MyTimer {
     
-    private var startTime: Int
+    let startTime: Int
     
     init(startTime: Int, timer: Timer = Timer()) {
         self.startTime = startTime
@@ -27,22 +27,16 @@ class MyCountdownTimer: MyTimer {
     
     override func start() {
         super.start()
-        addNotification()
     }
     
     override func refresh() {
         guard let diff = diff else {
             return
         }
-        time = startTime - diff
+        time = max(startTime - diff, 0)
+        if time <= 0 {
+            return
+        }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
-    }
-    
-    private func addNotification() {
-        
-    }
-    
-    func cancelNotification() {
-        
     }
 }

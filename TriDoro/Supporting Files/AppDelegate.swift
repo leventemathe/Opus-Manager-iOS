@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             currentVC.cancelTimer()
         }
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         if let currentVC = coordinator?.currentVC as? TimerVC {
             currentVC.refreshTimer()
