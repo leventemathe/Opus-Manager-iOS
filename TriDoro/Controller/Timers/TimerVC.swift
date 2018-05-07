@@ -21,7 +21,7 @@ class TimerVC: UIViewController {
         return label
     }()
     
-    var delegate: TimerVCDelegate?
+    weak var delegate: TimerVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

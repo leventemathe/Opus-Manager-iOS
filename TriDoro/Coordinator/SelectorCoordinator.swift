@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct SelectorCoordinator: Coordinator {
+class SelectorCoordinator: Coordinator {
     
     static let WORK_KEY = "work"
     
@@ -19,7 +19,7 @@ struct SelectorCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    mutating func start() {
+    func start() {
         navigationController.isNavigationBarHidden = true
         let selectorVC = SelectorVC.instantiate()
         selectorVC.photoService = UnsplashPhotoService()
@@ -31,17 +31,17 @@ struct SelectorCoordinator: Coordinator {
 
 extension SelectorCoordinator: SelectorVCDelegate {
 
-    mutating func work() {
-        var workCoordinator = WorkCoordinator(navigationController: navigationController)
+    func work() {
+        let workCoordinator = WorkCoordinator(navigationController: navigationController)
         coordinators[SelectorCoordinator.WORK_KEY] = workCoordinator
         workCoordinator.start()
     }
     
-    mutating func shortBreak() {
+    func shortBreak() {
         
     }
     
-    mutating func longBreak() {
+    func longBreak() {
         
     }
 }

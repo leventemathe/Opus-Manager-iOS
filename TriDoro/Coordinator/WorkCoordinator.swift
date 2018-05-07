@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct WorkCoordinator: Coordinator {
+class WorkCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
@@ -17,7 +17,7 @@ struct WorkCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    mutating func start() {
+    func start() {
         let workVC = WorkVC()
         workVC.delegate = self
         navigationController.pushViewController(workVC, animated: true)

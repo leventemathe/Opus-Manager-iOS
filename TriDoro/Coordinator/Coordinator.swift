@@ -13,5 +13,5 @@ protocol Coordinator {
     var navigationController: UINavigationController { get }
     var coordinators: [String: Coordinator] { get }
     
-    mutating func start()
+    func start()
 }

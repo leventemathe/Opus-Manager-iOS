@@ -6,8 +6,8 @@
 //  Copyright © 2018. Levente Máthé. All rights reserved.
 //
 
-protocol TimerVCDelegate {
+protocol TimerVCDelegate: class {
     
-    mutating func done()
+    func done()
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator {
     
     static let SELECTOR_KEY = "selector"
     
@@ -19,8 +19,8 @@ struct AppCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    mutating func start() {
-        var selectorCoordinator = SelectorCoordinator(navigationController: navigationController)
+    func start() {
+        let selectorCoordinator = SelectorCoordinator(navigationController: navigationController)
         coordinators[AppCoordinator.SELECTOR_KEY] = selectorCoordinator
         selectorCoordinator.start()
     }

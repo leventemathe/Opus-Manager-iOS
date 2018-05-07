@@ -6,9 +6,9 @@
 //  Copyright © 2018. Levente Máthé. All rights reserved.
 //
 
-protocol SelectorVCDelegate {
+protocol SelectorVCDelegate: class {
     
-    mutating func work()
-    mutating func shortBreak()
-    mutating func longBreak()
+    func work()
+    func shortBreak()
+    func longBreak()
 }

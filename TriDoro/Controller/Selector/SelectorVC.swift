@@ -17,7 +17,7 @@ class SelectorVC: UIViewController, Storyboarded {
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
     
-    var delegate: SelectorVCDelegate?
+    weak var delegate: SelectorVCDelegate?
     
     var images = [UIImage]() {
         didSet {
