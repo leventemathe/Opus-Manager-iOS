@@ -29,7 +29,7 @@ class MyCountdownTimer: MyTimer {
         super.start()
     }
     
-    override func refresh() {
+    override func refreshBecauseAppBecomesActive() {
         guard let diff = diff else {
             return
         }

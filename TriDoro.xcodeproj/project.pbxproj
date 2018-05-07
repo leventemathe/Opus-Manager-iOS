@@ -30,6 +30,7 @@
 		D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */; };
 		D7801D6620A050F1000786B6 /* TimerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6520A050F1000786B6 /* TimerNotification.swift */; };
 		D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */; };
+		D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6920A0A08D000786B6 /* MyTimerStorage.swift */; };
 		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
 		D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD08209B85B900D12549 /* WorkVC.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
@@ -81,6 +82,7 @@
 		D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorHandler.swift; sourceTree = "<group>"; };
 		D7801D6520A050F1000786B6 /* TimerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotification.swift; sourceTree = "<group>"; };
 		D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountdownTimer.swift; sourceTree = "<group>"; };
+		D7801D6920A0A08D000786B6 /* MyTimerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimerStorage.swift; sourceTree = "<group>"; };
 		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D78DBD08209B85B900D12549 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D756EAD4209B118B007F9976 /* Networking */,
+				D7801D6920A0A08D000786B6 /* MyTimerStorage.swift */,
 				D7477003209C646400F4584C /* MyTimer.swift */,
 				D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */,
 				D7801D6520A050F1000786B6 /* TimerNotification.swift */,
@@ -415,6 +418,7 @@
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
 				D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
+				D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

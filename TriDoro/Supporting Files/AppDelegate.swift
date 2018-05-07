@@ -32,13 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {
         if let currentVC = coordinator?.currentVC as? TimerVC {
-            currentVC.cancelTimer()
+            currentVC.pauseTimerBecauseAppBecameInactive()
         }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         if let currentVC = coordinator?.currentVC as? TimerVC {
-            currentVC.refreshTimer()
+            currentVC.refreshTimerBecauseAppBecameActive()
         }
     }
 }

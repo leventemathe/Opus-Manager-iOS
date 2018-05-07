@@ -16,17 +16,20 @@ protocol MyTimerDelegate: class {
 class MyTimer {
     
     var timer: Timer
-    var startTimestamp: Double?
+    
     var time = 0 {
         didSet {
             delegate?.timeChanged(string)
         }
     }
     
+    private var myTimerStorage: MyTimerStorage
+    
     weak var delegate: MyTimerDelegate?
     
-    init(timer: Timer = Timer()) {
+    init(timer: Timer = Timer(), myTimerStorage: MyTimerStorage = MyTimerStorage()) {
         self.timer = timer
+        self.myTimerStorage = myTimerStorage
     }
     
     var string: String {
@@ -38,7 +41,8 @@ class MyTimer {
     }
     
     func start() {
-        startTimestamp = Double(Date().timeIntervalSince1970)
+        let startTimestamp = Double(Date().timeIntervalSince1970)
+        myTimerStorage.store(startTimestamp: startTimestamp)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
         delegate?.timeChanged(string)
     }
@@ -47,19 +51,24 @@ class MyTimer {
         time += 1
     }
     
-    func cancel() {
+    func pauseBecauseAppBecomesInactive() {
         timer.invalidate()
     }
     
+    func cancel() {
+        timer.invalidate()
+        myTimerStorage.removeStartTimestamp()
+    }    
+    
     var diff: Int? {
-        guard let startTimestamp = startTimestamp else {
+        guard let startTimestamp = myTimerStorage.loadStartTimestamp() else {
             return nil
         }
         let currentTimestamp = Date().timeIntervalSince1970
         return Int(currentTimestamp - startTimestamp)
     }
     
-    func refresh() {
+    func refreshBecauseAppBecomesActive() {
         guard let diff = diff else {
             return
         }

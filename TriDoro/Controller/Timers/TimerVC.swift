@@ -69,11 +69,11 @@ class TimerVC: UIViewController {
         timerModel.start()
     }
     
-    func cancelTimer() {
-        timerModel.cancel()
+    func pauseTimerBecauseAppBecameInactive() {
+        timerModel.pauseBecauseAppBecomesInactive()
     }
     
-    func refreshTimer() {
-        timerModel.refresh()
+    func refreshTimerBecauseAppBecameActive() {
+        timerModel.refreshBecauseAppBecomesActive()
     }
 }

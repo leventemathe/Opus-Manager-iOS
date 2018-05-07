@@ -22,11 +22,12 @@ class WorkVC: TimerVC {
         if let timer = timerModel as? MyCountdownTimer {
             let notificationTitle = NSLocalizedString("Work done!", comment: "The notification title for work done")
             let notificationDescription = NSLocalizedString("Congrats! Now enjoy a short break (if you want).", comment: "The notification title for work done")
-            notifications.scheduleNotification(3, wihtTitle: notificationTitle, withDescription: notificationDescription)
+            notifications.scheduleNotification(Double(timer.startTime), wihtTitle: notificationTitle, withDescription: notificationDescription)
         }
     }
     
     override func done() {
+        timerModel.cancel()
         notifications.removeAllNotifications()
         super.done()
     }
