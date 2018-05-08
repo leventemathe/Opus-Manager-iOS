@@ -12,31 +12,16 @@ class MyCountdownTimer: MyTimer {
     
     let startTime: Int
     
-    init(startTime: Int, timer: Timer = Timer()) {
+    init(startTime: Int) {
         self.startTime = startTime
-        super.init(timer: timer)
-        self.time = startTime
+        super.init(time: startTime)
     }
     
     override func incementTimer() {
         time -= 1
+        delegate?.myTimerTimeChanged(string)
         if time <= 0 {
-            cancel()
+            stop()
         }
-    }
-    
-    override func start() {
-        super.start()
-    }
-    
-    override func refreshBecauseAppBecomesActive() {
-        guard let diff = diff else {
-            return
-        }
-        time = max(startTime - diff, 0)
-        if time <= 0 {
-            return
-        }
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
     }
 }

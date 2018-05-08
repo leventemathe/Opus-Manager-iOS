@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerLabel: UILabel, MyTimerDelegate {
+class TimerLabel: UILabel {
     
     private override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +28,5 @@ class TimerLabel: UILabel, MyTimerDelegate {
     private func commonInit() {
         font = UIFont.myDisplayLight
         textColor = UIColor.myTintColor
-    }
-    
-    func timeChanged(_ time: String) {
-        text = time
     }
 }

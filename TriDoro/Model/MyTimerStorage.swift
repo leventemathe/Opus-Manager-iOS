@@ -17,7 +17,7 @@ struct MyTimerStorage {
         self.userDefaults = userDefaults
     }
     
-    func store(startTimestamp timestamp: Double) {
+    func storeStartTimestamp(_ timestamp: Double = Date().timeIntervalSince1970) {
         userDefaults.set(timestamp, forKey: MyTimerStorage.START_TIMESTAMP_KEY)
     }
     

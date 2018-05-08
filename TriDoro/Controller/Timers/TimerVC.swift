@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerVC: UIViewController {
+class TimerVC: UIViewController, MyTimerDelegate {
     
     let doneButton: LargeButton = {
         var button = LargeButton()
@@ -24,6 +24,7 @@ class TimerVC: UIViewController {
     weak var delegate: TimerVCDelegate?
     
     var timerModel: MyTimer!
+    var timerStorage: MyTimerStorage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,8 @@ class TimerVC: UIViewController {
     }
     
     private func setupModel() {
-        timerModel.delegate = timerLabel
-        startTimer()
+        timerModel.delegate = self
+        timerModel.start()
     }
     
     private func setupView() {
@@ -62,18 +63,22 @@ class TimerVC: UIViewController {
     }
     
     @objc func done() {
+        timerModel.stop()
         delegate?.done()
     }
     
-    func startTimer() {
-        timerModel.start()
+    func myTimerTimeChanged(_ time: String) {
+        timerLabel.text = time
     }
     
-    func pauseTimerBecauseAppBecameInactive() {
-        timerModel.pauseBecauseAppBecomesInactive()
+    func myTimerStarted(_ time: String) {
+        timerLabel.text = time
+        timerStorage.storeStartTimestamp()
     }
     
-    func refreshTimerBecauseAppBecameActive() {
-        timerModel.refreshBecauseAppBecomesActive()
+    func myTimerFinished(_ time: String) {
+        timerStorage.removeStartTimestamp()
     }
 }
+
+

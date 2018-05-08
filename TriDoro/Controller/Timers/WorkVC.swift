@@ -17,18 +17,16 @@ class WorkVC: TimerVC {
         doneButton.setText(NSLocalizedString("Cancel", comment: "Label text for cancel button"))
     }
     
-    override func startTimer() {
-        super.startTimer()
-        if let timer = timerModel as? MyCountdownTimer {
-            let notificationTitle = NSLocalizedString("Work done!", comment: "The notification title for work done")
-            let notificationDescription = NSLocalizedString("Congrats! Now enjoy a short break (if you want).", comment: "The notification title for work done")
-            notifications.scheduleNotification(Double(timer.startTime), wihtTitle: notificationTitle, withDescription: notificationDescription)
-        }
-    }
-    
-    override func done() {
-        timerModel.cancel()
+    // The notifications are removed here, instead of myTimerFinished, because the timer may be a little faster then the notification
+    override func done() {        
         notifications.removeAllNotifications()
         super.done()
+    }
+
+    override func myTimerStarted(_ time: String) {
+        super.myTimerStarted(time)
+        let title = NSLocalizedString("Work Done!", comment: "")
+        let desc = NSLocalizedString("Time for a break.", comment: "")
+        notifications.scheduleNotification(Double(timerModel.time), wihtTitle: title, withDescription: desc)
     }
 }

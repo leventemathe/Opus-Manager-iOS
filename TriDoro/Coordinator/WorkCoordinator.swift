@@ -20,6 +20,7 @@ class WorkCoordinator: Coordinator {
     func start() {
         let workVC = WorkVC()
         workVC.timerModel = MyCountdownTimer(startTime: 15)
+        workVC.timerStorage = MyTimerStorage()
         workVC.notifications = TimerNotification()
         workVC.delegate = self
         navigationController.pushViewController(workVC, animated: true)

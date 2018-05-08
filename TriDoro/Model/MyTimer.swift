@@ -10,26 +10,20 @@ import Foundation
 
 protocol MyTimerDelegate: class {
     
-    func timeChanged(_ time: String)
+    func myTimerTimeChanged(_ time: String)
+    func myTimerStarted(_ time: String)
+    func myTimerFinished(_ time: String)
 }
 
 class MyTimer {
     
-    var timer: Timer
-    
-    var time = 0 {
-        didSet {
-            delegate?.timeChanged(string)
-        }
-    }
-    
-    private var myTimerStorage: MyTimerStorage
+    weak var timer: Timer?
+    var time: Int
     
     weak var delegate: MyTimerDelegate?
     
-    init(timer: Timer = Timer(), myTimerStorage: MyTimerStorage = MyTimerStorage()) {
-        self.timer = timer
-        self.myTimerStorage = myTimerStorage
+    init(time: Int = 0) {
+        self.time = time
     }
     
     var string: String {
@@ -41,42 +35,22 @@ class MyTimer {
     }
     
     func start() {
-        let startTimestamp = Double(Date().timeIntervalSince1970)
-        myTimerStorage.store(startTimestamp: startTimestamp)
+        timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
-        delegate?.timeChanged(string)
+        delegate?.myTimerStarted(string)
     }
     
     @objc func incementTimer() {
         time += 1
+        delegate?.myTimerTimeChanged(string)
     }
     
-    func pauseBecauseAppBecomesInactive() {
-        timer.invalidate()
+    func stop() {
+        timer?.invalidate()
+        delegate?.myTimerFinished(string)
     }
-    
-    func cancel() {
-        timer.invalidate()
-        myTimerStorage.removeStartTimestamp()
-    }    
-    
-    var diff: Int? {
-        guard let startTimestamp = myTimerStorage.loadStartTimestamp() else {
-            return nil
-        }
-        let currentTimestamp = Date().timeIntervalSince1970
-        return Int(currentTimestamp - startTimestamp)
-    }
-    
-    func refreshBecauseAppBecomesActive() {
-        guard let diff = diff else {
-            return
-        }
-        time = diff
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
-    }
-    
+
     deinit {
-        timer.invalidate()
+        stop()
     }
 }
