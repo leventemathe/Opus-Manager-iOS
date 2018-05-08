@@ -26,4 +26,13 @@ class MyCountdownTimer: MyTimer {
         }
         delegate?.myTimerTimeChanged(string)
     }
+    
+    override func restart(withTimeElapsed elapsed: Int) {
+        time = max(0, time - elapsed)
+        if time == 0 {
+            return
+        }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
+    }
 }

@@ -179,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
+				D7801D7120A1F211000786B6 /* New Group */,
 				D71E6AEF209A1ADA003647B7 /* Info.plist */,
 				D756EAD5209B12B5007F9976 /* Configuration.swift */,
 			);
@@ -246,6 +247,13 @@
 				D78DBD1C209BA05B00D12549 /* TimerLabel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D7801D7120A1F211000786B6 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D78DBD06209B854900D12549 /* Selector */ = {

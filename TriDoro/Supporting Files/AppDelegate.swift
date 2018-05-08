@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
+    
+    var applicationIsFreshlyLaucnhed = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         TimerNotification.askPermission()
@@ -31,14 +33,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
+        pauseTimerIfNeeded()
+    }
+    
+    private func pauseTimerIfNeeded() {
         if let currentVC = coordinator?.currentVC as? TimerVC {
-            
+            currentVC.timerModel.pause()
         }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        if !applicationIsFreshlyLaucnhed {
+            continueTimerIfNeeded()
+        }
+        applicationIsFreshlyLaucnhed = false
+    }
+    
+    private func continueTimerIfNeeded() {
         if let currentVC = coordinator?.currentVC as? TimerVC {
-            
+            if let timer = currentVC.timerStorage.loadTimer() {
+                if let workStartTimestamp = timer[String(describing: WorkVC.self)] {
+                    let diff = Date().timeIntervalSince1970-workStartTimestamp
+                    currentVC.timerModel.restart(withTimeElapsed: Int(diff))
+                }
+            }
         }
     }
 }
