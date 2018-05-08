@@ -58,12 +58,17 @@ class MyTimer {
     }
     
     func restart(withTimeElapsed elapsed: Int) {
-        time = max(0, time + elapsed)
+        incrementTimer(withTimeElapsed: elapsed)
+        delegate?.myTimerTimeChanged(string)
         if time == 0 {
             return
         }
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
+    }
+    
+    func incrementTimer(withTimeElapsed elapsed: Int) {
+        time = max(0, time + elapsed)
     }
     
     deinit {
