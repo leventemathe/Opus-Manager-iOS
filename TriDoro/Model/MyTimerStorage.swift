@@ -8,28 +8,30 @@
 
 import Foundation
 
+typealias TimerNameAndStartTimestamp = [String: Double]
+
 struct MyTimerStorage {
     
-    static let START_TIMESTAMP_KEY = "startTimeStamp"
+    static let TIMER_IN_PROGRESS = "timer_in_progress"
+    
     var userDefaults: UserDefaults
     
     init(userDefaults: UserDefaults = UserDefaults.standard) {
         self.userDefaults = userDefaults
     }
     
-    func storeStartTimestamp(_ timestamp: Double = Date().timeIntervalSince1970) {
-        userDefaults.set(timestamp, forKey: MyTimerStorage.START_TIMESTAMP_KEY)
+    func storeTimer(_ timer: String, withStartTimestamp timestamp: Double = Date().timeIntervalSince1970) {
+        userDefaults.set([timer: timestamp], forKey: MyTimerStorage.TIMER_IN_PROGRESS)
     }
     
-    func removeStartTimestamp() {
-        userDefaults.removeObject(forKey: MyTimerStorage.START_TIMESTAMP_KEY)
+    func removeTimer() {
+        userDefaults.removeObject(forKey: MyTimerStorage.TIMER_IN_PROGRESS)
     }
     
-    func loadStartTimestamp() -> Double? {
-        let startTimestampFromUserDefaults = userDefaults.double(forKey: MyTimerStorage.START_TIMESTAMP_KEY)
-        if startTimestampFromUserDefaults == 0 {
-            return nil
+    func loadTimer() -> TimerNameAndStartTimestamp? {
+        if let timer = userDefaults.object(forKey: MyTimerStorage.TIMER_IN_PROGRESS) as? TimerNameAndStartTimestamp {
+            return timer
         }
-        return startTimestampFromUserDefaults
+        return nil
     }
 }

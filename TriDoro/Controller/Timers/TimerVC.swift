@@ -73,11 +73,11 @@ class TimerVC: UIViewController, MyTimerDelegate {
     
     func myTimerStarted(_ time: String) {
         timerLabel.text = time
-        timerStorage.storeStartTimestamp()
+        timerStorage.storeTimer(String(describing: self))
     }
     
     func myTimerFinished(_ time: String) {
-        timerStorage.removeStartTimestamp()
+        timerStorage.removeTimer()
     }
 }
 
