@@ -10,26 +10,31 @@ import UIKit
 
 class WorkCoordinator: Coordinator {
     
-    var navigationController: UINavigationController
+    let navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
     
-    init(navigationController: UINavigationController) {
+    let startTime: Int
+    let animated: Bool
+    
+    init(navigationController: UINavigationController, startTime: Int, animated: Bool) {
         self.navigationController = navigationController
+        self.startTime = startTime
+        self.animated = animated
     }
     
     func start() {
         let workVC = WorkVC()
-        workVC.timerModel = MyCountdownTimer(startTime: 15)
+        workVC.timerModel = MyCountdownTimer(startTime: startTime)
         workVC.timerStorage = MyTimerStorage()
         workVC.notifications = TimerNotification()
         workVC.delegate = self
-        navigationController.pushViewController(workVC, animated: true)
+        navigationController.pushViewController(workVC, animated: animated)
     }
 }
 
 extension WorkCoordinator: TimerVCDelegate {
     
     func done() {
-        navigationController.popViewController(animated: true)
+        navigationController.popViewController(animated: animated)
     }
 }

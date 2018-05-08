@@ -23,7 +23,7 @@ class MyTimer {
     weak var delegate: MyTimerDelegate?
     
     init(time: Int = 0) {
-        self.time = time
+        self.time = max(time, 0)
     }
     
     var string: String {
@@ -35,9 +35,12 @@ class MyTimer {
     }
     
     func start() {
+        delegate?.myTimerStarted(string)
+        if time <= 0 {
+            return
+        }
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
-        delegate?.myTimerStarted(string)
     }
     
     @objc func incementTimer() {
@@ -51,6 +54,6 @@ class MyTimer {
     }
 
     deinit {
-        stop()
+        timer?.invalidate()
     }
 }

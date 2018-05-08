@@ -23,6 +23,10 @@ class TimerNotification: NSObject, UNUserNotificationCenterDelegate {
     }
     
     func scheduleNotification(_ timeInterval: Double, wihtTitle title: String, withDescription desc: String) {
+        if timeInterval <= 0 {
+            return
+        }
+        
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = desc

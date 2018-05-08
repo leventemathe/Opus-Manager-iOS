@@ -25,6 +25,7 @@ class WorkVC: TimerVC {
 
     override func myTimerStarted(_ time: String) {
         super.myTimerStarted(time)
+        notifications.removeAllNotifications()
         let title = NSLocalizedString("Work Done!", comment: "")
         let desc = NSLocalizedString("Time for a break.", comment: "")
         notifications.scheduleNotification(Double(timerModel.time), wihtTitle: title, withDescription: desc)

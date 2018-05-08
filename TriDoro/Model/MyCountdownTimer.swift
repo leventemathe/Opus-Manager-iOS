@@ -18,10 +18,12 @@ class MyCountdownTimer: MyTimer {
     }
     
     override func incementTimer() {
-        time -= 1
-        delegate?.myTimerTimeChanged(string)
-        if time <= 0 {
+        let newTime = time - 1
+        if newTime >= 0 {
+            time = newTime
+        } else {
             stop()
         }
+        delegate?.myTimerTimeChanged(string)
     }
 }

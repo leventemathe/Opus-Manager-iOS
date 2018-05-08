@@ -21,7 +21,9 @@ struct MyTimerStorage {
     }
     
     func storeTimer(_ timer: String, withStartTimestamp timestamp: Double = Date().timeIntervalSince1970) {
-        userDefaults.set([timer: timestamp], forKey: MyTimerStorage.TIMER_IN_PROGRESS)
+        if userDefaults.object(forKey: MyTimerStorage.TIMER_IN_PROGRESS) == nil {
+            userDefaults.set([timer: timestamp], forKey: MyTimerStorage.TIMER_IN_PROGRESS)
+        }
     }
     
     func removeTimer() {
