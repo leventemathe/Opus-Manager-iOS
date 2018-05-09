@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D701167D20A372A30094B56D /* PhotoUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701167C20A372A30094B56D /* PhotoUrl.swift */; };
 		D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */; };
 		D71E6AE9209A1AD8003647B7 /* SelectorVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* SelectorVC.storyboard */; };
 		D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEA209A1ADA003647B7 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D701167C20A372A30094B56D /* PhotoUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUrl.swift; sourceTree = "<group>"; };
 		D71E6AE0209A1AD8003647B7 /* TriDoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriDoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectorVC.storyboard; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				D756EAD2209B1184007F9976 /* ServiceResult.swift */,
 				D756EAD7209B1840007F9976 /* ServiceErrorHandler.swift */,
+				D701167C20A372A30094B56D /* PhotoUrl.swift */,
 				D756EACE209B10E4007F9976 /* PhotoService.swift */,
 				D756EAD0209B1100007F9976 /* UnsplashPhotoService.swift */,
 			);
@@ -438,6 +441,7 @@
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D7801D7720A315B9000786B6 /* TimerNavigationDelegate.swift in Sources */,
+				D701167D20A372A30094B56D /* PhotoUrl.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
 				D7801D7320A2FF46000786B6 /* OpacityView.swift in Sources */,
 				D7477002209C556500F4584C /* Coordinator.swift in Sources */,

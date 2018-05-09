@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias ThreePhotoUrls = [URL]
+typealias ThreePhotoUrls = [PhotoUrl]
 typealias ThreePhotoUrlsResult = ServiceResult<ThreePhotoUrls>
-typealias PhotoUrlResult = ServiceResult<URL>
+typealias PhotoUrlResult = ServiceResult<PhotoUrl>
 
 protocol PhotoService {
     

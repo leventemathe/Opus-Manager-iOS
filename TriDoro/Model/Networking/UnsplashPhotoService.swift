@@ -18,8 +18,8 @@ struct UnsplashPhotoService: PhotoService {
         self.serviceErrorHandler = serviceErrorHandler
     }
     
-    func getThreeRandomPhotoUrls(_ completion: @escaping (ThreePhotoUrlsResult) -> ()) {
-        guard let request = generateRequqestForThreeRandomUrls() else {
+    private func getRandomPhotos<T>(_ count: Int, deserializer: @escaping (Data)->(T?), completion: @escaping (ServiceResult<T>) -> ()) {
+        guard let request = generateRequqestForRandomUrl(count) else {
             completion(.error(ServiceError.other))
             return
         }
@@ -31,7 +31,7 @@ struct UnsplashPhotoService: PhotoService {
                 }
                 return
             } else if let data = data {
-                if let result = self.deserializeThreeRandomUrls(data) {
+                if let result = deserializer(data) {
                     DispatchQueue.main.async {
                         completion(.success(result))
                     }
@@ -44,8 +44,16 @@ struct UnsplashPhotoService: PhotoService {
         }).resume()
     }
     
-    private func generateRequqestForThreeRandomUrls() -> URLRequest? {
-        guard let url = URL(string: "https://api.unsplash.com/photos/random?count=3&query=nature") else {
+    func getThreeRandomPhotoUrls(_ completion: @escaping (ThreePhotoUrlsResult) -> ()) {
+        getRandomPhotos(3, deserializer: deserializeThreeRandomUrls, completion: completion)
+    }
+    
+    func getRandomPhotoUrl(_ completion: @escaping (PhotoUrlResult) -> ()) {
+        getRandomPhotos(1, deserializer: deserializeRandomUrl, completion: completion)
+    }
+    
+    private func generateRequqestForRandomUrl(_ count: Int) -> URLRequest? {
+        guard let url = URL(string: "https://api.unsplash.com/photos/random?count=\(count)&query=nature") else {
             return nil
         }
         
@@ -56,23 +64,11 @@ struct UnsplashPhotoService: PhotoService {
         return request
     }
     
-    private func deserializeThreeRandomUrls(_ data: Data) -> ThreePhotoUrls? {
+    private func deserializeRandomUrls(_ data: Data) -> [PhotoUrl]? {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let dict = json as? [Any] {
-                var urls = [URL]()
-                for photoAny in dict {
-                    if let photoDict = photoAny as? [String: Any],
-                       let urlsDict = photoDict["urls"] as? [String: String] {
-                        if let urlString = urlsDict["regular"],
-                           let url = URL(string: urlString) {
-                            urls.append(url)
-                        }
-                    }
-                }
-                if urls.count == 3 {
-                    return urls
-                }
+                return getPhotoUrlsFromJsonDict(dict)
             }
         } catch {
             return nil
@@ -80,60 +76,37 @@ struct UnsplashPhotoService: PhotoService {
         return nil
     }
     
-    func getRandomPhotoUrl(_ completion: @escaping (PhotoUrlResult) -> ()) {
-        guard let request = generateRequqestForRandomUrl() else {
-            completion(.error(ServiceError.other))
-            return
-        }
-        
-        urlSession.dataTask(with: request, completionHandler: { data, _, error in
-            if let error = error as NSError? {
-                DispatchQueue.main.async {
-                    completion(.error(self.serviceErrorHandler.genereateError(fromError: error)))
-                }
-                return
-            } else if let data = data {
-                if let result = self.deserializeRandomUrl(data) {
-                    DispatchQueue.main.async {
-                        completion(.success(result))
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        completion(.error(ServiceError.other))
+    private func getPhotoUrlsFromJsonDict(_ dict: [Any]) -> [PhotoUrl] {
+        var urls = [PhotoUrl]()
+        for photoAny in dict {
+            if let photoDict = photoAny as? [String: Any],
+                let urlsDict = photoDict["urls"] as? [String: String] {
+                if let full = urlsDict["full"],
+                    let regular = urlsDict["regular"],
+                    let small = urlsDict["small"] {
+                    if let fullUrl = URL(string: full),
+                        let regularUrl = URL(string: regular),
+                        let smallUrl = URL(string: small) {
+                        urls.append(PhotoUrl(small: smallUrl, regular: regularUrl, large: fullUrl))
                     }
                 }
             }
-        }).resume()
-    }
-    
-    private func generateRequqestForRandomUrl() -> URLRequest? {
-        guard let url = URL(string: "https://api.unsplash.com/photos/random?count=1&query=nature") else {
-            return nil
         }
-        
-        var request = URLRequest(url: url)
-        request.setValue("v1", forHTTPHeaderField: "Accept-Version")
-        request.setValue("Client-ID \(Configuration.unsplashAccessKey)", forHTTPHeaderField: "Authorization")
-        
-        return request
+        return urls
     }
     
-    private func deserializeRandomUrl(_ data: Data) -> URL? {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            if let dict = json as? [Any] {
-                for photoAny in dict {
-                    if let photoDict = photoAny as? [String: Any],
-                        let urlsDict = photoDict["urls"] as? [String: String] {
-                        if let urlString = urlsDict["full"],
-                            let url = URL(string: urlString) {
-                            return url
-                        }
-                    }
-                }
+    private func deserializeRandomUrl(_ data: Data) -> PhotoUrl? {
+        if let urls = deserializeRandomUrls(data) {
+            return urls.first
+        }
+        return nil
+    }
+    
+    private func deserializeThreeRandomUrls(_ data: Data) -> [PhotoUrl]? {
+        if let urls = deserializeRandomUrls(data) {
+            if urls.count == 3 {
+                return urls
             }
-        } catch {
-            return nil
         }
         return nil
     }

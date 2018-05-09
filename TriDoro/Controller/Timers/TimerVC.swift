@@ -77,7 +77,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         photoService.getRandomPhotoUrl { result in
             switch result {
             case .success(let url):
-                self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
+                self.imageDownloader.downloadImageFrom(url.large, withCompletion: { result in
                     switch result {
                     case .success(let image):
                         self.backgroundImageView.image = image

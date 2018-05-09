@@ -45,7 +45,7 @@ class SelectorVC: UIViewController, Storyboarded {
         photoService.getThreeRandomPhotoUrls { result in
             switch result {
             case .success(let urls):
-                self.downloadImagesFrom(urls: urls)
+                self.downloadImagesFrom(urls: urls.map { $0.regular })
             default:
                 break
             }
