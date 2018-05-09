@@ -20,4 +20,9 @@ class MyCountdownTimer: MyTimer {
     override func incrementTimer(withTimeElapsed elapsed: Double) {
         time = max(0, time - elapsed)
     }
+    
+    override var fractionalTime: Double {
+        let roundedTime = floor(time)
+        return time - roundedTime
+    }
 }

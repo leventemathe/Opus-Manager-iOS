@@ -60,7 +60,7 @@ class MyTimer {
     
     var fractionalTime: Double {
         let roundedTime = ceil(time)
-        return time - roundedTime
+        return -(time - roundedTime)
     }
     
     @objc private func incementTimer() {
