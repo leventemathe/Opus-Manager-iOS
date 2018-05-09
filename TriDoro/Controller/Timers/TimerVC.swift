@@ -28,6 +28,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
     var timerModel: MyTimer!
     var timerStorage: MyTimerStorage!
     
+    var photoService: PhotoService!
+    var imageDownloader: ImageDownloader!
     var image: UIImage?
     
     override func viewDidLoad() {
@@ -59,7 +61,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         if let image = image {
             backgroundImageView.image = image
         } else {
-            // TODO: download image
+            setBackgroundImageFromTheService()
         }
         
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +71,24 @@ class TimerVC: UIViewController, MyTimerDelegate {
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: bacgkroundImageTilt).isActive = true
         
         addParallaxEffectToBackgroundImageView()
+    }
+    
+    private func setBackgroundImageFromTheService() {
+        photoService.getRandomPhotoUrl { result in
+            switch result {
+            case .success(let url):
+                self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
+                    switch result {
+                    case .success(let image):
+                        self.backgroundImageView.image = image
+                    default:
+                        break
+                    }
+                })
+            default:
+                break
+            }
+        }
     }
     
     private func addParallaxEffectToBackgroundImageView() {

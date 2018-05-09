@@ -10,8 +10,10 @@ import Foundation
 
 typealias ThreePhotoUrls = [URL]
 typealias ThreePhotoUrlsResult = ServiceResult<ThreePhotoUrls>
+typealias PhotoUrlResult = ServiceResult<URL>
 
 protocol PhotoService {
     
-    func getThreeRandomPhotoUrls(_ completion: @escaping (ThreePhotoUrlsResult) -> ())    
+    func getThreeRandomPhotoUrls(_ completion: @escaping (ThreePhotoUrlsResult) -> ())
+    func getRandomPhotoUrl(_ completion: @escaping (PhotoUrlResult) -> ())
 }

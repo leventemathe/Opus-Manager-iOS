@@ -79,4 +79,62 @@ struct UnsplashPhotoService: PhotoService {
         }
         return nil
     }
+    
+    func getRandomPhotoUrl(_ completion: @escaping (PhotoUrlResult) -> ()) {
+        guard let request = generateRequqestForRandomUrl() else {
+            completion(.error(ServiceError.other))
+            return
+        }
+        
+        urlSession.dataTask(with: request, completionHandler: { data, _, error in
+            if let error = error as NSError? {
+                DispatchQueue.main.async {
+                    completion(.error(self.serviceErrorHandler.genereateError(fromError: error)))
+                }
+                return
+            } else if let data = data {
+                if let result = self.deserializeRandomUrl(data) {
+                    DispatchQueue.main.async {
+                        completion(.success(result))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(.error(ServiceError.other))
+                    }
+                }
+            }
+        }).resume()
+    }
+    
+    private func generateRequqestForRandomUrl() -> URLRequest? {
+        guard let url = URL(string: "https://api.unsplash.com/photos/random?count=1&query=nature") else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("v1", forHTTPHeaderField: "Accept-Version")
+        request.setValue("Client-ID \(Configuration.unsplashAccessKey)", forHTTPHeaderField: "Authorization")
+        
+        return request
+    }
+    
+    private func deserializeRandomUrl(_ data: Data) -> URL? {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            if let dict = json as? [Any] {
+                for photoAny in dict {
+                    if let photoDict = photoAny as? [String: Any],
+                        let urlsDict = photoDict["urls"] as? [String: String] {
+                        if let urlString = urlsDict["full"],
+                            let url = URL(string: urlString) {
+                            return url
+                        }
+                    }
+                }
+            }
+        } catch {
+            return nil
+        }
+        return nil
+    }
 }

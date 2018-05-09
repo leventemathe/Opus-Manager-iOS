@@ -37,6 +37,8 @@ class WorkCoordinator: Coordinator {
         workVC.timerModel = MyCountdownTimer(time: startTime)
         workVC.timerStorage = MyTimerStorage()
         workVC.notifications = TimerNotification()
+        workVC.photoService = UnsplashPhotoService()
+        workVC.imageDownloader = ImageDownloader()
         workVC.image = image
         workVC.delegate = self
         navigationController.pushViewController(workVC, animated: animated)
