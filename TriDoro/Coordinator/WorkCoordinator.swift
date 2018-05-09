@@ -24,7 +24,7 @@ class WorkCoordinator: Coordinator {
     
     func start() {
         let workVC = WorkVC()
-        workVC.timerModel = MyCountdownTimer(startTime: startTime)
+        workVC.timerModel = MyCountdownTimer(time: startTime)
         workVC.timerStorage = MyTimerStorage()
         workVC.notifications = TimerNotification()
         workVC.delegate = self

@@ -10,13 +10,6 @@ import Foundation
 
 class MyCountdownTimer: MyTimer {
     
-    let startTime: Double
-    
-    init(startTime: Double) {
-        self.startTime = startTime
-        super.init(time: startTime)
-    }
-    
     override func incrementTimer(withTimeElapsed elapsed: Double) {
         time = max(0, time - elapsed)
     }

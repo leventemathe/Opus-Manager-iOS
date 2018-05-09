@@ -18,6 +18,7 @@ protocol MyTimerDelegate: class {
 class MyTimer {
     
     weak var timer: Timer?
+    let startTime: Double
     var time: Double
     let accuracy: Double
     
@@ -25,6 +26,7 @@ class MyTimer {
     
     init(time: Double = 0, accuracy: Double = 0.01) {
         self.time = max(time, 0)
+        self.startTime = self.time
         self.accuracy = accuracy
     }
     
@@ -52,6 +54,7 @@ class MyTimer {
                 self.incrementTimer(withTimeElapsed: fraction)
                 self.timer?.invalidate()
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.incementTimer), userInfo: nil, repeats: true)
+                self.delegate?.myTimerTimeChanged(self.string)
             })
         } else {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
