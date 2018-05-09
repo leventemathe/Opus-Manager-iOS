@@ -13,12 +13,16 @@ class WorkCoordinator: Coordinator {
     let navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
     
+    let navigationAnimationDelegate: UINavigationControllerDelegate
+    
     let startTime: Double
     let animated: Bool
     var image: UIImage?
     
-    init(navigationController: UINavigationController, startTime: Double, animated: Bool, image: UIImage?) {
+    init(navigationAnimationDelegate: UINavigationControllerDelegate = TimerNavigationDelegate(), navigationController: UINavigationController, startTime: Double, animated: Bool, image: UIImage?) {
         self.navigationController = navigationController
+        self.navigationAnimationDelegate = navigationAnimationDelegate
+        self.navigationController.delegate = self.navigationAnimationDelegate
         self.startTime = startTime
         self.animated = animated
         self.image = image
