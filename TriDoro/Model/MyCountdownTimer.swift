@@ -10,24 +10,14 @@ import Foundation
 
 class MyCountdownTimer: MyTimer {
     
-    let startTime: Int
+    let startTime: Double
     
-    init(startTime: Int) {
+    init(startTime: Double) {
         self.startTime = startTime
         super.init(time: startTime)
     }
     
-    override func incementTimer() {
-        let newTime = time - 1
-        if newTime >= 0 {
-            time = newTime
-        } else {
-            stop()
-        }
-        delegate?.myTimerTimeChanged(string)
-    }
-    
-    override func incrementTimer(withTimeElapsed elapsed: Int) {
+    override func incrementTimer(withTimeElapsed elapsed: Double) {
         time = max(0, time - elapsed)
     }
 }

@@ -13,10 +13,10 @@ class WorkCoordinator: Coordinator {
     let navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
     
-    let startTime: Int
+    let startTime: Double
     let animated: Bool
     
-    init(navigationController: UINavigationController, startTime: Int, animated: Bool) {
+    init(navigationController: UINavigationController, startTime: Double, animated: Bool) {
         self.navigationController = navigationController
         self.startTime = startTime
         self.animated = animated

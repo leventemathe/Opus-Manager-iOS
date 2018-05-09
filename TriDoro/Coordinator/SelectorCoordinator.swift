@@ -39,8 +39,8 @@ class SelectorCoordinator: Coordinator {
     private func startTimerVCIfNeeded() {
         if let timerInProgress = userDefaults.object(forKey: MyTimerStorage.TIMER_IN_PROGRESS) as? TimerNameAndStartTimestamp {
             if let startTimestamp = timerInProgress[String(describing: WorkVC.self)] {
-                let diff = Int(calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970))
-                let time = max(15 - diff, 0)
+                let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
+                let time = max(15.0 - diff, 0.0)
                 startWorkVC(time, animated: false)
             }
         }
@@ -50,7 +50,7 @@ class SelectorCoordinator: Coordinator {
         return currentTime - oldTime
     }
     
-    private func startWorkVC(_ startTime: Int, animated: Bool) {
+    private func startWorkVC(_ startTime: Double, animated: Bool) {
         let workCoordinator = WorkCoordinator(navigationController: navigationController, startTime: startTime, animated: animated)
         coordinators[SelectorCoordinator.WORK_KEY] = workCoordinator
         workCoordinator.start()

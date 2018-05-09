@@ -18,17 +18,19 @@ protocol MyTimerDelegate: class {
 class MyTimer {
     
     weak var timer: Timer?
-    var time: Int
+    var time: Double
+    let accuracy: Double
     
     weak var delegate: MyTimerDelegate?
     
-    init(time: Int = 0) {
+    init(time: Double = 0, accuracy: Double = 0.01) {
         self.time = max(time, 0)
+        self.accuracy = accuracy
     }
     
     var string: String {
-        let mins = time / 60
-        let secs = time % 60
+        let mins = Int(round(time) / 60)
+        let secs = Int(round(time)) % 60
         let minsString = mins > 9 ? String(mins) : String("0\(mins)")
         let secsString = secs > 9 ? String(secs) : String("0\(secs)")
         return  "\(minsString):\(secsString)"
@@ -39,13 +41,35 @@ class MyTimer {
         if time <= 0 {
             return
         }
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
+        startTimer()
     }
     
-    @objc func incementTimer() {
-        time += 1
+    private func startTimer() {
+        timer?.invalidate()
+        let fraction = fractionalTime
+        if fraction > accuracy {
+            timer = Timer.scheduledTimer(withTimeInterval: fraction, repeats: false, block: { timer in
+                self.incrementTimer(withTimeElapsed: fraction)
+                self.timer?.invalidate()
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.incementTimer), userInfo: nil, repeats: true)
+            })
+        } else {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
+        }
+    }
+    
+    var fractionalTime: Double {
+        let roundedTime = ceil(time)
+        return time - roundedTime
+    }
+    
+    @objc private func incementTimer() {
+        incrementTimer(withTimeElapsed: 1.0)
         delegate?.myTimerTimeChanged(string)
+    }
+    
+    func incrementTimer(withTimeElapsed elapsed: Double) {
+        time = max(0, time + elapsed)
     }
     
     func stop() {
@@ -57,18 +81,16 @@ class MyTimer {
         timer?.invalidate()
     }
     
-    func restart(withTimeElapsed elapsed: Int) {
+    func restart(withTimeElapsed elapsed: Double) {
+        print(elapsed)
+        print(time)
         incrementTimer(withTimeElapsed: elapsed)
+        print(time)
         delegate?.myTimerTimeChanged(string)
         if time == 0 {
             return
         }
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
-    }
-    
-    func incrementTimer(withTimeElapsed elapsed: Int) {
-        time = max(0, time + elapsed)
+        startTimer()
     }
     
     deinit {
