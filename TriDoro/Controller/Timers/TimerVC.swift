@@ -10,6 +10,8 @@ import UIKit
 
 class TimerVC: UIViewController, MyTimerDelegate {
     
+    let backgroundImageView = ImageViewWithOpacityView()
+    
     let doneButton: LargeButton = {
         var button = LargeButton()
         button.setText(NSLocalizedString("Done", comment: "Label text for done button"))
@@ -26,6 +28,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
     var timerModel: MyTimer!
     var timerStorage: MyTimerStorage!
     
+    var image: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupModel()
@@ -38,9 +42,40 @@ class TimerVC: UIViewController, MyTimerDelegate {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor.myBackgroundColor
+        setupBackground()
         setupTimerLabel()
         setupDoneButton()
+    }
+
+    private func setupBackground() {
+        view.backgroundColor = UIColor.myBackgroundColor
+        setupBackgrounImageView()
+    }
+
+    private let bacgkroundImageTilt: CGFloat = 100.0
+    
+    private func setupBackgrounImageView() {
+        view.addSubview(backgroundImageView)
+        if let image = image {
+            backgroundImageView.image = image
+        } else {
+            // TODO: download image
+        }
+        
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -bacgkroundImageTilt).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: bacgkroundImageTilt).isActive = true
+        
+        addParallaxEffectToBackgroundImageView()
+    }
+    
+    private func addParallaxEffectToBackgroundImageView() {
+        let horizontalEffect = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        horizontalEffect.maximumRelativeValue = bacgkroundImageTilt
+        horizontalEffect.minimumRelativeValue = -bacgkroundImageTilt
+        backgroundImageView.addMotionEffect(horizontalEffect)
     }
     
     private func setupTimerLabel() {

@@ -11,8 +11,7 @@ import UIKit
 class TaskView: UIView {
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var opacityView: UIView!
+    @IBOutlet weak var imageViewWithOpacityView: ImageViewWithOpacityView!
     @IBOutlet weak var label: LargeLabel!
     
     override init(frame: CGRect) {
@@ -41,6 +40,6 @@ class TaskView: UIView {
     }
     
     func setImage(_ image: UIImage) {
-        imageView.image = image
+        imageViewWithOpacityView.image = image
     }
 }

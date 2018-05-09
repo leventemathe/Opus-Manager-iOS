@@ -31,6 +31,8 @@
 		D7801D6620A050F1000786B6 /* TimerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6520A050F1000786B6 /* TimerNotification.swift */; };
 		D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */; };
 		D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D6920A0A08D000786B6 /* MyTimerStorage.swift */; };
+		D7801D7320A2FF46000786B6 /* OpacityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D7220A2FF46000786B6 /* OpacityView.swift */; };
+		D7801D7520A300A5000786B6 /* ImageViewWithOpacityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801D7420A300A5000786B6 /* ImageViewWithOpacityView.swift */; };
 		D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD04209B7A7700D12549 /* ImageDownloader.swift */; };
 		D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD08209B85B900D12549 /* WorkVC.swift */; };
 		D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD0D209B861200D12549 /* LargeButton.swift */; };
@@ -83,6 +85,8 @@
 		D7801D6520A050F1000786B6 /* TimerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotification.swift; sourceTree = "<group>"; };
 		D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountdownTimer.swift; sourceTree = "<group>"; };
 		D7801D6920A0A08D000786B6 /* MyTimerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimerStorage.swift; sourceTree = "<group>"; };
+		D7801D7220A2FF46000786B6 /* OpacityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityView.swift; sourceTree = "<group>"; };
+		D7801D7420A300A5000786B6 /* ImageViewWithOpacityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithOpacityView.swift; sourceTree = "<group>"; };
 		D78DBD04209B7A7700D12549 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D78DBD08209B85B900D12549 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		D78DBD0D209B861200D12549 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		D77DABCC209A34FD003D02AC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D7801D7220A2FF46000786B6 /* OpacityView.swift */,
+				D7801D7420A300A5000786B6 /* ImageViewWithOpacityView.swift */,
 				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
 				D78DBD0D209B861200D12549 /* LargeButton.swift */,
 				D78DBD1C209BA05B00D12549 /* TimerLabel.swift */,
@@ -415,11 +421,13 @@
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D78DBD15209B940100D12549 /* SelectorCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
+				D7801D7520A300A5000786B6 /* ImageViewWithOpacityView.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
 				D78DBD19209B9C4A00D12549 /* WorkCoordinator.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
+				D7801D7320A2FF46000786B6 /* OpacityView.swift in Sources */,
 				D7477002209C556500F4584C /* Coordinator.swift in Sources */,
 				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,

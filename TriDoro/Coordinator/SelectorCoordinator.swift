@@ -17,6 +17,8 @@ class SelectorCoordinator: Coordinator {
     
     let userDefaults: UserDefaults
     
+    var selectorVC: SelectorVC!
+    
     init(navigationController: UINavigationController, userDefaults: UserDefaults = UserDefaults.standard) {
         self.navigationController = navigationController
         self.userDefaults = userDefaults
@@ -29,7 +31,7 @@ class SelectorCoordinator: Coordinator {
     
     private func startSelectorVC() {
         navigationController.isNavigationBarHidden = true
-        let selectorVC = SelectorVC.instantiate()
+        selectorVC = SelectorVC.instantiate()
         selectorVC.photoService = UnsplashPhotoService()
         selectorVC.imageDownloader = ImageDownloader()
         selectorVC.delegate = self
@@ -50,8 +52,8 @@ class SelectorCoordinator: Coordinator {
         return currentTime - oldTime
     }
     
-    private func startWorkVC(_ startTime: Double, animated: Bool) {
-        let workCoordinator = WorkCoordinator(navigationController: navigationController, startTime: startTime, animated: animated)
+    private func startWorkVC(_ startTime: Double, animated: Bool, image: UIImage? = nil) {
+        let workCoordinator = WorkCoordinator(navigationController: navigationController, startTime: startTime, animated: animated, image: image)
         coordinators[SelectorCoordinator.WORK_KEY] = workCoordinator
         workCoordinator.start()
     }
@@ -60,7 +62,8 @@ class SelectorCoordinator: Coordinator {
 extension SelectorCoordinator: SelectorVCDelegate {
 
     func work() {
-        startWorkVC(15, animated: true)
+        let image = selectorVC.workView.imageViewWithOpacityView.image
+        startWorkVC(15, animated: true, image: image)
     }
     
     func shortBreak() {
