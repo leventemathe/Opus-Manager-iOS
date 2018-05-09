@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentVC = coordinator?.currentVC as? TimerVC {
             if let timer = currentVC.timerStorage.loadTimer() {
                 if let workStartTimestamp = timer[String(describing: WorkVC.self)] {
-                    let diff = Date().timeIntervalSince1970-workStartTimestamp
+                    let diff = Date().timeIntervalSince1970 - workStartTimestamp - currentVC.timerModel.timeElapsedSinceStart
                     currentVC.timerModel.restart(withTimeElapsed: diff)
                 }
             }

@@ -84,11 +84,12 @@ class MyTimer {
         timer?.invalidate()
     }
     
+    var timeElapsedSinceStart: Double {
+        return time - startTime
+    }
+    
     func restart(withTimeElapsed elapsed: Double) {
-        print(elapsed)
-        print(time)
         incrementTimer(withTimeElapsed: elapsed)
-        print(time)
         delegate?.myTimerTimeChanged(string)
         if time == 0 {
             return

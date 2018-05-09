@@ -18,4 +18,8 @@ class MyCountdownTimer: MyTimer {
         let roundedTime = floor(time)
         return time - roundedTime
     }
+    
+    override var timeElapsedSinceStart: Double {
+        return startTime - time
+    }
 }
