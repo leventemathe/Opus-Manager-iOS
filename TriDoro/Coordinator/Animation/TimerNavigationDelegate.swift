@@ -17,7 +17,7 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
+        return 0.3
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -42,6 +42,7 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             toVC.view.center = container.center
             toVC.view.transform = CGAffineTransform.identity
         }, completion: { _ in
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
             transitionContext.completeTransition(true)
         })
     }
@@ -56,6 +57,7 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             fromVC.view.center = self.touchPoint
             fromVC.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }, completion: { _ in
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
             transitionContext.completeTransition(true)
         })
     }
