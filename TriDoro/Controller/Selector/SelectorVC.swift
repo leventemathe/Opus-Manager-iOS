@@ -76,24 +76,25 @@ class SelectorVC: UIViewController, Storyboarded {
     }
     
     private func setupCoordinator() {
-        let workTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(workTapped))
-        let shortBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shortBreakTapped))
-        let longBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(longBreakTapped))
+        let workTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(workTapped(_:)))
+        //let shortBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shortBreakTapped(_:forEvent:)))
+        //let longBreakTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(longBreakTapped(_:forEvent:)))
         
         workView.addGestureRecognizer(workTapRecognizer)
-        shortBreakView.addGestureRecognizer(shortBreakTapRecognizer)
-        longBreakView.addGestureRecognizer(longBreakTapRecognizer)
+        //shortBreakView.addGestureRecognizer(shortBreakTapRecognizer)
+        //longBreakView.addGestureRecognizer(longBreakTapRecognizer)
     }
     
-    @objc private func workTapped() {
-        delegate?.work()
+    @objc private func workTapped(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: view)
+        delegate?.work(point)
     }
     
-    @objc private func shortBreakTapped() {
-        delegate?.shortBreak()
+    @objc private func shortBreakTapped(_ sender: Any, forEvent event: UIEvent) {
+
     }
     
-    @objc private func longBreakTapped() {
-        delegate?.longBreak()
+    @objc private func longBreakTapped(_ sender: Any, forEvent event: UIEvent) {
+
     }
 }

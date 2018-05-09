@@ -19,7 +19,11 @@ class WorkCoordinator: Coordinator {
     let animated: Bool
     var image: UIImage?
     
-    init(navigationAnimationDelegate: UINavigationControllerDelegate = TimerNavigationDelegate(), navigationController: UINavigationController, startTime: Double, animated: Bool, image: UIImage?) {
+    init(navigationAnimationDelegate: UINavigationControllerDelegate,
+         navigationController: UINavigationController,
+         startTime: Double,
+         animated: Bool,
+         image: UIImage?) {
         self.navigationController = navigationController
         self.navigationAnimationDelegate = navigationAnimationDelegate
         self.navigationController.delegate = self.navigationAnimationDelegate
@@ -42,6 +46,6 @@ class WorkCoordinator: Coordinator {
 extension WorkCoordinator: TimerVCDelegate {
     
     func done() {
-        navigationController.popViewController(animated: animated)
+        navigationController.popViewController(animated: true)
     }
 }

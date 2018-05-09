@@ -10,8 +10,14 @@ import UIKit
 
 class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
+    private let touchPoint: CGPoint
+    
+    init(touchPoint: CGPoint) {
+        self.touchPoint = touchPoint
+    }
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1
+        return 0.4
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -27,14 +33,14 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     private func showTimerVC(_ transitionContext: UIViewControllerContextTransitioning, toVC: TimerVC) {
         let container = transitionContext.containerView
-        let bounds = UIScreen.main.bounds
-        let finalFrame = transitionContext.finalFrame(for: toVC)
         
-        toVC.view.frame = toVC.view.frame.offsetBy(dx: 0, dy: bounds.size.height)
+        toVC.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        toVC.view.center = touchPoint
         container.addSubview(toVC.view)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
-            toVC.view.frame = finalFrame
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: .curveEaseIn, animations: {
+            toVC.view.center = container.center
+            toVC.view.transform = CGAffineTransform.identity
         }, completion: { _ in
             transitionContext.completeTransition(true)
         })
@@ -42,14 +48,13 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     private func dismissTimerVC(_ transitionContext: UIViewControllerContextTransitioning, toVC: UIViewController, fromVC: TimerVC) {
         let container = transitionContext.containerView
-        let bounds = UIScreen.main.bounds
         
         container.addSubview(toVC.view)
         container.sendSubview(toBack: toVC.view)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
-            toVC.view.alpha = 1
-            fromVC.view.frame = fromVC.view.frame.offsetBy(dx: 0, dy: bounds.size.height)
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: .curveEaseIn, animations: {
+            fromVC.view.center = self.touchPoint
+            fromVC.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }, completion: { _ in
             transitionContext.completeTransition(true)
         })
@@ -58,10 +63,16 @@ class TimerNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
 class TimerNavigationDelegate: NSObject, UINavigationControllerDelegate {
     
+    private let touchPoint: CGPoint
+    
+    init(touchPoint: CGPoint) {
+        self.touchPoint = touchPoint
+    }
+    
     func navigationController(_ navigationController: UINavigationController,
                               animationControllerFor operation: UINavigationControllerOperation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return TimerNavigationAnimator()
+        return TimerNavigationAnimator(touchPoint: touchPoint)
     }
 }
