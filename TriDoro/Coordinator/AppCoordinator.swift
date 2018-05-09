@@ -24,6 +24,23 @@ class AppCoordinator: Coordinator {
         coordinators[AppCoordinator.SELECTOR_KEY] = selectorCoordinator
         selectorCoordinator.start()
     }
+    
+    func pauseTimerIfNeeded() {
+        if let currentVC = currentVC as? TimerVC {
+            currentVC.timerModel.pause()
+        }
+    }
+    
+    func continueTimerIfNeeded() {
+        if let currentVC = currentVC as? TimerVC {
+            if let timer = currentVC.timerStorage.loadTimer() {
+                if let workStartTimestamp = timer[String(describing: WorkVC.self)] {
+                    let diff = Date().timeIntervalSince1970 - workStartTimestamp - currentVC.timerModel.timeElapsedSinceStart
+                    currentVC.timerModel.restart(withTimeElapsed: diff)
+                }
+            }
+        }
+    }
 }
 
 
