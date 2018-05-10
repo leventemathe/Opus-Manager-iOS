@@ -34,6 +34,7 @@ class ImageViewWithOpacityView: UIView {
     }
     
     private func commonInit() {
+        backgroundColor = UIColor.myBackgroundColor
         setupImageView()
         setupOpacityView()
     }
@@ -64,7 +65,21 @@ class ImageViewWithOpacityView: UIView {
         get {
             return imageView.image
         } set {
-            imageView.image = newValue
+            if let newValue = newValue {
+                setImage(newValue, shouldAnimate: image == nil)
+            }
+        }
+    }
+    
+    private func setImage(_ image: UIImage, shouldAnimate: Bool) {
+        if shouldAnimate {
+            imageView.alpha = 0.0
+            imageView.image = image
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
+                self.imageView.alpha = 1.0
+            })
+        } else {
+            imageView.image = image
         }
     }
 }

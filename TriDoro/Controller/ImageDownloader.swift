@@ -35,4 +35,22 @@ struct ImageDownloader {
             }
         }).resume()
     }
+    
+    func downloadSmallThenLargeImageFrom(_ photoUrl: PhotoUrl, withCompletion completion: @escaping (ImageDownloaderResult) -> ()) {
+        downloadImageFrom(photoUrl.small, withCompletion: { result in
+            completion(result)
+            self.downloadImageFrom(photoUrl.large, withCompletion: { result in
+                completion(result)
+            })
+        })
+    }
+    
+    func downloadSmallThenRegularImageFrom(_ photoUrl: PhotoUrl, withCompletion completion: @escaping (ImageDownloaderResult) -> ()) {
+        downloadImageFrom(photoUrl.small, withCompletion: { result in
+            completion(result)
+            self.downloadImageFrom(photoUrl.regular, withCompletion: { result in
+                completion(result)
+            })
+        })
+    }
 }
