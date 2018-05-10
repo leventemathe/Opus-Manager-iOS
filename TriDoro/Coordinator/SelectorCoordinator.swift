@@ -52,9 +52,14 @@ class SelectorCoordinator: Coordinator {
         return currentTime - oldTime
     }
     
-    private func startWorkVC(_ startTime: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil) {
+    private func startWorkVC(_ startTime: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
         let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
-        let workCoordinator = WorkCoordinator(navigationAnimationDelegate: timerNavigationDelegate, navigationController: navigationController, startTime: startTime, animated: animated, image: image)
+        let workCoordinator = WorkCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
+                                              navigationController: navigationController,
+                                              startTime: startTime,
+                                              animated: animated,
+                                              image: image,
+                                              imageUrl: imageUrl)
         coordinators[SelectorCoordinator.WORK_KEY] = workCoordinator
         workCoordinator.start()
     }
@@ -64,7 +69,8 @@ extension SelectorCoordinator: SelectorVCDelegate {
 
     func work(_ touchPoint: CGPoint) {
         let image = selectorVC.workView.imageViewWithOpacityView.image
-        startWorkVC(15, animated: true, touchPoint: touchPoint, image: image)
+        let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[0] : nil
+        startWorkVC(15, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
     }
     
     func shortBreak(_ touchPoint: CGPoint) {

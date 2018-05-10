@@ -19,7 +19,7 @@ class SelectorVC: UIViewController, Storyboarded {
     
     weak var delegate: SelectorVCDelegate?
     
-    var images = [UIImage]() {
+    var images = [(UIImage, PhotoUrl)]() {
         didSet {
             print(images)
             setImages()
@@ -28,9 +28,9 @@ class SelectorVC: UIViewController, Storyboarded {
     
     private func setImages() {
         if images.count == 3 {
-            workView.setImage(images[0])
-            shortBreakView.setImage(images[1])
-            longBreakView.setImage(images[2])
+            workView.setImage(images[0].0)
+            shortBreakView.setImage(images[1].0)
+            longBreakView.setImage(images[2].0)
         }
     }
     
@@ -45,20 +45,20 @@ class SelectorVC: UIViewController, Storyboarded {
         photoService.getThreeRandomPhotoUrls { result in
             switch result {
             case .success(let urls):
-                self.downloadImagesFrom(urls: urls.map { $0.regular })
+                self.downloadImagesFrom(urls: urls)
             default:
                 break
             }
         }
     }
     
-    private func downloadImagesFrom(urls: [URL]) {
+    private func downloadImagesFrom(urls: [PhotoUrl]) {
         for url in urls {
             print(url)
-            self.imageDownloader.downloadImageFrom(url, withCompletion: { result in
+            self.imageDownloader.downloadImageFrom(url.regular, withCompletion: { result in
                 switch result {
                 case .success(let image):
-                    self.images.append(image)
+                    self.images.append((image, url))
                 default:
                     break
                 }

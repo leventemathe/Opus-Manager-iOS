@@ -18,18 +18,21 @@ class WorkCoordinator: Coordinator {
     let startTime: Double
     let animated: Bool
     var image: UIImage?
+    var imageUrl: PhotoUrl?
     
     init(navigationAnimationDelegate: UINavigationControllerDelegate,
          navigationController: UINavigationController,
          startTime: Double,
          animated: Bool,
-         image: UIImage?) {
+         image: UIImage?,
+         imageUrl: PhotoUrl?) {
         self.navigationController = navigationController
         self.navigationAnimationDelegate = navigationAnimationDelegate
         self.navigationController.delegate = self.navigationAnimationDelegate
         self.startTime = startTime
         self.animated = animated
         self.image = image
+        self.imageUrl = imageUrl
     }
     
     func start() {
@@ -40,6 +43,7 @@ class WorkCoordinator: Coordinator {
         workVC.photoService = UnsplashPhotoService()
         workVC.imageDownloader = ImageDownloader()
         workVC.image = image
+        workVC.imageURL = imageUrl
         workVC.delegate = self
         navigationController.pushViewController(workVC, animated: animated)
     }

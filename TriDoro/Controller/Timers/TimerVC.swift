@@ -31,6 +31,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
     var image: UIImage?
+    var imageURL: PhotoUrl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +59,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
     
     private func setupBackgrounImageView() {
         view.addSubview(backgroundImageView)
-        if let image = image {
-            backgroundImageView.image = image
-        } else {
-            setBackgroundImageFromTheService()
-        }
+        
+        setBackgroundImage()
         
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
@@ -73,7 +71,18 @@ class TimerVC: UIViewController, MyTimerDelegate {
         addParallaxEffectToBackgroundImageView()
     }
     
-    private func setBackgroundImageFromTheService() {
+    private func setBackgroundImage() {
+        if let image = image {
+            backgroundImageView.image = image
+            if let imageURL = imageURL {
+                setPhotoFromExistingUrlFromTheService(imageURL)
+            }
+        } else {
+            setRandomPhotoFromTheService()
+        }
+    }
+    
+    private func setRandomPhotoFromTheService() {
         photoService.getRandomPhotoUrl { result in
             switch result {
             case .success(let url):
@@ -89,6 +98,17 @@ class TimerVC: UIViewController, MyTimerDelegate {
                 break
             }
         }
+    }
+    
+    private func setPhotoFromExistingUrlFromTheService(_ url: PhotoUrl) {
+        imageDownloader.downloadImageFrom(url.large, withCompletion: { result in
+            switch result {
+            case .success(let image):
+                self.backgroundImageView.image = image
+            default:
+                break
+            }
+        })
     }
     
     private func addParallaxEffectToBackgroundImageView() {
