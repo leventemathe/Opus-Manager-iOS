@@ -21,7 +21,6 @@ class SelectorVC: UIViewController, Storyboarded {
     
     var images = [(UIImage, PhotoUrl)]() {
         didSet {
-            print(images)
             setImages()
         }
     }
@@ -54,7 +53,6 @@ class SelectorVC: UIViewController, Storyboarded {
     
     private func downloadImagesFrom(urls: [PhotoUrl]) {
         for url in urls {
-            print(url)
             self.imageDownloader.downloadImageFrom(url.regular, withCompletion: { result in
                 switch result {
                 case .success(let image):

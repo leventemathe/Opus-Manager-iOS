@@ -23,6 +23,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
         return label
     }()
     
+    let circleView = CircleView()
+    
     weak var delegate: TimerVCDelegate?
     
     var timerModel: MyTimer!
@@ -46,6 +48,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
     
     private func setupView() {
         setupBackground()
+        setupCircleView()
         setupTimerLabel()
         setupDoneButton()
     }
@@ -118,6 +121,17 @@ class TimerVC: UIViewController, MyTimerDelegate {
         backgroundImageView.addMotionEffect(horizontalEffect)
     }
     
+    private func setupCircleView() {
+        view.addSubview(circleView)
+        
+        circleView.translatesAutoresizingMaskIntoConstraints = false
+        circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        let size: CGFloat = 260
+        circleView.widthAnchor.constraint(equalToConstant: size).isActive = true
+        circleView.heightAnchor.constraint(equalToConstant: size).isActive = true
+    }
+    
     private func setupTimerLabel() {
         view.addSubview(timerLabel)
         
@@ -132,7 +146,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        doneButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 32).isActive = true
+        doneButton.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 32).isActive = true
         
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
     }
@@ -142,16 +156,17 @@ class TimerVC: UIViewController, MyTimerDelegate {
         delegate?.done()
     }
     
-    func myTimerTimeChanged(_ time: String) {
-        timerLabel.text = time
+    func myTimerTimeChanged(_ time: Double, timeString string: String) {
+        timerLabel.text = string
+        circleView.percent = timerModel.time / timerModel.startTime
     }
     
-    func myTimerStarted(_ time: String) {
-        timerLabel.text = time
+    func myTimerStarted(_ time: Double, timeString string: String) {
+        timerLabel.text = string
         timerStorage.storeTimer(String(describing: type(of: self)))
     }
     
-    func myTimerFinished(_ time: String) {
+    func myTimerFinished(_ time: Double, timeString string: String) {
         timerStorage.removeTimer()
     }
 }

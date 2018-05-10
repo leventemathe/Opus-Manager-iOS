@@ -10,9 +10,9 @@ import Foundation
 
 protocol MyTimerDelegate: class {
     
-    func myTimerTimeChanged(_ time: String)
-    func myTimerStarted(_ time: String)
-    func myTimerFinished(_ time: String)
+    func myTimerTimeChanged(_ time: Double, timeString string: String)
+    func myTimerStarted(_ time: Double, timeString string: String)
+    func myTimerFinished(_ time: Double, timeString string: String)
 }
 
 class MyTimer {
@@ -39,7 +39,7 @@ class MyTimer {
     }
     
     func start() {
-        delegate?.myTimerStarted(string)
+        delegate?.myTimerStarted(time, timeString: string)
         if time <= 0 {
             return
         }
@@ -54,7 +54,7 @@ class MyTimer {
                 self.incrementTimer(withTimeElapsed: fraction)
                 self.timer?.invalidate()
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.incementTimer), userInfo: nil, repeats: true)
-                self.delegate?.myTimerTimeChanged(self.string)
+                self.delegate?.myTimerTimeChanged(self.time, timeString: self.string)
             })
         } else {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(incementTimer), userInfo: nil, repeats: true)
@@ -68,7 +68,7 @@ class MyTimer {
     
     @objc private func incementTimer() {
         incrementTimer(withTimeElapsed: 1.0)
-        delegate?.myTimerTimeChanged(string)
+        delegate?.myTimerTimeChanged(time, timeString: string)
     }
     
     func incrementTimer(withTimeElapsed elapsed: Double) {
@@ -77,7 +77,7 @@ class MyTimer {
     
     func stop() {
         timer?.invalidate()
-        delegate?.myTimerFinished(string)
+        delegate?.myTimerFinished(time, timeString: string)
     }
 
     func pause() {
@@ -90,7 +90,7 @@ class MyTimer {
     
     func restart(withTimeElapsed elapsed: Double) {
         incrementTimer(withTimeElapsed: elapsed)
-        delegate?.myTimerTimeChanged(string)
+        delegate?.myTimerTimeChanged(time, timeString: string)
         if time == 0 {
             return
         }

@@ -46,6 +46,7 @@
 		D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */; };
 		D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */; };
 		D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* AppCoordinator.swift */; };
+		D7C7363320A474210030A227 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7363220A474210030A227 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F7209C540D0078F267 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D7C7363220A474210030A227 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
 				D78DBD0D209B861200D12549 /* LargeButton.swift */,
 				D78DBD1C209BA05B00D12549 /* TimerLabel.swift */,
+				D7C7363220A474210030A227 /* CircleView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				D701167D20A372A30094B56D /* PhotoUrl.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
 				D7801D7320A2FF46000786B6 /* OpacityView.swift in Sources */,
+				D7C7363320A474210030A227 /* CircleView.swift in Sources */,
 				D7477002209C556500F4584C /* Coordinator.swift in Sources */,
 				D78DBD0E209B861200D12549 /* LargeButton.swift in Sources */,
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,

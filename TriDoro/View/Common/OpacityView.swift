@@ -26,7 +26,7 @@ class OpacityView: UIView {
     }
     
     private func commonInit() {
-        let color = UIColor.myBackgroundColor.withAlphaComponent(0.4)
+        let color = UIColor.myBackgroundColorTransparent
         backgroundColor = color
     }
 }
