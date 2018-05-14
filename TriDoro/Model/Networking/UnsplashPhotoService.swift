@@ -80,14 +80,18 @@ struct UnsplashPhotoService: PhotoService {
         var urls = [PhotoUrl]()
         for photoAny in dict {
             if let photoDict = photoAny as? [String: Any],
-                let urlsDict = photoDict["urls"] as? [String: String] {
+                let urlsDict = photoDict["urls"] as? [String: String],
+                let userDict = photoDict["user"] as? [String: Any],
+                let linksDict = userDict["links"] as? [String: String],
+                let userUrlString = linksDict["html"] {
                 if let full = urlsDict["full"],
                     let regular = urlsDict["regular"],
                     let small = urlsDict["small"] {
                     if let fullUrl = URL(string: full),
                         let regularUrl = URL(string: regular),
-                        let smallUrl = URL(string: small) {
-                        urls.append(PhotoUrl(small: smallUrl, regular: regularUrl, large: fullUrl))
+                        let smallUrl = URL(string: small),
+                        let userlUrl = URL(string: userUrlString + "?utm_source=tridoro&utm_medium=referral") {
+                        urls.append(PhotoUrl(small: smallUrl, regular: regularUrl, large: fullUrl, userUrl: userlUrl))
                     }
                 }
             }

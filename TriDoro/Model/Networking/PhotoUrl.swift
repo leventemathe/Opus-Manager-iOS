@@ -13,4 +13,6 @@ struct PhotoUrl {
     let small: URL
     let regular: URL
     let large: URL
+    
+    let userUrl: URL
 }
