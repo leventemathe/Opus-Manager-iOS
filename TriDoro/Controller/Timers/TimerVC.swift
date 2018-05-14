@@ -33,7 +33,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
     var image: UIImage?
-    var imageURL: PhotoUrl?
+    var imageURL: Photo?
     
     var notifications: TimerNotification!    
     
@@ -91,6 +91,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         photoService.getRandomPhotoUrl { result in
             switch result {
             case .success(let url):
+                self.unslpashUserLinkButton.setText(url.user.name)
                 self.imageDownloader.downloadSmallThenLargeImageFrom(url, withCompletion: { result in
                     switch result {
                     case .success(let image):
@@ -105,7 +106,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         }
     }
     
-    private func setPhotoFromExistingUrlFromTheService(_ url: PhotoUrl) {
+    private func setPhotoFromExistingUrlFromTheService(_ url: Photo) {
         imageDownloader.downloadImageFrom(url.large, withCompletion: { result in
             switch result {
             case .success(let image):
@@ -149,8 +150,9 @@ class TimerVC: UIViewController, MyTimerDelegate {
     
     func setupUnsplashLinkButton() {
         view.addSubview(unslpashUserLinkButton)
-        
-        unslpashUserLinkButton.setText("ProbaUser")
+        if let user = imageURL?.user {
+            unslpashUserLinkButton.setText(user.name)
+        }
         unslpashUserLinkButton.translatesAutoresizingMaskIntoConstraints = false
         unslpashUserLinkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true

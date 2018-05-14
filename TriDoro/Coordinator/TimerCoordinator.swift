@@ -19,7 +19,7 @@ class TimerCoordinator<VCType: TimerVC, TimerType: MyTimer>: Coordinator {
     let time: Double
     let animated: Bool
     var image: UIImage?
-    var imageUrl: PhotoUrl?
+    var imageUrl: Photo?
     
     init(navigationAnimationDelegate: UINavigationControllerDelegate,
          navigationController: UINavigationController,
@@ -27,7 +27,7 @@ class TimerCoordinator<VCType: TimerVC, TimerType: MyTimer>: Coordinator {
          time: Double,
          animated: Bool,
          image: UIImage?,
-         imageUrl: PhotoUrl?) {
+         imageUrl: Photo?) {
         self.navigationController = navigationController
         self.navigationAnimationDelegate = navigationAnimationDelegate
         self.navigationController.delegate = self.navigationAnimationDelegate

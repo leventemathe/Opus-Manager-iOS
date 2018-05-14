@@ -1,5 +1,5 @@
 //
-//  PhotoUrl.swift
+//  Photo.swift
 //  TriDoro
 //
 //  Created by Máthé Levente on 2018. 05. 09..
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct PhotoUrl {
+struct Photo {
     
     let small: URL
     let regular: URL
     let large: URL
     
-    let userUrl: URL
+    let user: User
 }

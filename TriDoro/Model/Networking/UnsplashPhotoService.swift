@@ -64,7 +64,7 @@ struct UnsplashPhotoService: PhotoService {
         return request
     }
     
-    private func deserializeRandomUrls(_ data: Data) -> [PhotoUrl]? {
+    private func deserializeRandomUrls(_ data: Data) -> [Photo]? {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let dict = json as? [Any] {
@@ -76,22 +76,19 @@ struct UnsplashPhotoService: PhotoService {
         return nil
     }
     
-    private func getPhotoUrlsFromJsonDict(_ dict: [Any]) -> [PhotoUrl] {
-        var urls = [PhotoUrl]()
+    private func getPhotoUrlsFromJsonDict(_ dict: [Any]) -> [Photo] {
+        var urls = [Photo]()
         for photoAny in dict {
             if let photoDict = photoAny as? [String: Any],
-                let urlsDict = photoDict["urls"] as? [String: String],
-                let userDict = photoDict["user"] as? [String: Any],
-                let linksDict = userDict["links"] as? [String: String],
-                let userUrlString = linksDict["html"] {
+                let urlsDict = photoDict["urls"] as? [String: String] {
                 if let full = urlsDict["full"],
                     let regular = urlsDict["regular"],
                     let small = urlsDict["small"] {
                     if let fullUrl = URL(string: full),
                         let regularUrl = URL(string: regular),
                         let smallUrl = URL(string: small),
-                        let userlUrl = URL(string: userUrlString + "?utm_source=tridoro&utm_medium=referral") {
-                        urls.append(PhotoUrl(small: smallUrl, regular: regularUrl, large: fullUrl, userUrl: userlUrl))
+                        let user = getUserFromDict(photoDict) {
+                        urls.append(Photo(small: smallUrl, regular: regularUrl, large: fullUrl, user: user))
                     }
                 }
             }
@@ -99,14 +96,25 @@ struct UnsplashPhotoService: PhotoService {
         return urls
     }
     
-    private func deserializeRandomUrl(_ data: Data) -> PhotoUrl? {
+    private func getUserFromDict(_ dict: [String: Any]) -> User? {
+        if let userDict = dict["user"] as? [String: Any],
+           let name = userDict["name"] as? String,
+           let linksDict = userDict["links"] as? [String: String],
+           let userUrlString = linksDict["html"],
+           let url = URL(string: userUrlString + "?utm_source=tridoro&utm_medium=referral") {
+            return User(name: name, url: url)
+        }
+        return nil
+    }
+    
+    private func deserializeRandomUrl(_ data: Data) -> Photo? {
         if let urls = deserializeRandomUrls(data) {
             return urls.first
         }
         return nil
     }
     
-    private func deserializeThreeRandomUrls(_ data: Data) -> [PhotoUrl]? {
+    private func deserializeThreeRandomUrls(_ data: Data) -> [Photo]? {
         if let urls = deserializeRandomUrls(data) {
             if urls.count == 3 {
                 return urls

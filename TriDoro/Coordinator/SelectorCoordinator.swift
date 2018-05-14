@@ -58,7 +58,7 @@ class SelectorCoordinator: Coordinator {
         return currentTime - oldTime
     }
     
-    private func startWorkVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+    private func startWorkVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: Photo? = nil) {
         let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
         let workCoordinator = WorkCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
                                               navigationController: navigationController,
@@ -71,7 +71,7 @@ class SelectorCoordinator: Coordinator {
         workCoordinator.start()
     }
     
-    private func startShortBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+    private func startShortBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: Photo? = nil) {
         let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
         let shortBreakCoordinator = ShortBreakCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
                                               navigationController: navigationController,
@@ -84,7 +84,7 @@ class SelectorCoordinator: Coordinator {
         shortBreakCoordinator.start()
     }
     
-    private func startLongBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+    private func startLongBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: Photo? = nil) {
         let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
         let longBreakCoordinator = LongBreakCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
                                                           navigationController: navigationController,

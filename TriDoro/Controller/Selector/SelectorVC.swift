@@ -21,7 +21,7 @@ class SelectorVC: UIViewController, Storyboarded {
     
     weak var delegate: SelectorVCDelegate?
     
-    var images = [(UIImage, PhotoUrl)]() {
+    var images = [(UIImage, Photo)]() {
         didSet {
             setImages()
         }
@@ -64,7 +64,7 @@ class SelectorVC: UIViewController, Storyboarded {
         }
     }
     
-    private func downloadImagesFrom(urls: [PhotoUrl]) {
+    private func downloadImagesFrom(urls: [Photo]) {
         for url in urls {
             self.imageDownloader.downloadImageFrom(url.regular, withCompletion: { result in
                 switch result {
