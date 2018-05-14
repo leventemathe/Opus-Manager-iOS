@@ -40,7 +40,7 @@ class MyTimer {
     
     func start() {
         delegate?.myTimerStarted(time, timeString: string)
-        if time <= 0 {
+        if time < 0 {
             return
         }
         startTimer()

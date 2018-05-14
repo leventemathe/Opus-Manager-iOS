@@ -46,6 +46,9 @@ class SelectorCoordinator: Coordinator {
                 let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
                 let time = max(5.0 - diff, 0.0)
                 startWorkVC(5, time: time, animated: false)
+            } else if let startTimestamp = timerInProgress[String(describing: LongBreakVC.self)] {
+                let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
+                startLongBreakVC(0, time: diff, animated: false)
             }
         }
     }
@@ -79,6 +82,19 @@ class SelectorCoordinator: Coordinator {
         coordinators[String(describing: ShortBreakVC.self)] = shortBreakCoordinator
         shortBreakCoordinator.start()
     }
+    
+    private func startLongBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+        let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
+        let longBreakCoordinator = LongBreakCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
+                                                          navigationController: navigationController,
+                                                          startTime: startTime,
+                                                          time: time,
+                                                          animated: animated,
+                                                          image: image,
+                                                          imageUrl: imageUrl)
+        coordinators[String(describing: LongBreakCoordinator.self)] = longBreakCoordinator
+        longBreakCoordinator.start()
+    }
 }
 
 extension SelectorCoordinator: SelectorVCDelegate {
@@ -96,7 +112,9 @@ extension SelectorCoordinator: SelectorVCDelegate {
     }
     
     func longBreak(_ touchPoint: CGPoint) {
-        
+        let image = selectorVC.shortBreakView.imageViewWithOpacityView.image
+        let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[1] : nil
+        startLongBreakVC(0, time: 0, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
     }
 }
 

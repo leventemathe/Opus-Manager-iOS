@@ -50,6 +50,8 @@
 		D7D4F6E820A9B86F00702B58 /* ShortBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */; };
 		D7D4F6EA20A9B8A300702B58 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */; };
 		D7D4F6EC20A9BAA000702B58 /* ShortBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */; };
+		D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */; };
+		D7D4F6F020A9C32F00702B58 /* LongBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreakVC.swift; sourceTree = "<group>"; };
 		D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreakCoordinator.swift; sourceTree = "<group>"; };
+		D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakVC.swift; sourceTree = "<group>"; };
+		D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 				D78DBD1A209B9DD800D12549 /* TimerVC.swift */,
 				D78DBD08209B85B900D12549 /* WorkVC.swift */,
 				D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */,
+				D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */,
 			);
 			path = Timers;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */,
 				D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */,
 				D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */,
+				D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				D7801D7520A300A5000786B6 /* ImageViewWithOpacityView.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
 				D78DBD19209B9C4A00D12549 /* WorkCoordinator.swift in Sources */,
+				D7D4F6F020A9C32F00702B58 /* LongBreakCoordinator.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,
 				D7801D7720A315B9000786B6 /* TimerNavigationDelegate.swift in Sources */,
@@ -466,6 +473,7 @@
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
 				D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
+				D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */,
 				D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
