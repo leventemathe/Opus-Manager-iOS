@@ -43,7 +43,7 @@ class SelectorCoordinator: Coordinator {
             if let startTimestamp = timerInProgress[String(describing: WorkVC.self)] {
                 let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
                 let time = max(15.0 - diff, 0.0)
-                startWorkVC(time, animated: false)
+                startWorkVC(15, time: time, animated: false)
             }
         }
     }
@@ -52,11 +52,12 @@ class SelectorCoordinator: Coordinator {
         return currentTime - oldTime
     }
     
-    private func startWorkVC(_ startTime: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+    private func startWorkVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
         let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
         let workCoordinator = WorkCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
                                               navigationController: navigationController,
                                               startTime: startTime,
+                                              time: time,
                                               animated: animated,
                                               image: image,
                                               imageUrl: imageUrl)
@@ -70,7 +71,7 @@ extension SelectorCoordinator: SelectorVCDelegate {
     func work(_ touchPoint: CGPoint) {
         let image = selectorVC.workView.imageViewWithOpacityView.image
         let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[0] : nil
-        startWorkVC(15, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
+        startWorkVC(15, time: 15, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
     }
     
     func shortBreak(_ touchPoint: CGPoint) {

@@ -16,7 +16,8 @@ class CircleView: UIView {
     
     var percent = 1.0 {
         didSet {
-            fillLayer.strokeEnd = max(CGFloat(percent), 0.0)
+            percent = max(percent, 0.0)
+            fillLayer?.strokeEnd = CGFloat(percent)
         }
     }
     
@@ -24,7 +25,10 @@ class CircleView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        layout()
+    }
+    
+    private func layout() {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let circularPath = UIBezierPath(arcCenter: center,
                                         radius: bounds.width/2.0 - lineWidth/2.0,
@@ -58,7 +62,7 @@ class CircleView: UIView {
         fillLayer.strokeColor = UIColor.myTintColor.cgColor
         fillLayer.lineWidth = lineWidth
         fillLayer.lineCap = kCALineCapRound
-        fillLayer.strokeEnd = 1
+        fillLayer.strokeEnd = CGFloat(percent)
     }
 }
 

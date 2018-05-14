@@ -55,14 +55,27 @@ class WorkVC: TimerVC {
 
     override func myTimerStarted(_ time: Double, timeString string: String) {
         super.myTimerStarted(time, timeString: string)
+        createNotification()
+        refreshCircleView()
+    }
+    
+    private func createNotification() {
         notifications.removeAllNotifications()
         let title = NSLocalizedString("Work Done!", comment: "")
         let desc = NSLocalizedString("Time for a break.", comment: "")
         notifications.scheduleNotification(Double(timerModel.time), wihtTitle: title, withDescription: desc)
     }
     
+    private func refreshCircleView() {
+        if abs(timerModel.time) < timerModel.accuracy {
+            circleView.percent = 0
+        } else {
+            circleView.percent = timerModel.time / timerModel.startTime
+        }
+    }
+    
     override func myTimerTimeChanged(_ time: Double, timeString string: String) {
         super.myTimerTimeChanged(time, timeString: string)
-        circleView.percent = timerModel.time / timerModel.startTime
+        refreshCircleView()
     }
 }
