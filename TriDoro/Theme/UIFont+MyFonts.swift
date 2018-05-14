@@ -15,4 +15,6 @@ extension UIFont {
     
     static let myHeaderLight = UIFont(name: "Lato-Light", size: 38)!
     static let mySubheaderLight = UIFont(name: "Lato-Light", size: 24)!
+    
+    static let myRegularLight = UIFont(name: "Lato-Light", size: 16)!
 }

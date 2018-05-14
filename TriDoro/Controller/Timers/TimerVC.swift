@@ -23,6 +23,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
         return label
     }()
     
+    let unslpashUserLinkButton = UnsplashLinkButton()
+    
     weak var delegate: TimerVCDelegate?
     
     var timerModel: MyTimer!
@@ -50,6 +52,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         setupBackground()
         setupTimerLabel()
         setupDoneButton()
+        setupUnsplashLinkButton()
     }
 
     func setupBackground() {
@@ -142,6 +145,14 @@ class TimerVC: UIViewController, MyTimerDelegate {
     @objc func done() {
         timerModel.stop()
         delegate?.done()
+    }
+    
+    func setupUnsplashLinkButton() {
+        view.addSubview(unslpashUserLinkButton)
+        
+        unslpashUserLinkButton.translatesAutoresizingMaskIntoConstraints = false
+        unslpashUserLinkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
     }
     
     func myTimerTimeChanged(_ time: Double, timeString string: String) {

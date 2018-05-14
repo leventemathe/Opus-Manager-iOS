@@ -27,6 +27,7 @@ class CountdownTimerVC: TimerVC {
         setupCircleView()
         setupTimerLabel()
         setupDoneButton()
+        setupUnsplashLinkButton()
     }
     
     private func setupCircleView() {
