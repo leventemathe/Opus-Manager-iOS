@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TimerVC: UIViewController, MyTimerDelegate {
     
@@ -156,6 +157,14 @@ class TimerVC: UIViewController, MyTimerDelegate {
         unslpashUserLinkButton.translatesAutoresizingMaskIntoConstraints = false
         unslpashUserLinkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        
+        unslpashUserLinkButton.addTarget(self, action: #selector(showUserProfile), for: .touchUpInside)
+    }
+    
+    @objc private func showUserProfile() {
+        if let url = imageURL?.user.url {
+            delegate?.showUserProfile(url)
+        }
     }
     
     func myTimerTimeChanged(_ time: Double, timeString string: String) {
@@ -173,6 +182,10 @@ class TimerVC: UIViewController, MyTimerDelegate {
     
     func myTimerFinished(_ time: Double, timeString string: String) {
         timerStorage.removeTimer()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

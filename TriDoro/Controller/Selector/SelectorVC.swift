@@ -111,4 +111,8 @@ class SelectorVC: UIViewController, Storyboarded {
         let point = sender.location(in: view)
         delegate?.longBreak(point)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

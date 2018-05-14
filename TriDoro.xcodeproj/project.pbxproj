@@ -45,6 +45,7 @@
 		D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD1C209BA05B00D12549 /* TimerLabel.swift */; };
 		D79CA7EB20A9EA200066D162 /* UnslpashLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CA7EA20A9EA200066D162 /* UnslpashLinkButton.swift */; };
 		D79CA7ED20A9ECED0066D162 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CA7EC20A9ECED0066D162 /* User.swift */; };
+		D79CA7EF20AA0A310066D162 /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CA7EE20AA0A310066D162 /* UserProfileCoordinator.swift */; };
 		D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */; };
 		D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */; };
 		D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* AppCoordinator.swift */; };
@@ -113,6 +114,7 @@
 		D78DBD1C209BA05B00D12549 /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		D79CA7EA20A9EA200066D162 /* UnslpashLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnslpashLinkButton.swift; sourceTree = "<group>"; };
 		D79CA7EC20A9ECED0066D162 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D79CA7EE20AA0A310066D162 /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
 		D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F7209C540D0078F267 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */,
 				D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */,
 				D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */,
+				D79CA7EE20AA0A310066D162 /* UserProfileCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				D756EAD1209B1100007F9976 /* UnsplashPhotoService.swift in Sources */,
 				D78DBD05209B7A7700D12549 /* ImageDownloader.swift in Sources */,
 				D78DBD17209B975A00D12549 /* Storyboarded.swift in Sources */,
+				D79CA7EF20AA0A310066D162 /* UserProfileCoordinator.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
 				D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */,
 				D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */,

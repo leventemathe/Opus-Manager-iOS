@@ -6,8 +6,11 @@
 //  Copyright © 2018. Levente Máthé. All rights reserved.
 //
 
+import Foundation
+
 protocol TimerVCDelegate: class {
     
     func done()
+    func showUserProfile(_ url: URL)
 }
 
