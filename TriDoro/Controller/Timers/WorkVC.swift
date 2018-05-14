@@ -16,7 +16,12 @@ class WorkVC: TimerVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneButton.setText(NSLocalizedString("Cancel", comment: "Label text for cancel button"))
+        if abs(timerModel.time) < timerModel.accuracy {
+            doneButton.setText(NSLocalizedString("Done", comment: "Label text for done button"))
+        } else {
+            doneButton.setText(NSLocalizedString("Cancel", comment: "Label text for cancel button"))
+        }
+        
     }
     
     override func setupView() {
@@ -77,5 +82,10 @@ class WorkVC: TimerVC {
     override func myTimerTimeChanged(_ time: Double, timeString string: String) {
         super.myTimerTimeChanged(time, timeString: string)
         refreshCircleView()
+    }
+    
+    override func myTimerFinished(_ time: Double, timeString string: String) {
+        super.myTimerFinished(time, timeString: string)
+        doneButton.setText(NSLocalizedString("Done", comment: "Label text for done button"))
     }
 }

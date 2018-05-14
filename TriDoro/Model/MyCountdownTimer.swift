@@ -12,6 +12,9 @@ class MyCountdownTimer: MyTimer {
     
     override func incrementTimer(withTimeElapsed elapsed: Double) {
         time = max(0, time - elapsed)
+        if abs(time) < accuracy {
+            delegate?.myTimerFinished(time, timeString: string)
+        }
     }
     
     override var fractionalTime: Double {
