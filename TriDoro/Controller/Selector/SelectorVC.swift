@@ -17,6 +17,8 @@ class SelectorVC: UIViewController, Storyboarded {
     var photoService: PhotoService!
     var imageDownloader: ImageDownloader!
     
+    var workSessionCounter: WorkSessionCounter!
+    
     weak var delegate: SelectorVCDelegate?
     
     var images = [(UIImage, PhotoUrl)]() {
@@ -38,6 +40,17 @@ class SelectorVC: UIViewController, Storyboarded {
         downloadImages()
         setupLabels()
         setupCoordinator()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setWorkSublabelText()
+    }
+    
+    private func setWorkSublabelText() {
+        let label = NSLocalizedString("Today", comment: "The label for the number of work sessions for today")
+        let countString = String(workSessionCounter.load())
+        workView.setSublabelText(label + ": " + countString)
     }
     
     private func downloadImages() {

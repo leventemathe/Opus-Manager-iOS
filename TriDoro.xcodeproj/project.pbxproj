@@ -53,6 +53,8 @@
 		D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */; };
 		D7D4F6F020A9C32F00702B58 /* LongBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */; };
 		D7D4F6F220A9CD9F00702B58 /* SmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */; };
+		D7D4F6F420A9CF4100702B58 /* WorkSessionCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F320A9CF4100702B58 /* WorkSessionCounter.swift */; };
+		D7D4F6F620A9D13F00702B58 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F520A9D13F00702B58 /* DateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakVC.swift; sourceTree = "<group>"; };
 		D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakCoordinator.swift; sourceTree = "<group>"; };
 		D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLabel.swift; sourceTree = "<group>"; };
+		D7D4F6F320A9CF4100702B58 /* WorkSessionCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSessionCounter.swift; sourceTree = "<group>"; };
+		D7D4F6F520A9D13F00702B58 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 				D7477003209C646400F4584C /* MyTimer.swift */,
 				D7801D6720A056D9000786B6 /* MyCountdownTimer.swift */,
 				D7801D6520A050F1000786B6 /* TimerNotification.swift */,
+				D7D4F6F320A9CF4100702B58 /* WorkSessionCounter.swift */,
+				D7D4F6F520A9D13F00702B58 /* DateProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,8 +450,10 @@
 				D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */,
 				D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
+				D7D4F6F420A9CF4100702B58 /* WorkSessionCounter.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
+				D7D4F6F620A9D13F00702B58 /* DateProvider.swift in Sources */,
 				D78DBD1D209BA05B00D12549 /* TimerLabel.swift in Sources */,
 				D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */,
 				D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */,

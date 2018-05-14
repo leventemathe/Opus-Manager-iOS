@@ -32,6 +32,7 @@ class SelectorCoordinator: Coordinator {
         selectorVC = SelectorVC.instantiate()
         selectorVC.photoService = UnsplashPhotoService()
         selectorVC.imageDownloader = ImageDownloader()
+        selectorVC.workSessionCounter = WorkSessionCounter()
         selectorVC.delegate = self
         navigationController.pushViewController(selectorVC, animated: false)
     }
