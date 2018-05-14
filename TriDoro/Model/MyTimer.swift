@@ -12,6 +12,7 @@ protocol MyTimerDelegate: class {
     
     func myTimerTimeChanged(_ time: Double, timeString string: String)
     func myTimerStarted(_ time: Double, timeString string: String)
+    func myTimerStopped(_ time: Double, timeString string: String)
     func myTimerFinished(_ time: Double, timeString string: String)
 }
 
@@ -77,7 +78,7 @@ class MyTimer {
     
     func stop() {
         timer?.invalidate()
-        delegate?.myTimerFinished(time, timeString: string)
+        delegate?.myTimerStopped(time, timeString: string)
     }
 
     func pause() {

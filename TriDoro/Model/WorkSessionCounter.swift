@@ -24,11 +24,9 @@ struct WorkSessionCounter {
     func add() {
         if shouldReset {
             reset()
-            userDefaults.set(1, forKey: WORK_SESSIONS_TODAY_COUNT)
-        } else {
-            let current = userDefaults.integer(forKey: WORK_SESSIONS_TODAY_COUNT)
-            userDefaults.set(current+1, forKey: WORK_SESSIONS_TODAY_COUNT)
         }
+        let current = userDefaults.integer(forKey: WORK_SESSIONS_TODAY_COUNT)
+        userDefaults.set(current+1, forKey: WORK_SESSIONS_TODAY_COUNT)
     }
     
     private var shouldReset: Bool {

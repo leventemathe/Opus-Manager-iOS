@@ -10,9 +10,12 @@ import Foundation
 
 class MyCountdownTimer: MyTimer {
     
+    var finished = false
+    
     override func incrementTimer(withTimeElapsed elapsed: Double) {
         time = max(0, time - elapsed)
-        if abs(time) < accuracy {
+        if abs(time) < accuracy && !finished{
+            finished = true
             delegate?.myTimerFinished(time, timeString: string)
         }
     }

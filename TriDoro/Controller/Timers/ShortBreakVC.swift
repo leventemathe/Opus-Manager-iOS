@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ShortBreakVC: WorkVC {
+class ShortBreakVC: CountdownTimerVC {
     
     override var notificationTitle: String { return NSLocalizedString("Break over!", comment: "") }
     override var notificationDescription: String { return NSLocalizedString("Time for some work.", comment: "") }

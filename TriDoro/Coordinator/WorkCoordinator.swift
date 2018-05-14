@@ -9,5 +9,11 @@
 import UIKit
 
 class WorkCoordinator: TimerCoordinator<WorkVC, MyCountdownTimer> {
-    
+ 
+    override func start() {
+        super.start()
+        if let workVC = navigationController.topViewController as? WorkVC {
+            workVC.workSessionCounter = WorkSessionCounter()
+        }
+    }
 }

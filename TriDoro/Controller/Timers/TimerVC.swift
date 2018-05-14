@@ -153,6 +153,10 @@ class TimerVC: UIViewController, MyTimerDelegate {
         timerStorage.storeTimer(String(describing: type(of: self)))
     }
     
+    func myTimerStopped(_ time: Double, timeString string: String) {
+        timerStorage.removeTimer()
+    }
+    
     func myTimerFinished(_ time: Double, timeString string: String) {
         timerStorage.removeTimer()
     }
