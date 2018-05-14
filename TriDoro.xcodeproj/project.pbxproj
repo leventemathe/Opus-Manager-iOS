@@ -52,6 +52,7 @@
 		D7D4F6EC20A9BAA000702B58 /* ShortBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */; };
 		D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */; };
 		D7D4F6F020A9C32F00702B58 /* LongBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */; };
+		D7D4F6F220A9CD9F00702B58 /* SmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreakCoordinator.swift; sourceTree = "<group>"; };
 		D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakVC.swift; sourceTree = "<group>"; };
 		D7D4F6EF20A9C32F00702B58 /* LongBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakCoordinator.swift; sourceTree = "<group>"; };
+		D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				D7801D7220A2FF46000786B6 /* OpacityView.swift */,
 				D7801D7420A300A5000786B6 /* ImageViewWithOpacityView.swift */,
 				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
+				D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */,
 				D78DBD0D209B861200D12549 /* LargeButton.swift */,
 				D78DBD1C209BA05B00D12549 /* TimerLabel.swift */,
 				D7C7363220A474210030A227 /* CircleView.swift */,
@@ -458,6 +461,7 @@
 				D7801D7520A300A5000786B6 /* ImageViewWithOpacityView.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
 				D78DBD19209B9C4A00D12549 /* WorkCoordinator.swift in Sources */,
+				D7D4F6F220A9CD9F00702B58 /* SmallLabel.swift in Sources */,
 				D7D4F6F020A9C32F00702B58 /* LongBreakCoordinator.swift in Sources */,
 				D756EAD6209B12B5007F9976 /* Configuration.swift in Sources */,
 				D78DBD09209B85B900D12549 /* WorkVC.swift in Sources */,

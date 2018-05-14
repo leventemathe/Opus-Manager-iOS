@@ -69,6 +69,7 @@ class SelectorVC: UIViewController, Storyboarded {
         let shortBreakText = NSLocalizedString("Short Break", comment: "Label for short break in selector")
         let longBreakText = NSLocalizedString("Long Break", comment: "Label for long break in selector")
         workView.setLabelText(workText)
+        workView.setSublabelText("Today: 4")
         shortBreakView.setLabelText(shortBreakText)
         longBreakView.setLabelText(longBreakText)
     }

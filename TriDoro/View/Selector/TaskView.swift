@@ -13,6 +13,7 @@ class TaskView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var imageViewWithOpacityView: ImageViewWithOpacityView!
     @IBOutlet weak var label: LargeLabel!
+    @IBOutlet weak var sublabel: SmallLabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,5 +42,9 @@ class TaskView: UIView {
     
     func setImage(_ image: UIImage) {
         imageViewWithOpacityView.image = image
+    }
+    
+    func setSublabelText(_ text: String) {
+        sublabel.text = text
     }
 }
