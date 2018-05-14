@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDv-ls-Hi0" customClass="SmallLabel" customModule="TriDoro" customModuleProvider="target">
-                    <rect key="frame" x="269" y="226.5" width="0.0" height="0.0"/>
+                    <rect key="frame" x="269" y="218.5" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                 <constraint firstItem="vzO-t4-hww" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5cH-fz-yGk"/>
                 <constraint firstItem="kp3-33-zsW" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="8PQ-JN-XfZ"/>
                 <constraint firstItem="vzO-t4-hww" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="AC0-nW-pd3"/>
-                <constraint firstItem="dDv-ls-Hi0" firstAttribute="top" secondItem="vzO-t4-hww" secondAttribute="bottom" constant="16" id="EBh-CJ-weQ"/>
+                <constraint firstItem="dDv-ls-Hi0" firstAttribute="top" secondItem="vzO-t4-hww" secondAttribute="bottom" constant="8" id="EBh-CJ-weQ"/>
                 <constraint firstItem="kp3-33-zsW" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Hj5-n3-q1s"/>
                 <constraint firstItem="dDv-ls-Hi0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YEn-Ai-5kX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vzO-t4-hww" secondAttribute="trailing" constant="16" id="ap8-p8-lq8"/>
