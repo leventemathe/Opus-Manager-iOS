@@ -12,9 +12,39 @@ class WorkVC: TimerVC {
     
     var notifications: TimerNotification!
     
+    let circleView = CircleView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.setText(NSLocalizedString("Cancel", comment: "Label text for cancel button"))
+    }
+    
+    override func setupView() {
+        setupBackground()
+        setupCircleView()
+        setupTimerLabel()
+        setupDoneButton()
+    }
+    
+    private func setupCircleView() {
+        view.addSubview(circleView)
+        
+        circleView.translatesAutoresizingMaskIntoConstraints = false
+        circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        let size: CGFloat = 260
+        circleView.widthAnchor.constraint(equalToConstant: size).isActive = true
+        circleView.heightAnchor.constraint(equalToConstant: size).isActive = true
+    }
+    
+    override func setupDoneButton() {
+        view.addSubview(doneButton)
+        
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        doneButton.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 32).isActive = true
+        
+        doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
     }
     
     // The notifications are removed here, instead of myTimerFinished, because the timer may be a little faster then the notification
@@ -29,5 +59,10 @@ class WorkVC: TimerVC {
         let title = NSLocalizedString("Work Done!", comment: "")
         let desc = NSLocalizedString("Time for a break.", comment: "")
         notifications.scheduleNotification(Double(timerModel.time), wihtTitle: title, withDescription: desc)
+    }
+    
+    override func myTimerTimeChanged(_ time: Double, timeString string: String) {
+        super.myTimerTimeChanged(time, timeString: string)
+        circleView.percent = timerModel.time / timerModel.startTime
     }
 }

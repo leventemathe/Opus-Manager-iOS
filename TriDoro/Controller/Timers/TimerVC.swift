@@ -23,8 +23,6 @@ class TimerVC: UIViewController, MyTimerDelegate {
         return label
     }()
     
-    let circleView = CircleView()
-    
     weak var delegate: TimerVCDelegate?
     
     var timerModel: MyTimer!
@@ -46,14 +44,13 @@ class TimerVC: UIViewController, MyTimerDelegate {
         timerModel.start()
     }
     
-    private func setupView() {
+    func setupView() {
         setupBackground()
-        setupCircleView()
         setupTimerLabel()
         setupDoneButton()
     }
 
-    private func setupBackground() {
+    func setupBackground() {
         view.backgroundColor = UIColor.myBackgroundColor
         setupBackgrounImageView()
     }
@@ -121,18 +118,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         backgroundImageView.addMotionEffect(horizontalEffect)
     }
     
-    private func setupCircleView() {
-        view.addSubview(circleView)
-        
-        circleView.translatesAutoresizingMaskIntoConstraints = false
-        circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        circleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        let size: CGFloat = 260
-        circleView.widthAnchor.constraint(equalToConstant: size).isActive = true
-        circleView.heightAnchor.constraint(equalToConstant: size).isActive = true
-    }
-    
-    private func setupTimerLabel() {
+    func setupTimerLabel() {
         view.addSubview(timerLabel)
         
         timerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -141,12 +127,12 @@ class TimerVC: UIViewController, MyTimerDelegate {
         timerLabel.layoutIfNeeded()
     }
     
-    private func setupDoneButton() {
+    func setupDoneButton() {
         view.addSubview(doneButton)
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        doneButton.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 32).isActive = true
+        doneButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 32).isActive = true
         
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
     }
@@ -157,8 +143,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
     }
     
     func myTimerTimeChanged(_ time: Double, timeString string: String) {
-        timerLabel.text = string
-        circleView.percent = timerModel.time / timerModel.startTime
+        timerLabel.text = string        
     }
     
     func myTimerStarted(_ time: Double, timeString string: String) {
