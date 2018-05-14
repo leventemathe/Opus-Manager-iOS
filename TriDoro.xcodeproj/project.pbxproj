@@ -55,6 +55,7 @@
 		D7D4F6F220A9CD9F00702B58 /* SmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */; };
 		D7D4F6F420A9CF4100702B58 /* WorkSessionCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F320A9CF4100702B58 /* WorkSessionCounter.swift */; };
 		D7D4F6F620A9D13F00702B58 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F520A9D13F00702B58 /* DateProvider.swift */; };
+		D7D4F6F820A9D66E00702B58 /* CountdownTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F720A9D66E00702B58 /* CountdownTimerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLabel.swift; sourceTree = "<group>"; };
 		D7D4F6F320A9CF4100702B58 /* WorkSessionCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSessionCounter.swift; sourceTree = "<group>"; };
 		D7D4F6F520A9D13F00702B58 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		D7D4F6F720A9D66E00702B58 /* CountdownTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				D78DBD1A209B9DD800D12549 /* TimerVC.swift */,
+				D7D4F6F720A9D66E00702B58 /* CountdownTimerVC.swift */,
 				D78DBD08209B85B900D12549 /* WorkVC.swift */,
 				D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */,
 				D7D4F6ED20A9C30700702B58 /* LongBreakVC.swift */,
@@ -449,6 +452,7 @@
 			files = (
 				D7B299F3209C526D0078F267 /* SelectorVCDelegate.swift in Sources */,
 				D7801D6820A056D9000786B6 /* MyCountdownTimer.swift in Sources */,
+				D7D4F6F820A9D66E00702B58 /* CountdownTimerVC.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
 				D7D4F6F420A9CF4100702B58 /* WorkSessionCounter.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
