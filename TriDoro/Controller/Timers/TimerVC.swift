@@ -150,6 +150,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
     func setupUnsplashLinkButton() {
         view.addSubview(unslpashUserLinkButton)
         
+        unslpashUserLinkButton.setText("ProbaUser")
         unslpashUserLinkButton.translatesAutoresizingMaskIntoConstraints = false
         unslpashUserLinkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true

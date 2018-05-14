@@ -26,7 +26,6 @@ class UnsplashLinkButton: UIButton {
     }
     
     private func commonInit() {
-        setText("Proba link")
         setupFont()
         setupBackground()
     }
@@ -41,7 +40,8 @@ class UnsplashLinkButton: UIButton {
         backgroundColor = UIColor.clear
     }
     
-    func setText(_ text: String) {
+    func setText(_ user: String) {
+        let text = NSLocalizedString("Photo by", comment: "Photo by ...") + " " + user + ", Unsplash"
         setTitle(text, for: .normal)
         setTitle(text, for: .highlighted)
     }
