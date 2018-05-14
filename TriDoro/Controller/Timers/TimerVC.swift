@@ -33,6 +33,8 @@ class TimerVC: UIViewController, MyTimerDelegate {
     var image: UIImage?
     var imageURL: PhotoUrl?
     
+    var notifications: TimerNotification!    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupModel()

@@ -24,7 +24,7 @@ class MyTimer {
     
     weak var delegate: MyTimerDelegate?
     
-    init(startTime: Double, time: Double, accuracy: Double = 0.01) {
+    required init(startTime: Double, time: Double, accuracy: Double = 0.01) {
         self.time = max(time, 0)
         self.startTime = startTime
         self.accuracy = accuracy

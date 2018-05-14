@@ -10,8 +10,6 @@ import UIKit
 
 class WorkVC: TimerVC {
     
-    var notifications: TimerNotification!
-    
     let circleView = CircleView()
     
     override func viewDidLoad() {

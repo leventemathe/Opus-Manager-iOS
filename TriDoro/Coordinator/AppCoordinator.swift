@@ -34,8 +34,8 @@ class AppCoordinator: Coordinator {
     func continueTimerIfNeeded() {
         if let currentVC = currentVC as? TimerVC {
             if let timer = currentVC.timerStorage.loadTimer() {
-                if let workStartTimestamp = timer[String(describing: WorkVC.self)] {
-                    let diff = Date().timeIntervalSince1970 - workStartTimestamp - currentVC.timerModel.timeElapsedSinceStart
+                if let timestamp = timer.values.first {
+                    let diff = Date().timeIntervalSince1970 - timestamp - currentVC.timerModel.timeElapsedSinceStart
                     currentVC.timerModel.restart(withTimeElapsed: diff)
                 }
             }

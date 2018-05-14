@@ -10,8 +10,6 @@ import UIKit
 
 class SelectorCoordinator: Coordinator {
     
-    static let WORK_KEY = "work"
-    
     let navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
     
@@ -44,6 +42,10 @@ class SelectorCoordinator: Coordinator {
                 let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
                 let time = max(15.0 - diff, 0.0)
                 startWorkVC(15, time: time, animated: false)
+            } else if let startTimestamp = timerInProgress[String(describing: ShortBreakVC.self)] {
+                let diff = calculateDiff(startTimestamp, currentTime: Date().timeIntervalSince1970)
+                let time = max(5.0 - diff, 0.0)
+                startWorkVC(5, time: time, animated: false)
             }
         }
     }
@@ -61,8 +63,21 @@ class SelectorCoordinator: Coordinator {
                                               animated: animated,
                                               image: image,
                                               imageUrl: imageUrl)
-        coordinators[SelectorCoordinator.WORK_KEY] = workCoordinator
+        coordinators[String(describing: WorkVC.self)] = workCoordinator
         workCoordinator.start()
+    }
+    
+    private func startShortBreakVC(_ startTime: Double, time: Double, animated: Bool, touchPoint: CGPoint? = nil, image: UIImage? = nil, imageUrl: PhotoUrl? = nil) {
+        let timerNavigationDelegate = TimerNavigationDelegate(touchPoint: touchPoint ?? navigationController.view.center)
+        let shortBreakCoordinator = ShortBreakCoordinator(navigationAnimationDelegate: timerNavigationDelegate,
+                                              navigationController: navigationController,
+                                              startTime: startTime,
+                                              time: time,
+                                              animated: animated,
+                                              image: image,
+                                              imageUrl: imageUrl)
+        coordinators[String(describing: ShortBreakVC.self)] = shortBreakCoordinator
+        shortBreakCoordinator.start()
     }
 }
 
@@ -75,7 +90,9 @@ extension SelectorCoordinator: SelectorVCDelegate {
     }
     
     func shortBreak(_ touchPoint: CGPoint) {
-        
+        let image = selectorVC.shortBreakView.imageViewWithOpacityView.image
+        let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[1] : nil
+        startShortBreakVC(5, time: 5, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
     }
     
     func longBreak(_ touchPoint: CGPoint) {

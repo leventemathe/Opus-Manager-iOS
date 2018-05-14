@@ -47,6 +47,9 @@
 		D7B299F5209C532F0078F267 /* TimerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */; };
 		D7B299F8209C540D0078F267 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B299F7209C540D0078F267 /* AppCoordinator.swift */; };
 		D7C7363320A474210030A227 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7363220A474210030A227 /* CircleView.swift */; };
+		D7D4F6E820A9B86F00702B58 /* ShortBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */; };
+		D7D4F6EA20A9B8A300702B58 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */; };
+		D7D4F6EC20A9BAA000702B58 /* ShortBreakCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,9 @@
 		D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVCDelegate.swift; sourceTree = "<group>"; };
 		D7B299F7209C540D0078F267 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D7C7363220A474210030A227 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreakVC.swift; sourceTree = "<group>"; };
+		D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
+		D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreakCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +298,7 @@
 			children = (
 				D78DBD1A209B9DD800D12549 /* TimerVC.swift */,
 				D78DBD08209B85B900D12549 /* WorkVC.swift */,
+				D7D4F6E720A9B86F00702B58 /* ShortBreakVC.swift */,
 			);
 			path = Timers;
 			sourceTree = "<group>";
@@ -304,7 +311,9 @@
 				D7477001209C556500F4584C /* Coordinator.swift */,
 				D7B299F7209C540D0078F267 /* AppCoordinator.swift */,
 				D78DBD14209B940100D12549 /* SelectorCoordinator.swift */,
+				D7D4F6E920A9B8A300702B58 /* TimerCoordinator.swift */,
 				D78DBD18209B9C4A00D12549 /* WorkCoordinator.swift */,
+				D7D4F6EB20A9BAA000702B58 /* ShortBreakCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -435,8 +444,10 @@
 				D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */,
 				D7801D6620A050F1000786B6 /* TimerNotification.swift in Sources */,
 				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,
+				D7D4F6EA20A9B8A300702B58 /* TimerCoordinator.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
 				D78DBD15209B940100D12549 /* SelectorCoordinator.swift in Sources */,
+				D7D4F6EC20A9BAA000702B58 /* ShortBreakCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,
 				D7801D7520A300A5000786B6 /* ImageViewWithOpacityView.swift in Sources */,
 				D756EAD3209B1184007F9976 /* ServiceResult.swift in Sources */,
@@ -446,6 +457,7 @@
 				D7801D7720A315B9000786B6 /* TimerNavigationDelegate.swift in Sources */,
 				D701167D20A372A30094B56D /* PhotoUrl.swift in Sources */,
 				D731C4F3209A4BE300076098 /* UIColor+MyColors.swift in Sources */,
+				D7D4F6E820A9B86F00702B58 /* ShortBreakVC.swift in Sources */,
 				D7801D7320A2FF46000786B6 /* OpacityView.swift in Sources */,
 				D7C7363320A474210030A227 /* CircleView.swift in Sources */,
 				D7477002209C556500F4584C /* Coordinator.swift in Sources */,
