@@ -14,11 +14,28 @@ class CircleView: UIView {
     private var trackLayer: CAShapeLayer!
     private var fillLayer: CAShapeLayer!
     
-    var percent = 1.0 {
+    var percentVisualAdjustment = 0.04
+    
+    var percent: Double {
         didSet {
-            percent = max(percent, 0.0)
+            percent = max(min(percent, percent-percentVisualAdjustment), 0.0)
             fillLayer?.strokeEnd = CGFloat(percent)
         }
+    }
+    
+    private override init(frame: CGRect) {
+        percent = 1.0 - percentVisualAdjustment
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        percent = 1.0 - percentVisualAdjustment
+        super.init(coder: aDecoder)
+    }
+    
+    init() {
+        percent = 1.0 - percentVisualAdjustment
+        super.init(frame: CGRect.zero)
     }
     
     private let lineWidth: CGFloat = 30
