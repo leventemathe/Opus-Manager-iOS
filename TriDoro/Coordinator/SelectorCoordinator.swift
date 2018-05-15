@@ -113,8 +113,8 @@ extension SelectorCoordinator: SelectorVCDelegate {
     }
     
     func longBreak(_ touchPoint: CGPoint) {
-        let image = selectorVC.shortBreakView.imageViewWithOpacityView.image
-        let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[1] : nil
+        let image = selectorVC.longBreakView.imageViewWithOpacityView.image
+        let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[2] : nil
         startLongBreakVC(0, time: 0, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
     }
 }
