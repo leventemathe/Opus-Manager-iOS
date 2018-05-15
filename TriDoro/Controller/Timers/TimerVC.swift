@@ -92,6 +92,7 @@ class TimerVC: UIViewController, MyTimerDelegate {
         photoService.getRandomPhotoUrl { result in
             switch result {
             case .success(let url):
+                self.imageURL = url
                 self.unslpashUserLinkButton.setText(url.user.name)
                 self.imageDownloader.downloadSmallThenLargeImageFrom(url, withCompletion: { result in
                     switch result {
