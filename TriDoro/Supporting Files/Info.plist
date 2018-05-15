@@ -29,10 +29,14 @@
 	<string>LaunchScreen</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+    
+    
+    
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -40,6 +44,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>UIRequiresFullScreen~ipad</key>
+    <false/>
+    
+    
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>
