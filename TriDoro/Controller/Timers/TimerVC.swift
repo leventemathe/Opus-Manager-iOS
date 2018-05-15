@@ -157,7 +157,11 @@ class TimerVC: UIViewController, MyTimerDelegate {
         }
         unslpashUserLinkButton.translatesAutoresizingMaskIntoConstraints = false
         unslpashUserLinkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        if #available(iOS 11.0, *) {
+            unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8).isActive = true
+        } else {
+            unslpashUserLinkButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        }
         
         unslpashUserLinkButton.addTarget(self, action: #selector(showUserProfile), for: .touchUpInside)
     }
