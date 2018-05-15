@@ -213,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
-				D7801D7120A1F211000786B6 /* New Group */,
 				D71E6AEF209A1ADA003647B7 /* Info.plist */,
 				D756EAD5209B12B5007F9976 /* Configuration.swift */,
 			);
@@ -290,13 +289,6 @@
 				D7C7363220A474210030A227 /* CircleView.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		D7801D7120A1F211000786B6 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D7801D7820A3184D000786B6 /* Animation */ = {

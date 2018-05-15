@@ -38,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         if !applicationIsFreshlyLaucnhed {
+            if let selectorVC = coordinator?.currentVC as? SelectorVC {
+                selectorVC.refreshWorkCount()
+            }
             coordinator?.continueTimerIfNeeded()
         }
         applicationIsFreshlyLaucnhed = false

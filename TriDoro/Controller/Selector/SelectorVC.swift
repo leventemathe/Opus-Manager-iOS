@@ -44,10 +44,10 @@ class SelectorVC: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setWorkSublabelText()
+        refreshWorkCount()
     }
     
-    private func setWorkSublabelText() {
+    func refreshWorkCount() {
         let label = NSLocalizedString("Today", comment: "The label for the number of work sessions for today")
         let countString = String(workSessionCounter.load())
         workView.setSublabelText(label + ": " + countString)
