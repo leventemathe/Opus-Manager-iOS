@@ -32,7 +32,7 @@ struct WorkSessionCounter {
     private var shouldReset: Bool {
         let currentTimestamp = userDefaults.double(forKey: WORK_SESSIONS_TODAY_DATE)
         if currentTimestamp == 0 {
-            return false
+            return true
         }
         return dateProvider.isDateYesterday(Date(timeIntervalSince1970: currentTimestamp))
     }

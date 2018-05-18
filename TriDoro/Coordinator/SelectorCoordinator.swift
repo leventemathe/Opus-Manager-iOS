@@ -17,8 +17,8 @@ class SelectorCoordinator: Coordinator {
     
     var selectorVC: SelectorVC!
     
-    var workTime = 25.0*60.0
-    var shortBreakTime = 5.0*60.0
+    var workTime = 10.0//25.0*60.0
+    var shortBreakTime = 5.0//5.0*60.0
     
     init(navigationController: UINavigationController, userDefaults: UserDefaults = UserDefaults.standard) {
         self.navigationController = navigationController
