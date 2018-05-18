@@ -30,7 +30,7 @@ class TimerNotification: NSObject, UNUserNotificationCenterDelegate {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = desc
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound(named: "chime.aiff")
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         

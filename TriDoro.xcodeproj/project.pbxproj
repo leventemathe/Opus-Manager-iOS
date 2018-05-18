@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D701167D20A372A30094B56D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701167C20A372A30094B56D /* Photo.swift */; };
+		D702A18A20AEE411000363F6 /* chime.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D702A18920AEE411000363F6 /* chime.aiff */; };
 		D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */; };
 		D71E6AE9209A1AD8003647B7 /* SelectorVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AE7209A1AD8003647B7 /* SelectorVC.storyboard */; };
 		D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71E6AEA209A1ADA003647B7 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		D701167C20A372A30094B56D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D702A18920AEE411000363F6 /* chime.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = chime.aiff; sourceTree = "<group>"; };
 		D71E6AE0209A1AD8003647B7 /* TriDoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriDoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D71E6AE8209A1AD8003647B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectorVC.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				D71E6B0C209A1D92003647B7 /* Lato-Bold.ttf */,
 				D71E6B0D209A1D92003647B7 /* Lato-Light.ttf */,
 				D71E6B0B209A1D92003647B7 /* SIL Open Font License.txt */,
+				D702A18920AEE411000363F6 /* chime.aiff */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			files = (
 				D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */,
 				D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */,
+				D702A18A20AEE411000363F6 /* chime.aiff in Resources */,
 				D731C4EB209A3DDA00076098 /* TaskView.xib in Resources */,
 				D7B396AC20AB34E7001608AA /* Localizable.strings in Resources */,
 				D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */,
