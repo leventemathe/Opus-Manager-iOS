@@ -14,12 +14,17 @@ class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var coordinators = [String: Coordinator]()
+    
 
-    init(navigationController: UINavigationController) {
+    init(onboardingDecider: OnboardingDecider = OnboardingDecider(), navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
+        presentSelector()
+    }
+    
+    private func presentSelector() {
         let selectorCoordinator = SelectorCoordinator(navigationController: navigationController)
         coordinators[AppCoordinator.SELECTOR_KEY] = selectorCoordinator
         selectorCoordinator.start()

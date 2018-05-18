@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding OverviewVC-->
+        <scene sceneID="ihP-9h-e3f">
+            <objects>
+                <viewController restorationIdentifier="OnboardingOverviewVC" storyboardIdentifier="OnboardingOverviewVC" id="CAN-z6-uKE" customClass="OnboardingOverviewVC" customModule="Opus_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Sa-Ah-H5o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-GN-t6j" customClass="MediumLabel" customModule="Opus_Manager" customModuleProvider="target">
+                                <rect key="frame" x="8" y="284.5" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get things done with the Work, Short Break, and Long Break timers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMb-KM-MUz" customClass="SmallLabel" customModule="Opus_Manager" customModuleProvider="target">
+                                <rect key="frame" x="8" y="313" width="359" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pMb-KM-MUz" firstAttribute="centerY" secondItem="6Sa-Ah-H5o" secondAttribute="centerY" id="1KB-h9-fdS"/>
+                            <constraint firstItem="pMb-KM-MUz" firstAttribute="top" secondItem="gxa-GN-t6j" secondAttribute="bottom" constant="8" id="Rdy-ms-iZc"/>
+                            <constraint firstAttribute="trailing" secondItem="pMb-KM-MUz" secondAttribute="trailing" constant="8" id="cDb-gE-aH1"/>
+                            <constraint firstItem="Kcs-S0-hFh" firstAttribute="trailing" secondItem="gxa-GN-t6j" secondAttribute="trailing" constant="8" id="tvV-WL-b6i"/>
+                            <constraint firstItem="gxa-GN-t6j" firstAttribute="leading" secondItem="Kcs-S0-hFh" secondAttribute="leading" constant="8" id="vgY-hm-S7w"/>
+                            <constraint firstItem="pMb-KM-MUz" firstAttribute="leading" secondItem="6Sa-Ah-H5o" secondAttribute="leading" constant="8" id="wKo-wO-nin"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kcs-S0-hFh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqR-fu-G1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="-79"/>
+        </scene>
+    </scenes>
+</document>

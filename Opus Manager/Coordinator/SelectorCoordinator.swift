@@ -8,10 +8,35 @@
 
 import UIKit
 
+struct OnboardingDecider {
+    
+    private let KEY = "should_not_present_onboarding"
+    
+    let userDefaults: UserDefaults
+    
+    init(userDefaults: UserDefaults = UserDefaults()) {
+        self.userDefaults = userDefaults
+    }
+    
+    var shouldPresentOnboarding: Bool {
+        return !userDefaults.bool(forKey: KEY)
+    }
+    
+    func turnOnOnboarding() {
+        userDefaults.set(false, forKey: KEY)
+    }
+    
+    func turnOffOnboarding() {
+        userDefaults.set(true, forKey: KEY)
+    }
+}
+
 class SelectorCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     var coordinators = [String : Coordinator]()
+    
+    let onboardingDecider: OnboardingDecider
     
     let userDefaults: UserDefaults
     
@@ -20,24 +45,45 @@ class SelectorCoordinator: Coordinator {
     var workTime = 10.0//25.0*60.0
     var shortBreakTime = 5.0//5.0*60.0
     
-    init(navigationController: UINavigationController, userDefaults: UserDefaults = UserDefaults.standard) {
+    init(navigationController: UINavigationController,
+         onboardingDecider: OnboardingDecider = OnboardingDecider(),
+         userDefaults: UserDefaults = UserDefaults.standard) {
         self.navigationController = navigationController
+        self.onboardingDecider = onboardingDecider
         self.userDefaults = userDefaults
     }
     
     func start() {
-        startSelectorVC()
+        navigationController.isNavigationBarHidden = true
+        if onboardingDecider.shouldPresentOnboarding {
+            startOnboarding()
+        } else {
+            startSelectorVC(false)
+        }
         startTimerVCIfNeeded()
     }
     
-    private func startSelectorVC() {
-        navigationController.isNavigationBarHidden = true
+    private func startOnboarding() {
+        let onboardingVC = OnboardingVC.instantiate()
+        onboardingVC.delegate = self
+        navigationController.pushViewController(onboardingVC, animated: false)
+    }
+    
+    private func startSelectorVC(_ animated: Bool) {
         selectorVC = SelectorVC.instantiate()
         selectorVC.photoService = UnsplashPhotoService()
         selectorVC.imageDownloader = ImageDownloader()
         selectorVC.workSessionCounter = WorkSessionCounter()
         selectorVC.delegate = self
-        navigationController.pushViewController(selectorVC, animated: false)
+        navigationController.pushViewController(selectorVC, animated: animated)
+    }
+    
+    private func presentOnboardingIfNeeded() {
+        if onboardingDecider.shouldPresentOnboarding {
+            let onboardingVC = OnboardingVC.instantiate()
+            onboardingVC.modalPresentationStyle = .overFullScreen
+            navigationController.present(onboardingVC, animated: true, completion: nil)
+        }
     }
     
     private func startTimerVCIfNeeded() {
@@ -119,6 +165,14 @@ extension SelectorCoordinator: SelectorVCDelegate {
         let image = selectorVC.longBreakView.imageViewWithOpacityView.image
         let imageUrl = selectorVC.images.count == 3 ? (selectorVC.images.map { $0.1 })[2] : nil
         startLongBreakVC(0, time: 0, animated: true, touchPoint: touchPoint, image: image, imageUrl: imageUrl)
+    }
+}
+
+extension SelectorCoordinator: OnboardingVCDelegate {
+    
+    func done() {
+        navigationController.popViewController(animated: false)
+        startSelectorVC(true)
     }
 }
 
