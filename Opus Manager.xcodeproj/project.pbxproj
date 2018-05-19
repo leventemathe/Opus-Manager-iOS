@@ -64,7 +64,7 @@
 		D7D4F6F620A9D13F00702B58 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F520A9D13F00702B58 /* DateProvider.swift */; };
 		D7D4F6F820A9D66E00702B58 /* CountdownTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D4F6F720A9D66E00702B58 /* CountdownTimerVC.swift */; };
 		D7F664CF20AF116600E09441 /* OnboardingOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664CE20AF116600E09441 /* OnboardingOverviewVC.swift */; };
-		D7F664D120AF1DF600E09441 /* MediumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D020AF1DF600E09441 /* MediumLabel.swift */; };
+		D7F664D120AF1DF600E09441 /* OnboardingTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D020AF1DF600E09441 /* OnboardingTextLabel.swift */; };
 		D7F664D320AF211E00E09441 /* OnboardingWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D220AF211E00E09441 /* OnboardingWorkVC.swift */; };
 		D7F664D520AF237300E09441 /* OnboardingVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D420AF237300E09441 /* OnboardingVCDelegate.swift */; };
 		D7F664D720AF271400E09441 /* OnboardingShortBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D620AF271400E09441 /* OnboardingShortBreakVC.swift */; };
@@ -76,6 +76,7 @@
 		D7F664F520B0575500E09441 /* OnboardingShortBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664F720B0575500E09441 /* OnboardingShortBreakVC.storyboard */; };
 		D7F664FC20B0576100E09441 /* OnboardingLongBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664FE20B0576100E09441 /* OnboardingLongBreakVC.storyboard */; };
 		D7F6650520B059F200E09441 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F6650320B059F200E09441 /* InfoPlist.strings */; };
+		D7F6650820B05D0100E09441 /* OnboardingTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F6650720B05D0000E09441 /* OnboardingTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,7 +156,7 @@
 		D7D4F6F520A9D13F00702B58 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		D7D4F6F720A9D66E00702B58 /* CountdownTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerVC.swift; sourceTree = "<group>"; };
 		D7F664CE20AF116600E09441 /* OnboardingOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOverviewVC.swift; sourceTree = "<group>"; };
-		D7F664D020AF1DF600E09441 /* MediumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumLabel.swift; sourceTree = "<group>"; };
+		D7F664D020AF1DF600E09441 /* OnboardingTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextLabel.swift; sourceTree = "<group>"; };
 		D7F664D220AF211E00E09441 /* OnboardingWorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWorkVC.swift; sourceTree = "<group>"; };
 		D7F664D420AF237300E09441 /* OnboardingVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVCDelegate.swift; sourceTree = "<group>"; };
 		D7F664D620AF271400E09441 /* OnboardingShortBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingShortBreakVC.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		D7F6650020B0576300E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingLongBreakVC.strings; sourceTree = "<group>"; };
 		D7F6650220B0576400E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingLongBreakVC.strings; sourceTree = "<group>"; };
 		D7F6650420B059F200E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7F6650720B05D0000E09441 /* OnboardingTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				D77DABCC209A34FD003D02AC /* Common */,
+				D7F6650620B05CAE00E09441 /* Onboarding */,
 				D78DBD06209B854900D12549 /* Selector */,
 				D71E6AEC209A1ADA003647B7 /* LaunchScreen.storyboard */,
 			);
@@ -354,7 +357,6 @@
 				D7801D7420A300A5000786B6 /* ImageViewWithOpacityView.swift */,
 				D79CA7EA20A9EA200066D162 /* UnslpashLinkButton.swift */,
 				D731C4EE209A4AC700076098 /* LargeLabel.swift */,
-				D7F664D020AF1DF600E09441 /* MediumLabel.swift */,
 				D7D4F6F120A9CD9F00702B58 /* SmallLabel.swift */,
 				D78DBD0D209B861200D12549 /* LargeButton.swift */,
 				D78DBD1C209BA05B00D12549 /* TimerLabel.swift */,
@@ -418,6 +420,15 @@
 				D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D7F6650620B05CAE00E09441 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D7F664D020AF1DF600E09441 /* OnboardingTextLabel.swift */,
+				D7F6650720B05D0000E09441 /* OnboardingTitleLabel.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +552,7 @@
 				D7F664D920AF272F00E09441 /* OnboardingLongBreakVC.swift in Sources */,
 				D7D4F6F820A9D66E00702B58 /* CountdownTimerVC.swift in Sources */,
 				D731C4F1209A4B4B00076098 /* UIFont+MyFonts.swift in Sources */,
+				D7F6650820B05D0100E09441 /* OnboardingTitleLabel.swift in Sources */,
 				D7D4F6F420A9CF4100702B58 /* WorkSessionCounter.swift in Sources */,
 				D756EAD8209B1840007F9976 /* ServiceErrorHandler.swift in Sources */,
 				D731C4ED209A3EA100076098 /* TaskView.swift in Sources */,
@@ -585,7 +597,7 @@
 				D79CA7EF20AA0A310066D162 /* UserProfileCoordinator.swift in Sources */,
 				D756EACF209B10E4007F9976 /* PhotoService.swift in Sources */,
 				D7D4F6EE20A9C30700702B58 /* LongBreakVC.swift in Sources */,
-				D7F664D120AF1DF600E09441 /* MediumLabel.swift in Sources */,
+				D7F664D120AF1DF600E09441 /* OnboardingTextLabel.swift in Sources */,
 				D7801D6A20A0A08D000786B6 /* MyTimerStorage.swift in Sources */,
 				D79CA7ED20A9ECED0066D162 /* User.swift in Sources */,
 			);

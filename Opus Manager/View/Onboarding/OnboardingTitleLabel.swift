@@ -1,14 +1,14 @@
 //
-//  MediumLabel.swift
+//  OnboardingTitleLabel.swift
 //  Opus Manager
 //
-//  Created by Máthé Levente on 2018. 05. 18..
+//  Created by Máthé Levente on 2018. 05. 19..
 //  Copyright © 2018. Levente Máthé. All rights reserved.
 //
 
 import UIKit
 
-class MediumLabel: UILabel {
+class OnboardingTitleLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +26,14 @@ class MediumLabel: UILabel {
     }
     
     private func commonInit() {
-        font = UIFont.mySubheaderBold
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            font = UIFont.mySubheaderLight
+        case .pad:
+            font = UIFont.myHeaderLight
+        default:
+            font = UIFont.mySubheaderBold
+        }
         textColor = UIColor.myTintColor
     }
 }
