@@ -28,9 +28,9 @@ class OnboardingTitleLabel: UILabel {
     private func commonInit() {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
-            font = UIFont.mySubheaderLight
+            font = UIFont.mySubheaderBold
         case .pad:
-            font = UIFont.myHeaderLight
+            font = UIFont.myHeaderBold
         default:
             font = UIFont.mySubheaderBold
         }

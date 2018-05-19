@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,38 +15,43 @@
             <objects>
                 <viewController restorationIdentifier="OnboardingVC" storyboardIdentifier="OnboardingVC" id="Cut-31-I32" customClass="OnboardingVC" customModule="Opus_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hta-HH-BhD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9f-2v-waH" customClass="ImageViewWithOpacityView" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8hN-5v-cll">
-                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <rect key="frame" x="8" y="45.5" width="304" height="477"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-tR-qX5">
-                                        <rect key="frame" x="29" y="0.0" width="301" height="233"/>
+                                        <rect key="frame" x="1.5" y="0.0" width="301" height="233"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="301" id="Ngw-41-TCZ"/>
                                             <constraint firstAttribute="height" constant="233" id="xib-5f-qiv"/>
                                         </constraints>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jJ-oR-Pvc">
-                                        <rect key="frame" x="0.0" y="241" width="359" height="256"/>
+                                        <rect key="frame" x="0.0" y="241" width="304" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="1MY-Xi-q0X">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="220"/>
+                                            </constraint>
+                                        </constraints>
                                         <connections>
                                             <segue destination="FJs-hU-mVT" kind="embed" id="y8m-SE-Kc2"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvI-Rc-UEF" customClass="LargeButton" customModule="Opus_Manager" customModuleProvider="target">
-                                        <rect key="frame" x="162.5" y="505" width="34" height="88"/>
+                                        <rect key="frame" x="135" y="409" width="34" height="30"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="doneButtonTapped:" destination="Cut-31-I32" eventType="touchUpInside" id="SLV-wy-Xr4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7c-et-Lgd" customClass="UnsplashLinkButton" customModule="Opus_Manager" customModuleProvider="target">
-                                        <rect key="frame" x="164.5" y="601" width="30" height="30"/>
+                                        <rect key="frame" x="137" y="447" width="30" height="30"/>
                                         <connections>
                                             <action selector="unsplashUserLinkButtonTapped:" destination="Cut-31-I32" eventType="touchUpInside" id="Bm1-U3-Sie"/>
                                         </connections>
@@ -55,22 +60,18 @@
                                 <constraints>
                                     <constraint firstItem="0jJ-oR-Pvc" firstAttribute="width" secondItem="8hN-5v-cll" secondAttribute="width" id="k4m-UP-Drw"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="32"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="A9f-2v-waH" secondAttribute="bottom" id="0dn-9V-BVL"/>
-                            <constraint firstItem="8hN-5v-cll" firstAttribute="top" secondItem="xNo-TK-BVN" secondAttribute="top" constant="8" id="AWU-tw-xyx">
-                                <variation key="heightClass=regular-widthClass=regular" constant="64"/>
-                            </constraint>
                             <constraint firstItem="A9f-2v-waH" firstAttribute="top" secondItem="Hta-HH-BhD" secondAttribute="top" id="b9L-3A-9LD"/>
                             <constraint firstItem="8hN-5v-cll" firstAttribute="leading" secondItem="xNo-TK-BVN" secondAttribute="leading" constant="8" id="e94-8T-JDa"/>
+                            <constraint firstItem="8hN-5v-cll" firstAttribute="centerY" secondItem="Hta-HH-BhD" secondAttribute="centerY" id="ef2-om-EXV"/>
                             <constraint firstAttribute="trailing" secondItem="A9f-2v-waH" secondAttribute="trailing" id="foI-5n-m8J"/>
                             <constraint firstItem="A9f-2v-waH" firstAttribute="leading" secondItem="Hta-HH-BhD" secondAttribute="leading" id="fqk-eD-dBj"/>
                             <constraint firstItem="xNo-TK-BVN" firstAttribute="trailing" secondItem="8hN-5v-cll" secondAttribute="trailing" constant="8" id="jg1-Ir-qXV"/>
-                            <constraint firstItem="xNo-TK-BVN" firstAttribute="bottom" secondItem="8hN-5v-cll" secondAttribute="bottom" constant="8" id="weg-Nr-e32">
-                                <variation key="heightClass=regular-widthClass=regular" constant="64"/>
-                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xNo-TK-BVN"/>
                     </view>

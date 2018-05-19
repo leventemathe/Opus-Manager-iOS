@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Break" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsm-EZ-kia" customClass="OnboardingTitleLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="274.5" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="294.5" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After a couple of work sessions, instead of a short break, have a long one. This can be as long as you need." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ9-LE-9RS" customClass="OnboardingTextLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="303" width="359" height="61"/>
+                                <rect key="frame" x="8" y="323" width="359" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                             <constraint firstItem="Vsm-EZ-kia" firstAttribute="leading" secondItem="tiN-0g-FQR" secondAttribute="leading" constant="8" id="lnx-tg-Ev8"/>
                             <constraint firstItem="tiN-0g-FQR" firstAttribute="trailing" secondItem="Vsm-EZ-kia" secondAttribute="trailing" constant="8" id="pnS-xt-dvW"/>
                             <constraint firstAttribute="trailing" secondItem="sJ9-LE-9RS" secondAttribute="trailing" constant="8" id="uTe-Y1-HQy"/>
-                            <constraint firstItem="sJ9-LE-9RS" firstAttribute="centerY" secondItem="qQH-6i-JlC" secondAttribute="centerY" id="wHO-CA-R84"/>
+                            <constraint firstItem="sJ9-LE-9RS" firstAttribute="centerY" secondItem="qQH-6i-JlC" secondAttribute="centerY" constant="20" id="wHO-CA-R84"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tiN-0g-FQR"/>
                     </view>

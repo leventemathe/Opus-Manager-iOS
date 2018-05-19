@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRM-gQ-1d6" customClass="OnboardingTitleLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="274.5" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="294.5" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start working, and focus with the Work timer. Try to work through as many sessions as you can every day. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv3-ZY-L4S" customClass="OnboardingTextLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="303" width="359" height="61"/>
+                                <rect key="frame" x="8" y="323" width="359" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kv3-ZY-L4S" firstAttribute="leading" secondItem="cDq-6p-TK7" secondAttribute="leading" constant="8" id="54o-PN-ocQ"/>
-                            <constraint firstItem="kv3-ZY-L4S" firstAttribute="centerY" secondItem="cDq-6p-TK7" secondAttribute="centerY" id="8cL-H5-E1d"/>
+                            <constraint firstItem="kv3-ZY-L4S" firstAttribute="centerY" secondItem="cDq-6p-TK7" secondAttribute="centerY" constant="20" id="8cL-H5-E1d"/>
                             <constraint firstAttribute="trailing" secondItem="kv3-ZY-L4S" secondAttribute="trailing" constant="8" id="hcx-Do-i94"/>
                             <constraint firstItem="U3V-nT-uqP" firstAttribute="trailing" secondItem="BRM-gQ-1d6" secondAttribute="trailing" constant="8" id="v7E-ii-Zcc"/>
                             <constraint firstItem="kv3-ZY-L4S" firstAttribute="top" secondItem="BRM-gQ-1d6" secondAttribute="bottom" constant="8" id="x3V-fd-5kL"/>

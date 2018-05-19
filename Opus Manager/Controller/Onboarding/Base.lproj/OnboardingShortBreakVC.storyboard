@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Break" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94G-X2-hq9" customClass="OnboardingTitleLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="284.5" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="304.5" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After every work session, have a short break. This will help you focus again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-qO-JRt" customClass="OnboardingTextLabel" customModule="Opus_Manager" customModuleProvider="target">
-                                <rect key="frame" x="8" y="313" width="359" height="41"/>
+                                <rect key="frame" x="8" y="333" width="359" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                             <constraint firstAttribute="trailing" secondItem="dgK-qO-JRt" secondAttribute="trailing" constant="8" id="Mai-Li-HwE"/>
                             <constraint firstItem="sZv-bN-1hx" firstAttribute="trailing" secondItem="94G-X2-hq9" secondAttribute="trailing" constant="8" id="cGs-1A-sjw"/>
                             <constraint firstItem="94G-X2-hq9" firstAttribute="leading" secondItem="sZv-bN-1hx" secondAttribute="leading" constant="8" id="fQz-Tn-hS4"/>
-                            <constraint firstItem="dgK-qO-JRt" firstAttribute="centerY" secondItem="J9Q-u5-e8s" secondAttribute="centerY" id="hLG-BR-Oi2"/>
+                            <constraint firstItem="dgK-qO-JRt" firstAttribute="centerY" secondItem="J9Q-u5-e8s" secondAttribute="centerY" constant="20" id="hLG-BR-Oi2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sZv-bN-1hx"/>
                     </view>

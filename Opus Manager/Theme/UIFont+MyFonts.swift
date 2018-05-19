@@ -14,10 +14,11 @@ extension UIFont {
     static let myDisplayLight = UIFont(name: "Lato-Light", size: 72)!
     
     static let myHeaderLight = UIFont(name: "Lato-Light", size: 38)!
+    static let myHeaderBold = UIFont(name: "Lato-Bold", size: 38)!
     
     static let mySubheaderBold = UIFont(name: "Lato-Bold", size: 24)!
     static let mySubheaderLight = UIFont(name: "Lato-Light", size: 24)!
     
-    static let myRegularBold = UIFont(name: "Lato-Light", size: 16)!
+    static let myRegularBold = UIFont(name: "Lato-Bold", size: 16)!
     static let myRegularLight = UIFont(name: "Lato-Light", size: 16)!
 }
