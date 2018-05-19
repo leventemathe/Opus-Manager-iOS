@@ -55,6 +55,7 @@ class SelectorCoordinator: Coordinator {
     
     func start() {
         navigationController.isNavigationBarHidden = true
+        onboardingDecider.turnOnOnboarding()
         if onboardingDecider.shouldPresentOnboarding {
             startOnboarding()
         } else {
@@ -66,6 +67,9 @@ class SelectorCoordinator: Coordinator {
     private func startOnboarding() {
         let onboardingVC = OnboardingVC.instantiate()
         onboardingVC.delegate = self
+        onboardingVC.photoService = UnsplashPhotoService()
+        onboardingVC.imageDownloader = ImageDownloader()
+        onboardingDecider.turnOffOnboarding()
         navigationController.pushViewController(onboardingVC, animated: false)
     }
     
@@ -76,14 +80,6 @@ class SelectorCoordinator: Coordinator {
         selectorVC.workSessionCounter = WorkSessionCounter()
         selectorVC.delegate = self
         navigationController.pushViewController(selectorVC, animated: animated)
-    }
-    
-    private func presentOnboardingIfNeeded() {
-        if onboardingDecider.shouldPresentOnboarding {
-            let onboardingVC = OnboardingVC.instantiate()
-            onboardingVC.modalPresentationStyle = .overFullScreen
-            navigationController.present(onboardingVC, animated: true, completion: nil)
-        }
     }
     
     private func startTimerVCIfNeeded() {

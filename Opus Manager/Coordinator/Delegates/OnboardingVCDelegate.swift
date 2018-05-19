@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol OnboardingVCDelegate: class {
+protocol OnboardingVCDelegate: UserProfileVCDelegate {
     
     func done()
 }

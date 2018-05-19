@@ -57,10 +57,4 @@ extension TimerCoordinator: TimerVCDelegate {
     func done() {
         navigationController.popViewController(animated: true)
     }
-    
-    func showUserProfile(_ url: URL) {
-        let userProfileCoordinator = UserProfileCoordinator(navigationController: navigationController, url: url)
-        coordinators[String(describing: UserProfileCoordinator.self)] = userProfileCoordinator
-        userProfileCoordinator.start()
-    }
 }

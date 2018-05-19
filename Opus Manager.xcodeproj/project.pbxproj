@@ -74,6 +74,7 @@
 		D7F664D920AF272F00E09441 /* OnboardingLongBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D820AF272F00E09441 /* OnboardingLongBreakVC.swift */; };
 		D7F664DB20AF274C00E09441 /* OnboardingShortBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664DA20AF274C00E09441 /* OnboardingShortBreakVC.storyboard */; };
 		D7F664DD20AF279C00E09441 /* OnboardingLongBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664DC20AF279C00E09441 /* OnboardingLongBreakVC.storyboard */; };
+		D7F664DF20B04FC300E09441 /* UserProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664DE20B04FC300E09441 /* UserProfileVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		D7F664D820AF272F00E09441 /* OnboardingLongBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLongBreakVC.swift; sourceTree = "<group>"; };
 		D7F664DA20AF274C00E09441 /* OnboardingShortBreakVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingShortBreakVC.storyboard; sourceTree = "<group>"; };
 		D7F664DC20AF279C00E09441 /* OnboardingLongBreakVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingLongBreakVC.storyboard; sourceTree = "<group>"; };
+		D7F664DE20B04FC300E09441 /* UserProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +401,7 @@
 			children = (
 				D7B299F2209C526D0078F267 /* SelectorVCDelegate.swift */,
 				D7F664D420AF237300E09441 /* OnboardingVCDelegate.swift */,
+				D7F664DE20B04FC300E09441 /* UserProfileVCDelegate.swift */,
 				D7B299F4209C532F0078F267 /* TimerVCDelegate.swift */,
 			);
 			path = Delegates;
@@ -537,6 +540,7 @@
 				D78DBD1B209B9DD800D12549 /* TimerVC.swift in Sources */,
 				D7D4F6EA20A9B8A300702B58 /* TimerCoordinator.swift in Sources */,
 				D731C4EF209A4AC700076098 /* LargeLabel.swift in Sources */,
+				D7F664DF20B04FC300E09441 /* UserProfileVCDelegate.swift in Sources */,
 				D78DBD15209B940100D12549 /* SelectorCoordinator.swift in Sources */,
 				D7D4F6EC20A9BAA000702B58 /* ShortBreakCoordinator.swift in Sources */,
 				D71E6B0A209A1C19003647B7 /* SelectorVC.swift in Sources */,

@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: class {
  
     var navigationController: UINavigationController { get }
-    var coordinators: [String: Coordinator] { get }
+    var coordinators: [String: Coordinator] { get set }
     var currentVC: UIViewController? { get }
     
     func start()

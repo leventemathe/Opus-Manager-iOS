@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol TimerVCDelegate: class {
+protocol TimerVCDelegate: UserProfileVCDelegate {
     
-    func done()
-    func showUserProfile(_ url: URL)
+    func done()    
 }
 

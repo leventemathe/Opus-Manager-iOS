@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-struct UserProfileCoordinator: Coordinator {
+class UserProfileCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     var coordinators = [String: Coordinator]()
