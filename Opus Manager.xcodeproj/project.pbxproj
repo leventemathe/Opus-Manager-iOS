@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		D701167D20A372A30094B56D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701167C20A372A30094B56D /* Photo.swift */; };
 		D711FADB20AF0A5A0012D86D /* chime.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D711FADA20AF0A590012D86D /* chime.aiff */; };
-		D711FADE20AF0CA90012D86D /* OnboardingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711FADD20AF0CA90012D86D /* OnboardingVC.storyboard */; };
-		D711FAE020AF0E640012D86D /* OnboardingOverviewVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711FADF20AF0E640012D86D /* OnboardingOverviewVC.storyboard */; };
-		D711FAE220AF0F490012D86D /* OnboardingWorkVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D711FAE120AF0F490012D86D /* OnboardingWorkVC.storyboard */; };
 		D711FAE420AF0FC50012D86D /* OnboardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711FAE320AF0FC50012D86D /* OnboardingPageVC.swift */; };
 		D711FAE620AF10360012D86D /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D711FAE520AF10360012D86D /* OnboardingVC.swift */; };
 		D71E6AE4209A1AD8003647B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */; };
@@ -72,9 +69,13 @@
 		D7F664D520AF237300E09441 /* OnboardingVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D420AF237300E09441 /* OnboardingVCDelegate.swift */; };
 		D7F664D720AF271400E09441 /* OnboardingShortBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D620AF271400E09441 /* OnboardingShortBreakVC.swift */; };
 		D7F664D920AF272F00E09441 /* OnboardingLongBreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664D820AF272F00E09441 /* OnboardingLongBreakVC.swift */; };
-		D7F664DB20AF274C00E09441 /* OnboardingShortBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664DA20AF274C00E09441 /* OnboardingShortBreakVC.storyboard */; };
-		D7F664DD20AF279C00E09441 /* OnboardingLongBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664DC20AF279C00E09441 /* OnboardingLongBreakVC.storyboard */; };
 		D7F664DF20B04FC300E09441 /* UserProfileVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F664DE20B04FC300E09441 /* UserProfileVCDelegate.swift */; };
+		D7F664E020B0570100E09441 /* OnboardingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664E220B0570100E09441 /* OnboardingVC.storyboard */; };
+		D7F664E720B0573700E09441 /* OnboardingOverviewVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664E920B0573700E09441 /* OnboardingOverviewVC.storyboard */; };
+		D7F664EE20B0574600E09441 /* OnboardingWorkVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664F020B0574600E09441 /* OnboardingWorkVC.storyboard */; };
+		D7F664F520B0575500E09441 /* OnboardingShortBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664F720B0575500E09441 /* OnboardingShortBreakVC.storyboard */; };
+		D7F664FC20B0576100E09441 /* OnboardingLongBreakVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F664FE20B0576100E09441 /* OnboardingLongBreakVC.storyboard */; };
+		D7F6650520B059F200E09441 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F6650320B059F200E09441 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +91,6 @@
 /* Begin PBXFileReference section */
 		D701167C20A372A30094B56D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D711FADA20AF0A590012D86D /* chime.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = chime.aiff; sourceTree = "<group>"; };
-		D711FADD20AF0CA90012D86D /* OnboardingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingVC.storyboard; sourceTree = "<group>"; };
-		D711FADF20AF0E640012D86D /* OnboardingOverviewVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingOverviewVC.storyboard; sourceTree = "<group>"; };
-		D711FAE120AF0F490012D86D /* OnboardingWorkVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingWorkVC.storyboard; sourceTree = "<group>"; };
 		D711FAE320AF0FC50012D86D /* OnboardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageVC.swift; sourceTree = "<group>"; };
 		D711FAE520AF10360012D86D /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		D71E6AE0209A1AD8003647B7 /* Opus Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opus Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,9 +160,23 @@
 		D7F664D420AF237300E09441 /* OnboardingVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVCDelegate.swift; sourceTree = "<group>"; };
 		D7F664D620AF271400E09441 /* OnboardingShortBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingShortBreakVC.swift; sourceTree = "<group>"; };
 		D7F664D820AF272F00E09441 /* OnboardingLongBreakVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLongBreakVC.swift; sourceTree = "<group>"; };
-		D7F664DA20AF274C00E09441 /* OnboardingShortBreakVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingShortBreakVC.storyboard; sourceTree = "<group>"; };
-		D7F664DC20AF279C00E09441 /* OnboardingLongBreakVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingLongBreakVC.storyboard; sourceTree = "<group>"; };
 		D7F664DE20B04FC300E09441 /* UserProfileVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVCDelegate.swift; sourceTree = "<group>"; };
+		D7F664E420B0570700E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingVC.strings; sourceTree = "<group>"; };
+		D7F664E520B0571600E09441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnboardingVC.storyboard; sourceTree = "<group>"; };
+		D7F664E620B0572700E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingVC.strings; sourceTree = "<group>"; };
+		D7F664E820B0573700E09441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnboardingOverviewVC.storyboard; sourceTree = "<group>"; };
+		D7F664EB20B0573B00E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingOverviewVC.strings; sourceTree = "<group>"; };
+		D7F664ED20B0573D00E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingOverviewVC.strings; sourceTree = "<group>"; };
+		D7F664EF20B0574600E09441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnboardingWorkVC.storyboard; sourceTree = "<group>"; };
+		D7F664F220B0574700E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingWorkVC.strings; sourceTree = "<group>"; };
+		D7F664F420B0574E00E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingWorkVC.strings; sourceTree = "<group>"; };
+		D7F664F620B0575500E09441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnboardingShortBreakVC.storyboard; sourceTree = "<group>"; };
+		D7F664F920B0575900E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingShortBreakVC.strings; sourceTree = "<group>"; };
+		D7F664FB20B0575A00E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingShortBreakVC.strings; sourceTree = "<group>"; };
+		D7F664FD20B0576100E09441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnboardingLongBreakVC.storyboard; sourceTree = "<group>"; };
+		D7F6650020B0576300E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/OnboardingLongBreakVC.strings; sourceTree = "<group>"; };
+		D7F6650220B0576400E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingLongBreakVC.strings; sourceTree = "<group>"; };
+		D7F6650420B059F200E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,11 +200,11 @@
 		D711FADC20AF0C920012D86D /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				D711FADD20AF0CA90012D86D /* OnboardingVC.storyboard */,
-				D711FADF20AF0E640012D86D /* OnboardingOverviewVC.storyboard */,
-				D711FAE120AF0F490012D86D /* OnboardingWorkVC.storyboard */,
-				D7F664DA20AF274C00E09441 /* OnboardingShortBreakVC.storyboard */,
-				D7F664DC20AF279C00E09441 /* OnboardingLongBreakVC.storyboard */,
+				D7F664E220B0570100E09441 /* OnboardingVC.storyboard */,
+				D7F664E920B0573700E09441 /* OnboardingOverviewVC.storyboard */,
+				D7F664F020B0574600E09441 /* OnboardingWorkVC.storyboard */,
+				D7F664F720B0575500E09441 /* OnboardingShortBreakVC.storyboard */,
+				D7F664FE20B0576100E09441 /* OnboardingLongBreakVC.storyboard */,
 				D711FAE520AF10360012D86D /* OnboardingVC.swift */,
 				D711FAE320AF0FC50012D86D /* OnboardingPageVC.swift */,
 				D7F664CE20AF116600E09441 /* OnboardingOverviewVC.swift */,
@@ -270,6 +282,7 @@
 			children = (
 				D71E6AE3209A1AD8003647B7 /* AppDelegate.swift */,
 				D71E6AEF209A1ADA003647B7 /* Info.plist */,
+				D7F6650320B059F200E09441 /* InfoPlist.strings */,
 				D7B396AA20AB34E7001608AA /* Localizable.strings */,
 				D756EAD5209B12B5007F9976 /* Configuration.swift */,
 			);
@@ -472,6 +485,7 @@
 				en,
 				Base,
 				hu,
+				ro,
 			);
 			mainGroup = D71E6AD7209A1AD8003647B7;
 			productRefGroup = D71E6AE1209A1AD8003647B7 /* Products */;
@@ -490,19 +504,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D731C4F5209A4DCB00076098 /* Lato-Bold.ttf in Resources */,
-				D711FADE20AF0CA90012D86D /* OnboardingVC.storyboard in Resources */,
+				D7F664E020B0570100E09441 /* OnboardingVC.storyboard in Resources */,
 				D71E6AEE209A1ADA003647B7 /* LaunchScreen.storyboard in Resources */,
 				D711FADB20AF0A5A0012D86D /* chime.aiff in Resources */,
+				D7F6650520B059F200E09441 /* InfoPlist.strings in Resources */,
 				D731C4EB209A3DDA00076098 /* TaskView.xib in Resources */,
-				D711FAE220AF0F490012D86D /* OnboardingWorkVC.storyboard in Resources */,
-				D7F664DD20AF279C00E09441 /* OnboardingLongBreakVC.storyboard in Resources */,
+				D7F664EE20B0574600E09441 /* OnboardingWorkVC.storyboard in Resources */,
+				D7F664FC20B0576100E09441 /* OnboardingLongBreakVC.storyboard in Resources */,
 				D7B396AC20AB34E7001608AA /* Localizable.strings in Resources */,
 				D71E6AEB209A1ADA003647B7 /* Assets.xcassets in Resources */,
 				D71E6AE9209A1AD8003647B7 /* SelectorVC.storyboard in Resources */,
 				D71E6B0E209A1D93003647B7 /* SIL Open Font License.txt in Resources */,
-				D711FAE020AF0E640012D86D /* OnboardingOverviewVC.storyboard in Resources */,
+				D7F664E720B0573700E09441 /* OnboardingOverviewVC.storyboard in Resources */,
 				D731C4F4209A4DC600076098 /* Lato-Light.ttf in Resources */,
-				D7F664DB20AF274C00E09441 /* OnboardingShortBreakVC.storyboard in Resources */,
+				D7F664F520B0575500E09441 /* OnboardingShortBreakVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +637,64 @@
 				D7B396AF20AB6940001608AA /* ro */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D7F664E220B0570100E09441 /* OnboardingVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F664E420B0570700E09441 /* ro */,
+				D7F664E520B0571600E09441 /* Base */,
+				D7F664E620B0572700E09441 /* hu */,
+			);
+			name = OnboardingVC.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F664E920B0573700E09441 /* OnboardingOverviewVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F664E820B0573700E09441 /* Base */,
+				D7F664EB20B0573B00E09441 /* hu */,
+				D7F664ED20B0573D00E09441 /* ro */,
+			);
+			name = OnboardingOverviewVC.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F664F020B0574600E09441 /* OnboardingWorkVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F664EF20B0574600E09441 /* Base */,
+				D7F664F220B0574700E09441 /* hu */,
+				D7F664F420B0574E00E09441 /* ro */,
+			);
+			name = OnboardingWorkVC.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F664F720B0575500E09441 /* OnboardingShortBreakVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F664F620B0575500E09441 /* Base */,
+				D7F664F920B0575900E09441 /* hu */,
+				D7F664FB20B0575A00E09441 /* ro */,
+			);
+			name = OnboardingShortBreakVC.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F664FE20B0576100E09441 /* OnboardingLongBreakVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F664FD20B0576100E09441 /* Base */,
+				D7F6650020B0576300E09441 /* hu */,
+				D7F6650220B0576400E09441 /* ro */,
+			);
+			name = OnboardingLongBreakVC.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F6650320B059F200E09441 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F6650420B059F200E09441 /* hu */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
