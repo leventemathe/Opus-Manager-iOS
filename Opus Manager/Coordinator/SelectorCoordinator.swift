@@ -55,7 +55,7 @@ class SelectorCoordinator: Coordinator {
     
     func start() {
         navigationController.isNavigationBarHidden = true
-        onboardingDecider.turnOnOnboarding()
+        // onboardingDecider.turnOnOnboarding()
         if onboardingDecider.shouldPresentOnboarding {
             startOnboarding()
         } else {
