@@ -179,6 +179,7 @@
 		D7F6650220B0576400E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/OnboardingLongBreakVC.strings; sourceTree = "<group>"; };
 		D7F6650420B059F200E09441 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7F6650720B05D0000E09441 /* OnboardingTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTitleLabel.swift; sourceTree = "<group>"; };
+		D7F6650920B2D2E700E09441 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -705,6 +706,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7F6650420B059F200E09441 /* hu */,
+				D7F6650920B2D2E700E09441 /* ro */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

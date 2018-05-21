@@ -36,4 +36,14 @@ class OnboardingTitleLabel: UILabel {
         }
         textColor = UIColor.myTintColor
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if traitCollection.horizontalSizeClass == .compact {
+                font = UIFont.mySubheaderBold
+            } else {
+                font = UIFont.myHeaderBold
+            }
+        }
+    }
 }
