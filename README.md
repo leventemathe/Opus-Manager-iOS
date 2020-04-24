@@ -2,8 +2,8 @@
 A work and study timer with beautiful dynamic nature photos from Unsplash.
 
 <p float="left">
-  <img src="/docs/img/1_welcome.jpg" width="100" />
-  <img src="/docs/img/2_work_timer.jpg" width="100" /> 
-  <img src="/docs/img/3_short_break_timer.jpg" width="100" />
+  <img src="/docs/img/1_welcome.jpg" width="30%" />
+  <img src="/docs/img/2_work_timer.jpg" width="30%" /> 
+  <img src="/docs/img/3_short_break_timer.jpg" width="30%" />
 </p>
 
